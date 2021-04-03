@@ -77,9 +77,11 @@ Las tecnologías que se han decidido usar para la correcta implementación del p
 -	En relación a la base de datos se va a usar MySQL y Firebase para la parte de logueo del cliente.
 
 ERD
+
 ![image](https://user-images.githubusercontent.com/55058648/113489858-f3d21900-94c6-11eb-993e-587f9e2f3267.png)
 
 Mockup Inicial
+
 ![image](https://user-images.githubusercontent.com/55058648/113489874-0c423380-94c7-11eb-82a2-f1215f1efd57.png)
 
 
