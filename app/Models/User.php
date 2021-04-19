@@ -58,4 +58,64 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function user_address()
+    {
+        return $this->belongsTo('App\Models\Address','idAdr','idAdr');//muchos a 1
+    }
+
+    public function user_rol()
+    {
+        return $this->belongsTo('App\Models\Rol','idRol','idRol');//muchos a 1
+    }
+
+    public function user_workDays()
+    {
+        return $this->hasMany('App\Models\Work_Day','idUsu','idUsu');//1 a muchos
+    }
+
+    public function users_reservations()
+    {
+        return $this->belongsToMany('App\Models\reservation','users_reservations','idUsu','idRes');//muchos a muchos
+    }
+
+    public function users_clients()
+    {
+        return $this->belongsToMany('App\Models\Client','users_clients','idUsu','idCli');//muchos a muchos
+    }
+
+    public function users_orders()
+    {
+        return $this->belongsToMany('App\Models\Order','users_orders','idUsu','idOrd');//muchos a muchos
+    }
+
+    public function users_drinks()
+    {
+        return $this->belongsToMany('App\Models\Drink','users_drinks','idUsu','idDri');//muchos a muchos
+    }
+
+    public function menus_users()
+    {
+        return $this->belongsToMany('App\Models\Menu','users_menus','idUsu','idMen');//muchos a muchos
+    }
+
+    public function users_dishes()
+    {
+        return $this->belongsToMany('App\Models\Dish','users_dishes','idUsu','idDis');//muchos a muchos
+    }
+
+    public function users_products()
+    {
+        return $this->belongsToMany('App\Models\Product','users_products','idUsu','idPro');//muchos a muchos
+    }
+
+    public function users_allergens()
+    {
+        return $this->belongsToMany('App\Models\Allergens','users_allergens','idUsu','idAle');//muchos a muchos
+    }
+
+    public function users_factures()
+    {
+        return $this->belongsToMany('App\Models\Facture','users_factures','idUsu','idFac');//muchos a muchos
+    }
 }
