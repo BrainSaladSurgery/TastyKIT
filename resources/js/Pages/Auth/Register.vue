@@ -1,30 +1,44 @@
 <template>
-    <jet-authentication-card>
-        <template #logo>
-            <jet-authentication-card-logo />
+    <authentication-card classesCard="w-3/4 h-1/4 mt-0 px-8 pt-5 bg-white shadow-xl overflow-hidden sm:rounded-lg">
+        <template #letras>
+            <inertia-link href="/">
+                <letras  width="450px" classes="p-5" box="0 0 99.928184 28.895552"/>
+            </inertia-link>
         </template>
 
         <jet-validation-errors class="mb-4" />
 
-        <form @submit.prevent="submit">
-            <div>
-                <jet-label for="name" value="Name" />
-                <jet-input id="name" type="text" class="mt-1 block w-full" v-model="form.name" required autofocus autocomplete="name" />
+        <!-- Formulario de registro, las validaciones y creacción del User se realizaran desde Actions/Fortify/CreateNewUser -->
+        <form @submit.prevent="submit" class=" grid grid-flow-row grid-cols-2 grid-rows-4  gap-4">
+
+            <div >
+                <jet-label for="nick" value="Nick Name" />
+                <jet-input id="nick" type="text" class="mt-1 block w-full" v-model="form.nick" required autofocus autocomplete="nick" />
             </div>
 
-            <div class="mt-4">
+            <div >
                 <jet-label for="email" value="Email" />
                 <jet-input id="email" type="email" class="mt-1 block w-full" v-model="form.email" required />
             </div>
 
-            <div class="mt-4">
+            <div >
                 <jet-label for="password" value="Password" />
                 <jet-input id="password" type="password" class="mt-1 block w-full" v-model="form.password" required autocomplete="new-password" />
             </div>
 
-            <div class="mt-4">
+            <div >
+                <jet-label for="dni" value="DNI" />
+                <jet-input id="dni" type="text" class="mt-1 block w-full" v-model="form.dni" required />
+            </div>
+
+            <div >
                 <jet-label for="password_confirmation" value="Confirm Password" />
                 <jet-input id="password_confirmation" type="password" class="mt-1 block w-full" v-model="form.password_confirmation" required autocomplete="new-password" />
+            </div>
+
+            <div >
+                <jet-label for="phone" value="Phone" />
+                <jet-input id="phone" type="text" class="mt-1 block w-full" v-model="form.phone" required />
             </div>
 
             <div class="mt-4" v-if="$page.props.jetstream.hasTermsAndPrivacyPolicyFeature">
@@ -39,23 +53,28 @@
                 </jet-label>
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <inertia-link :href="route('login')" class="underline text-sm text-gray-600 hover:text-gray-900">
+            <div class="text-left col-start-1 ">
+                <h3 class="text-gray-400 "> Join Up Tastyer</h3>
+            </div>
+
+            <div class="text-right col-start-2 ">
+                <inertia-link :href="route('login')" class=" underline text-sm text-gray-600 hover:text-gray-900">
                     Already registered?
                 </inertia-link>
 
-                <jet-button class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <yelx-button class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Register
-                </jet-button>
+                </yelx-button>
             </div>
         </form>
-    </jet-authentication-card>
+    </authentication-card>
 </template>
 
 <script>
-    import JetAuthenticationCard from '@/Jetstream/AuthenticationCard'
+    import AuthenticationCard from '@/Components/AuthenticationCard'
+    import Letras from '@/Components/Letras'
     import JetAuthenticationCardLogo from '@/Jetstream/AuthenticationCardLogo'
-    import JetButton from '@/Jetstream/Button'
+    import YelxButton from '@/Components/Button'
     import JetInput from '@/Jetstream/Input'
     import JetCheckbox from "@/Jetstream/Checkbox";
     import JetLabel from '@/Jetstream/Label'
@@ -63,21 +82,24 @@
 
     export default {
         components: {
-            JetAuthenticationCard,
+            AuthenticationCard,
             JetAuthenticationCardLogo,
-            JetButton,
+            YelxButton,
             JetInput,
             JetCheckbox,
             JetLabel,
-            JetValidationErrors
+            JetValidationErrors,
+            Letras
         },
 
         data() {
             return {
                 form: this.$inertia.form({
-                    name: '',
                     email: '',
                     password: '',
+                    nick: '',
+                    dni: '',
+                    phone: '',
                     password_confirmation: '',
                     terms: false,
                 })

@@ -14,12 +14,12 @@ class AddNewAttributesUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('firstName');
-            $table->string('lastName');
-            $table->string('nick');
-            $table->string('DNI');
-            $table->date('Bir_Date');
-            $table->string('phone');
+            $table->string('firstName')->nullable();
+            $table->string('lastName')->nullable();
+            $table->string('nick')->unique();
+            $table->string('dni')->unique();
+            $table->date('Bir_Date')->nullable();
+            $table->string('phone')->unique();
             $table->foreignId('rol_id')->constrained('roles');
             $table->foreignId('addresses_id')->constrained();
         });

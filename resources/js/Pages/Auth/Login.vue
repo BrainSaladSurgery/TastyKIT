@@ -1,7 +1,10 @@
 <template>
     <authentication-card>
-        <template #logo>
-            <authentication-card-logo />
+        <!-- Letras del logo este nos redirige pulsandolo al Home -->
+        <template #letras>
+            <inertia-link href="/">
+                <letras  width="450px" classes="p-5" box="0 0 99.928184 28.895552"/>
+            </inertia-link>
         </template>
 
         <jet-validation-errors class="mb-4" />
@@ -10,6 +13,7 @@
             {{ status }}
         </div>
 
+        <!-- Formulario de inicio de sesión -->
         <form @submit.prevent="submit">
             <div>
                 <jet-label for="email" value="Email" />
@@ -33,18 +37,34 @@
                     Forgot your password?
                 </inertia-link>
 
-                <jet-button class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <yelx-button class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Log in
-                </jet-button>
+                </yelx-button>
             </div>
         </form>
+
+        <!-- Registrate -->
+        <template #register>
+            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+                <div class="flex justify-center">
+                    <span class="mr-4 text-gray-600">¿No tienes cuenta?</span>
+                    <inertia-link :href="route('register')" class= "underline text-md text-gray-600 hover:text-gray-900">
+                        Registrate
+                    </inertia-link>
+                </div>
+            </div>
+        </template>
+
     </authentication-card>
+
+
+
 </template>
 
 <script>
     import AuthenticationCard from '@/Components/AuthenticationCard'
-    import AuthenticationCardLogo from '@/Components/AuthenticationCardLogo'
-    import JetButton from '@/Jetstream/Button'
+    import Letras from '@/Components/Letras'
+    import YelxButton from '@/Components/Button'
     import JetInput from '@/Jetstream/Input'
     import JetCheckbox from '@/Jetstream/Checkbox'
     import JetLabel from '@/Jetstream/Label'
@@ -53,8 +73,8 @@
     export default {
         components: {
             AuthenticationCard,
-            AuthenticationCardLogo,
-            JetButton,
+            Letras,
+            YelxButton,
             JetInput,
             JetCheckbox,
             JetLabel,
