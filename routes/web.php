@@ -28,8 +28,12 @@ Route::get('/login',function(){
 //Utilizamos un grupo con middleware para que todos los que tengan acceso a esta sección deban estar logeados
 Route::middleware(['auth:sanctum', 'verified'])->group( function () {
 
-    Route::get('/dashboard', function(){
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
+    Route::get('/home', function(){
+        return Inertia::render('Admin/Home');
+    })->name('home');
+
+    Route::get('/products', function(){
+        return Inertia::render('Admin/Products');
+    })->name('products');
 
 });

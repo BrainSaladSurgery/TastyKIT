@@ -1,28 +1,26 @@
 <template>
     <app-layout>
-        <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Dashboard
-            </h2>
+        <template #navSide>
+            <nav-side />
         </template>
-        <div class="h-full w-full">
-            <content-main />
-        </div>
-
-
+        
+        <template #content>
+            <home />
+        </template>
     </app-layout>
+    
 </template>
 
 <script>
+
+    import Home from '@/Pages/Admin/Home'
     import AppLayout from '@/Layouts/AppLayout'
-    import Welcome from '@/Jetstream/Welcome'
-    import ContentMain from '@/Components/ContentMain'
 
     export default {
         components: {
             AppLayout,
-            Welcome,
-            ContentMain
+            Home,
+            
         },
     }
 </script>
