@@ -25,13 +25,14 @@ class CreateNewUser implements CreatesNewUsers
             'password' => $this->passwordRules(),
             'dni' => ['required', 'string', 'max:9','unique:users'],
             'phone' => ['required', 'string', 'max:9','unique:users'],
-            'nick' => ['required', 'string', 'max:20','unique:users'],
+            'name' => ['required', 'string', 'max:20','unique:users'],
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
         ])->validate();
 
+        //Para la foto de perfil con letras igualamos el name al nick
         return User::create([
+            'name' => $input['name'],
             'email' => $input['email'],
-            'nick' => $input['nick'],
             'dni' => $input['dni'],
             'phone' => $input['phone'],
             // Por defecto agrego que sea User y que no tenga dirección para rellenarla luego más tarde en el perfil

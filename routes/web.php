@@ -15,19 +15,21 @@ use Inertia\Inertia;
 |
 */
 
+//Pagina Home
 Route::get('/', function () {
-
     return Inertia::render('Index');
-    // return Redirect::route('Index');
-
 });
 
+//Login
 Route::get('/login',function(){
-
     return Inertia::render('Auth/Login');
-
 })->name('login');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-return Inertia::render('Dashboard');
-})->name('dashboard');
+//Utilizamos un grupo con middleware para que todos los que tengan acceso a esta sección deban estar logeados
+Route::middleware(['auth:sanctum', 'verified'])->group( function () {
+
+    Route::get('/dashboard', function(){
+        return Inertia::render('Dashboard');
+    })->name('dashboard');
+
+});

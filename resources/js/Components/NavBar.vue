@@ -19,15 +19,60 @@
                 <a class="text-white font-bold hover:text-gray-600" href="#">Disabled</a>
             </li>
         </ul>
-        <inertia-link href="/login" class="bg-gray-100 hover:bg-gray-100 text-gray-600 font-bold py-2 px-4 border border-gray-400 rounded-full shadow-lg">
+        <inertia-link href="/login" v-if="!$page.props.user.name " class="bg-gray-100 hover:bg-gray-100 text-gray-600 font-bold py-2 px-4 border border-gray-400 rounded-full shadow-lg">
             Login
         </inertia-link>
+
+
+
+         <!-- Settings Dropdown -->
+        <div class="relative mr-8">
+            <dropdown align="right"  >
+                <template #trigger>
+
+                    <div class="flex flex-row items-center">
+                        <p class="mr-8 text-white text-extrabold uppercase">{{ $page.props.user.name }}</p>
+                        <button  class="flex text-sm border-4 border-gray-400 rounded-full focus:outline-none hover:bg-gray-600 ">
+                            <img class="h-11 w-11 rounded-full object-cover" :src="$page.props.user.profile_photo_url" :alt="$page.props.user.name" />
+                        </button>
+
+                    </div>
+                </template>
+
+                     <template #content>
+                        <!-- Account Management -->
+                        <div class="text-center text-gray-600">
+                            <inertia-link :href="route('profile.show')">
+                            Profile
+                            </inertia-link>
+
+                            <div class="border-t border-gray-100"></div>
+
+                            <!-- Authentication -->
+                            <form @submit.prevent="logout">
+                                <inertia-link as="button">
+                                    Log Out
+                                </inertia-link>
+                            </form>
+                        </div>
+                    </template>
+
+            </dropdown>
+        </div>
     </nav>
 </template>
 
 <script>
+    import Dropdown from '@/Components/Dropdown'
     export default {
-
+        components: {
+            Dropdown
+        },
+        methods:{
+            logout() {
+                this.$inertia.post(route('logout'));
+            },
+        }
     }
 </script>
 

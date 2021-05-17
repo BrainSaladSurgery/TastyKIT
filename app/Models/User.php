@@ -28,7 +28,7 @@ class User extends Authenticatable
         'password',
         'firstName',
         'lastName',
-        'nick',
+        'name',
         'dni',
         'Bir_Date',
         'phone',

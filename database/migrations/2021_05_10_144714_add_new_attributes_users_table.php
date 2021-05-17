@@ -16,7 +16,6 @@ class AddNewAttributesUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('firstName')->nullable();
             $table->string('lastName')->nullable();
-            $table->string('nick')->unique();
             $table->string('dni')->unique();
             $table->date('Bir_Date')->nullable();
             $table->string('phone')->unique();

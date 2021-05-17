@@ -12,8 +12,8 @@
         <form @submit.prevent="submit" class=" grid grid-flow-row grid-cols-2 grid-rows-4  gap-4">
 
             <div >
-                <jet-label for="nick" value="Nick Name" />
-                <jet-input id="nick" type="text" class="mt-1 block w-full" v-model="form.nick" required autofocus autocomplete="nick" />
+                <jet-label for="name" value="Nick Name" />
+                <jet-input id="name" type="text" class="mt-1 block w-full" v-model="form.name" required autofocus autocomplete="nick" />
             </div>
 
             <div >
@@ -97,7 +97,7 @@
                 form: this.$inertia.form({
                     email: '',
                     password: '',
-                    nick: '',
+                    name: '',
                     dni: '',
                     phone: '',
                     password_confirmation: '',
