@@ -8,21 +8,22 @@
     </template>
     <template #content>
     <header aria-label="page caption" class="flex-none flex h-16 bg-gray-100 border-t px-4 items-center ">
-        <h1 id="page-caption" class="font-semibold text-lg ">Productos</h1>
+        <h1 id="page-caption" class="font-semibold text-lg ">Bebidas</h1>
     </header>
 
-    <nav-top @changeModal="showModalMod = $event" @changeModalCreate="showModal = $event" @modalData="productID = $event" :tipo="type"/>
+    <nav-top @changeModal="showModalMod = $event"  @changeModalCreate="showModal = $event" @modalData="drinkID = $event" :tipo="type" />
+
 
     <main class="flex-grow flex min-h-0 border-t">
 
         <section aria-label="main content" class="flex  flex-col flex-auto border-l bg-gray-100">
 
-            <div v-if="productos.length > 0" id="grid" >
+            <div v-if="bebidas.length > 0" id="grid" >
                     <!-- Column -->
-                    <div  v-for="(product,index) in productos" @key="index" class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3 ">
+                    <div  v-for="(bebida,index) in bebidas" @key="index" class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3 ">
 
                         <!-- Article -->
-                        <card-data @changeModal="showModalMod = $event" @modalData="productID = $event" :data="product" :categories="allCategories" @emitDelete="deletePro = $event" class="bg-white"/>
+                        <card-data @changeModal="showModalMod = $event" @modalData="drinkID = $event" :data="bebida" :categories="allCategories" @emitDelete="deletePro = $event" class="bg-white"/>
                 <!-- END Article -->
                     </div>
 
@@ -31,37 +32,36 @@
                     <modal class="flex flex-col w-11/12 sm:w-5/6 lg:w-1/2 max-w-2xl mx-auto rounded-lg border border-gray-300 shadow-xl" :show="showModal" @close="changeStateModal">
                         <div>
                             <div class="flex flex-row justify-between p-6 bg-white border-b border-gray-200 rounded-tl-lg rounded-tr-lg">
-                                <p class="font-semibold text-gray-800">Alta Producto</p>
+                                <p class="font-semibold text-gray-800">Alta Bebida</p>
                                 <svg  @click="changeStateModal" class="w-6 h-6 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" ></path></svg>
                             </div>
                             <div class="flex flex-col m-5 sm:flex-row items-center mb-5 sm:space-x-5">
                                 <div class="w-full sm:w-3/5">
-                                    <p class="mb-2 font-semibold text-gray-700">Nombre del producto</p>
-                                    <input v-model="productName" class="bg-white border border-gray-200 rounded shadow-sm w-full focus:ring-0 focus:border-gray-500 " type="text" name="name">
+                                    <p class="mb-2 font-semibold text-gray-700">Nombre de la Bebida</p>
+                                    <input v-model="drinkName" class="bg-white border border-gray-200 rounded shadow-sm w-full focus:ring-0 focus:border-gray-500 " type="text" name="name">
                                 </div>
                                 <div class="w-full sm:w-1/3 mt-2 sm:mt-0">
                                     <p class="mb-2 font-semibold text-gray-700">Cantidad</p>
-                                    <input  v-model="productAmount" class=" bg-white border border-gray-200 rounded shadow-sm  focus:ring-0 focus:border-gray-500" type="text" name="amount" >
+                                    <input  v-model="drinkAmount" class=" bg-white border border-gray-200 rounded shadow-sm  focus:ring-0 focus:border-gray-500" type="text" name="amount" >
                                 </div>
                                 <div class="w-full sm:w-1/3 mt-2 sm:mt-0">
                                     <p class="mb-2 font-semibold text-gray-700">Categoría</p>
-                                    <select v-model="productCategory" type="text" name="categoryCreate" class="w-full p-2 bg-white border border-gray-200 rounded shadow-sm appearance-none focus:ring-0 focus:border-gray-500">
-                                        <option value="2">Vegetales</option>
-                                        <option value="3">Carnes</option>
-                                        <option value="4">Frutas</option>
-                                        <option value="5">Pescados</option>
-                                        <option value="1">Otros</option>
-                                    </select>
+                                <select v-model="categoryCreate" type="text" name="category" class="w-full p-2 cursor-pointer bg-white border border-gray-200 rounded shadow-sm appearance-none focus:ring-0 focus:border-gray-500">
+                                    <option value="2">Refrescos</option>
+                                    <option value="3">Con Alcohol</option>
+                                    <option value="4">Cocteles</option>
+                                    <option value="1">Otros</option>
+                                </select>
                                 </div>
                             </div>
                             <div class="flex flex-col px-6 py-5 bg-gray-50">
                                 <p class="mb-2 font-semibold text-gray-700">Descripción</p>
-                                <textarea v-model="descriptionProduct" type="text" name="" placeholder="Escribe aquí..." class="p-5 mb-5 bg-white border border-gray-200 rounded shadow-sm h-36 focus:ring-0 focus:border-gray-500" id=""></textarea>
+                                <textarea v-model="descriptionDrink" type="text" name="" placeholder="Escribe aquí..." class="p-5 mb-5 bg-white border border-gray-200 rounded shadow-sm h-36 focus:ring-0 focus:border-gray-500" ></textarea>
 
                                 <hr />
 
                                 <div class="flex items-center mt-5 mb-3 space-x-4">
-                                    <input v-model="imageDefault" class="inline-flex rounded-full" type="checkbox" id="check1" name="check1" />
+                                    <input v-model="imageDefault" class="inline-flex rounded-full cursor-pointer" type="checkbox" id="check1" name="check1" />
                                     <label class="inline-flex font-semibold text-gray-400" for="check1">Imagen por defecto</label>
                                 </div>
                                 <div class="flex flex-row items-center justify-between p-5 bg-white border border-gray-200 rounded shadow-sm">
@@ -80,7 +80,7 @@
                             </div>
                                 <div class="flex flex-row items-center justify-between p-5 bg-white border-t border-gray-200 rounded-bl-lg rounded-br-lg">
                                     <p class="font-semibold text-blue-500 ml-5">Cancelar</p>
-                                    <button  @click="createProduct()" class="px-4 py-2 text-white font-semibold bg-yellow-600 rounded w-28">
+                                    <button  @click="createDrink()" class="px-4 py-2 text-white font-semibold bg-yellow-600 rounded w-28">
                                         Guardar
                                     </button>
                                 </div>
@@ -92,37 +92,36 @@
                     <modal class="flex flex-col w-11/12 sm:w-5/6 lg:w-1/2 max-w-2xl mx-auto rounded-lg border border-gray-300 shadow-xl" :show="showModalMod" @close="changeStateModalMod">
                         <div>
                             <div class="flex flex-row justify-between p-6 bg-white border-b border-gray-200 rounded-tl-lg rounded-tr-lg">
-                                <p class="font-semibold text-gray-800">Modificar Producto</p>
+                                <p class="font-semibold text-gray-800">Modificar Bebida</p>
                                 <svg  @click="changeStateModalMod" class="w-6 h-6 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" ></path></svg>
                             </div>
                             <div class="flex flex-col m-5 sm:flex-row items-center mb-5 sm:space-x-5">
                                 <div class="w-full sm:w-3/5">
-                                    <p class="mb-2 font-semibold text-gray-700">Nombre del producto</p>
-                                    <input v-model="produc.name" class="bg-white border border-gray-200 rounded shadow-sm w-full focus:ring-0 focus:border-gray-500 " type="text" name="name" required >
+                                    <p class="mb-2 font-semibold text-gray-700">Nombre de la bebida</p>
+                                    <input v-model="drink.name" class="bg-white border border-gray-200 rounded shadow-sm w-full focus:ring-0 focus:border-gray-500 " type="text" name="name" required >
                                 </div>
                                 <div class="w-full sm:w-1/3 mt-2 sm:mt-0">
                                     <p class="mb-2 font-semibold text-gray-700">Cantidad</p>
-                                    <input  v-model="produc.amount" class=" bg-white border border-gray-200 rounded shadow-sm  focus:ring-0 focus:border-gray-500" type="text" name="amount" required  >
+                                    <input  v-model="drink.amount" class=" bg-white border border-gray-200 rounded shadow-sm  focus:ring-0 focus:border-gray-500" type="text" name="amount" required  >
                                 </div>
                                 <div class="w-full sm:w-1/3 mt-2 sm:mt-0">
                                     <p class="mb-2 font-semibold text-gray-700">Categoría</p>
-                                <select v-model="produc.categories_id" type="text" name="category" class="w-full p-2 bg-white border border-gray-200 rounded shadow-sm appearance-none focus:ring-0 focus:border-gray-500" required >
-                                        <option value="2">Vegetales</option>
-                                        <option value="3">Carnes</option>
-                                        <option value="4">Frutas</option>
-                                        <option value="5">Pescados</option>
-                                        <option value="1">Otros</option>
+                                <select v-model="drink.categories_id" type="text" name="category" class="w-full p-2 cursor-pointer bg-white border border-gray-200 rounded shadow-sm appearance-none focus:ring-0 focus:border-gray-500" required >
+                                    <option value="2">Refrescos</option>
+                                    <option value="3">Con Alcohol</option>
+                                    <option value="4">Cocteles</option>
+                                    <option value="1">Otros</option>
                                 </select>
                                 </div>
                             </div>
                             <div class="flex flex-col px-6 py-5 bg-gray-50">
                                 <p class="mb-2 font-semibold text-gray-700">Descripción</p>
-                                <textarea v-model="produc.description" type="text" name="" placeholder="Escribe aquí..." class="p-5 mb-5 bg-white border border-gray-200 rounded shadow-sm h-36 focus:ring-0 focus:border-gray-500" ></textarea>
+                                <textarea v-model="drink.description" type="text" name="" placeholder="Escribe aquí..." class="p-5 mb-5 bg-white border border-gray-200 rounded shadow-sm h-36 focus:ring-0 focus:border-gray-500" ></textarea>
 
                                 <hr />
 
                                 <div class="flex items-center mt-5 mb-3 space-x-4">
-                                    <input v-model="imageDefault" class="inline-flex rounded-full" type="checkbox" id="check1" name="check1" />
+                                    <input v-model="imageDefault" class="inline-flex rounded-full cursor-pointer" type="checkbox" id="check1" name="check1" />
                                     <label class="inline-flex font-semibold text-gray-400" for="check1">Imagen por defecto</label>
                                 </div>
                                 <div class="flex flex-row items-center justify-between p-5 bg-white border border-gray-200 rounded shadow-sm">
@@ -141,7 +140,7 @@
                             </div>
                                 <div class="flex flex-row items-center justify-between p-5 bg-white border-t border-gray-200 rounded-bl-lg rounded-br-lg">
                                     <p class="font-semibold text-blue-500 ml-5">Cancelar</p>
-                                    <button  @click="updateProduct(produc.id)" class="px-4 py-2 text-white font-semibold bg-yellow-600 rounded w-28">
+                                    <button  @click="updateDrink(drink.id)" class="px-4 py-2 text-white font-semibold bg-yellow-600 rounded w-28">
                                         Guardar
                                     </button>
                                 </div>
@@ -176,22 +175,22 @@
                 showModal: false,
                 showModalMod: false,
                 image: null,
-                productName:'',
-                productAmount: '',
-                descriptionProduct: '',
+                drinkName:'',
+                drinkAmount: '',
+                descriptionDrink: '',
                 imageDefault: false,
                 url: null,
-                productCategory: 1,
-                productos : [],
-                productID: '',
-                produc: [],
+                categoryCreate: 1,
+                bebidas : [],
+                drinkID: '',
+                drink: [],
                 change: false,
                 deletePro: false,
                 error: ''
 
             }
         },
-        props: ['allCategories','type'],
+        props:['allCategories', 'type'],
         components: {
             AppLayout,
             NavTop,
@@ -226,25 +225,25 @@
                 this.image = file
                 this.url = URL.createObjectURL(file)
             },
-            // Method create Product
-            async createProduct(){
+            // Method create Drink
+            async createDrink(){
 
                 const formData = new FormData()
                 formData.append('image', this.image)
-                formData.append('name', this.productName)
-                formData.append('amount', this.productAmount)
-                formData.append('description', this.descriptionProduct)
+                formData.append('name', this.drinkName)
+                formData.append('amount', this.drinkAmount)
+                formData.append('description', this.descriptionDrink)
                 formData.append('imageDefault', this.imageDefault)
-                formData.append('categoryCreate', this.productCategory)
+                formData.append('categoryCreate', this.categoryCreate)
 
-                await axios.post('/create-product',formData,{
+                await axios.post('/create-drink',formData,{
                     headers:{
                         'Content-Type':'multipart/form-data'
                     }
                 }).
                     then((response) => {
 
-                        this.productos.unshift(response.data)
+                        this.bebidas.unshift(response.data)
                         this.resetData()
 
                     }).catch(error =>{
@@ -257,28 +256,28 @@
 
                 this.showModal = false
                 this.image = null
-                this.productName =''
-                this.productAmount = ''
-                this.descriptionProduct = ''
+                this.drinkName =''
+                this.drinkAmount = ''
+                this.descriptiondrink = ''
                 this.imageDefault = false
                 this.url = null
-                this.productCategory = ''
+                this.drinkCategory = ''
             },
 
-            async getProducts(){
+            async getDrinks(){
 
-                await axios.get('/products-list')
+                await axios.get('/drinks-list')
                 .then(response =>{
 
-                    this.productos = response.data
+                    this.bebidas = response.data
                 })
             },
 
-            async updateProduct(idProduct){
+            async updateDrink(idProduct){
 
-                var url = '/update-product/' + idProduct
+                var url = '/update-drink/' + idProduct
 
-                await axios.put(url ,this.produc).
+                await axios.put(url ,this.drink).
                     then((response) => {
 
                         this.change = true
@@ -300,15 +299,16 @@
             resetDataUp(){
 
                 this.showModalMod = false
-                this.produc = []
+                this.drink = []
 
             },
 
-            async getProduct(id){
+            async getDrink(id){
 
-                await axios.get('/product/'+id).
+                await axios.get('/drink/'+id).
                     then((response) =>{
-                        this.produc = response.data
+                        this.drink = response.data
+                        console.log(this.drink)
                     })
             }
         },
@@ -316,25 +316,25 @@
 
         mounted: function() {
 
-            this.getProducts()
+            this.getDrinks()
 
         },
 
 
         watch: {
-            productID: function(val){
-                this.getProduct(val)
+            drinkID: function(val){
+                this.getDrink(val)
             },
             change: function(val){
 
                 if(val == true){
-                    this.getProducts()
+                    this.getDrinks()
                 }
             },
             deletePro: function(val){
 
                 if(val == true){
-                    this.getProducts()
+                    this.getDrinks()
                 }
             }
         }
@@ -359,4 +359,3 @@
     }
 
 </style>
-

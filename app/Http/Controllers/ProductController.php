@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProductCategory;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -21,8 +22,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-
-        return Inertia::render('Admin/Products');
+        $allCategories = ProductCategory::all();
+        $product= Product::all()->first();
+        return Inertia::render('Admin/Products',['allCategories' => $allCategories,
+                                                'type' => $product->type]);
     }
 
     public function getProducts()
@@ -71,7 +74,7 @@ class ProductController extends Controller
         $producto->name = $request->name;
         $producto->amount = $request->amount;
         $producto->description = $request->description;
-        $producto->product_categories_id = 1;
+        $producto->categories_id = $request->categories_id;
 
         $producto->update();
     }

@@ -15,7 +15,9 @@ class Product extends Model
         'image',
         'description',
         'name',
-        'product_categories_id'
+        'type',
+        'default_img',
+        'categories_id'
     ];
 
     // Method createProduct
@@ -41,7 +43,9 @@ class Product extends Model
             'description' => $request->decription,
             'name' => $request->name,
             'amount' => $request->amount,
-            'product_categories_id' => $request->category
+            'categories_id' => $request->categoryCreate,
+            'default_img' => $request->imageDefault,
+            'type' => 'Producto',
         ]);
 
         return $product;

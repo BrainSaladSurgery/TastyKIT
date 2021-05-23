@@ -15,8 +15,8 @@ class ProductCategorySeeder extends Seeder
     public function run()
     {
         ProductCategory::create([
-            'name' => 'Sin asignar',
-            'description' => 'Sin descripción'
+            'name' => 'Otros',
+            'description' => 'Otros'
         ]);
 
         ProductCategory::create([

@@ -20,7 +20,9 @@ class DatabaseSeeder extends Seeder
             RolesSeeder::class,
             AddressesSeeder::class,
             ProductCategorySeeder::class,
-            ProductSeeder::class
+            ProductSeeder::class,
+            DrinkCategorySeeder::class,
+            DrinkSeeder::class
         ]);
 
     }

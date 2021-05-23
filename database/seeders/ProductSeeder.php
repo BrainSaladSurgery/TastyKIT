@@ -27,7 +27,8 @@ class ProductSeeder extends Seeder
                 'image'=> 'https://cdn1.iconfinder.com/data/icons/fruit-filled-line-1/64/food_fruit_vegetable_vegetarian_organic_tomato-256.png',
                 'description' =>$fkr->text(),
                 'name' =>$faker->vegetableName(),
-                'product_categories_id' => 2
+                'type' => 'Producto',
+                'categories_id' => 2
             ]);
 
         }
@@ -40,7 +41,8 @@ class ProductSeeder extends Seeder
                 'image' => 'https://cdn3.iconfinder.com/data/icons/food-set-3/91/Food_C223-256.png',
                 'description' =>$fkr->text(),
                 'name' =>$faker->meatName(),
-                'product_categories_id' => 3
+                'type' => 'Producto',
+                'categories_id' => 3
             ]);
 
         }
@@ -53,7 +55,8 @@ class ProductSeeder extends Seeder
                 'image' => 'https://cdn3.iconfinder.com/data/icons/spring-2-1/30/Strawberry-256.png',
                 'description' =>$fkr->text(),
                 'name' =>$faker->fruitName(),
-                'product_categories_id' => 4
+                'type' => 'Producto',
+                'categories_id' => 4
             ]);
 
         }
@@ -66,7 +69,8 @@ class ProductSeeder extends Seeder
                 'image' => 'https://cdn3.iconfinder.com/data/icons/food-set-3/91/Food_C205-256.png',
                 'description' =>$fkr->text(),
                 'name' =>$faker->foodName(),
-                'product_categories_id' => 5
+                'type' => 'Producto',
+                'categories_id' => 5
             ]);
 
         }

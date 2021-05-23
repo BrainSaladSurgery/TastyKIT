@@ -20,7 +20,8 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->boolean('default_img')->default(false)->nullable();
-            $table->foreignId('product_categories_id')->constrained('product_categories');
+            $table->string('type');
+            $table->foreignId('categories_id')->constrained('product_categories');
             $table->timestamps();
         });
     }
