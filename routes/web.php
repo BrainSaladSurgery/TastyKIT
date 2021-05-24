@@ -71,6 +71,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group( function () {
 
     //Users
     Route::get('/users', [UserController::class, 'index'])->name('users');
+    Route::get('/users-list', [UserController::class, 'getUsers'])->name('users-list');
+    Route::get('/user/{id}',[UserController::class, 'show'])->name('user');
+    Route::delete('/user-product/{id}', [UserController::class, 'destroy'])->name('user-product');
 
     //Innvoices
     Route::get('/innvoices', [InnvoiceController::class, 'index'])->name('innvoices');

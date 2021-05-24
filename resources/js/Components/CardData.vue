@@ -6,7 +6,7 @@
         </div>
         <div class="flex-wrap mr-3">
             <header class="flex items-center justify-center p-2 ml-4 w-full ">
-                <div class="text-gray-600 font-bold cursor-default w-1/2 h-8 mt-3">{{ data.name }}</div>
+                <div class="text-gray-600 font-bold cursor-default w-1/3 h-8 mt-3">{{ data.name }}</div>
                 <div class="flex items-center justify-center w-1/2">
                     <p class="cursor-default">Cantidad:</p>
                     <div name="cantidad" class=" ml-5 mb-1  text-center text-gray-600 font-bold cursor-default" >{{ data.amount }}</div>
