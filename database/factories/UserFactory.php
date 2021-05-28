@@ -32,6 +32,7 @@ class UserFactory extends Factory
             'phone' => $this->faker->phoneNumber,
             'firstName' => $this->faker->firstName,
             'lastName' => $this->faker->lastName,
+            'type' => 'Usuario',
             'Bir_Date' => $this->faker->date('Y-m-d','now'),
             'rol_id' => $this->faker->numberBetween(1,3),
             'addresses_id'=> $this->faker->numberBetween(1,60)

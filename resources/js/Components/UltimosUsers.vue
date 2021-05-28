@@ -1,7 +1,7 @@
 <template>
-    <section class="flex flex-col p-4 w-full max-w-sm flex-none bg-gray-100 min-h-0 h-full overflow-auto">
+    <section class="flex flex-col p-4 flex-none bg-gray-100 min-h-0 h-full overflow-auto">
         <h1 class="font-semibold mb-3">
-        Tickets
+        Últimos Usuarios creados
         </h1>
         <ul>
         <li>
@@ -69,9 +69,15 @@
 </template>
 
 <script>
-    export default {
-
-    }
+export default {
+  name: "Test",
+  created() {},
+  data() {
+    return {};
+  },
+  props: {},
+  methods: {},
+};
 </script>
 
-
+<style lang="scss" scoped></style>

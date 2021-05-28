@@ -17,9 +17,13 @@ class CreateDishesTable extends Migration
             $table->id();
             $table->string('name');
             $table->double('price');
-            $table->string('description');
-            $table->foreignId('dish_categories_id')->constrained('dish_categories');
+            $table->string('description')->nullable();
+            $table->integer('amount')->nullable();
+            $table->string('image')->nullable();
+            $table->string('type');
+            $table->foreignId('categories_id')->constrained('dish_categories');
             $table->timestamps();
+
         });
     }
 

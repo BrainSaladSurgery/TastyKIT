@@ -1,10 +1,10 @@
 
 <template>
-    <div class="h-screen">
+    <div class="h-screen bg-gray-100" >
         <!--Añadimos barra de navegación  -->
         <nav-bar />
         <div class=" h-4/5 flex items-center w-full">
-            <div class="w-full flex-wrap text-center items-center justify-center">
+            <div class="w-full flex-wrap text-center items-center justify-center" >
                 <h1 class="font-bold text-gray-400 text-3xl">
                     Welcome Tastyer
                 </h1>

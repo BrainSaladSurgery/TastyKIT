@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Address;
 
 class User extends Authenticatable
 {
@@ -32,6 +33,7 @@ class User extends Authenticatable
         'dni',
         'Bir_Date',
         'phone',
+        'type',
         'rol_id',
         'addresses_id'
     ];
@@ -66,9 +68,9 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function user_address()
+    public function address()
     {
-        return $this->belongsTo(Address::class);//muchos a 1
+        return $this->belongsTo(Address::class, 'addresses_id', 'id');
     }
 
     public function user_rol()

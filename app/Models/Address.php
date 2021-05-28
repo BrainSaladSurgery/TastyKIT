@@ -9,7 +9,7 @@ class Address extends Model
 {
     use HasFactory;
 
-    protected $filllable = [
+    protected $fillable = [
         'city',
         'location',
         'address',
@@ -17,8 +17,8 @@ class Address extends Model
         'ZIP'
     ];
 
-    public function user_address()
+    public function users()
     {
-        return $this->hasMany(User::class,'user_id');//1 a muchos
+        return $this->hasMany(User::class, 'addresses_id', 'id');//1 a muchos
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Address;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\DB;
@@ -43,7 +44,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        
+
     }
 
     /**
@@ -54,7 +55,19 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return User::where('id', $id)->first(); 
+        $usuario = User::where('id', $id)->first();
+        $address = $usuario->address;
+
+        $user = [   'name' => $usuario->name,
+                    'firstName' => $usuario->firstName,
+                    'lastName' => $usuario->lastName,
+                    'rol' => $usuario->rol_id,
+                    'email' => $usuario->email,
+                    'phone' => $usuario->phone,
+                    'address' => $address->address,
+                    'id' => $usuario->id
+        ];
+        return $user;
     }
 
     /**
@@ -75,9 +88,20 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function updateUser(Request $request, $id)
     {
-        //
+        $user = User::findOrfail($id);
+        $user->firstName = $request->firstName;
+        $user->lastName = $request->lastName;
+        $user->rol_id = $request->rol;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->name = $request->name;
+        $address = Address::find($user->addresses_id);
+        $address->address = $request->address;
+
+        $address->update();
+        $user->update();
     }
 
     /**

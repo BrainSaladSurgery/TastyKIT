@@ -1,5 +1,5 @@
 <template>
-    <nav class="bg-yellow-600 mt-0  shadow-xl items-center flex justify-between p-5" style="height:60px">
+    <nav class=" mt-0  shadow-xl items-center flex justify-between p-5" style="height:60px; background-color:#e6822eff" >
         <ul class="flex">
             <li class="mr-6 ml-3 ">
                 <inertia-link href="/" class="text-white font-bold hover:text-gray-600" >

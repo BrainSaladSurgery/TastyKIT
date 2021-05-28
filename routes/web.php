@@ -73,7 +73,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group( function () {
     Route::get('/users', [UserController::class, 'index'])->name('users');
     Route::get('/users-list', [UserController::class, 'getUsers'])->name('users-list');
     Route::get('/user/{id}',[UserController::class, 'show'])->name('user');
-    Route::delete('/user-product/{id}', [UserController::class, 'destroy'])->name('user-product');
+    Route::put('/update-user/{id}', [UserController::class, 'updateUser'])->name('update-user');
+    Route::delete('/user-delete/{id}', [UserController::class, 'destroy'])->name('user-delete');
 
     //Innvoices
     Route::get('/innvoices', [InnvoiceController::class, 'index'])->name('innvoices');

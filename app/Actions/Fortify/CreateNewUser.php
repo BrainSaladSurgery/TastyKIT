@@ -29,8 +29,10 @@ class CreateNewUser implements CreatesNewUsers
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
         ])->validate();
 
+
         //Para la foto de perfil con letras igualamos el name al nick
         return User::create([
+            'type' => 'Usuario',
             'name' => $input['name'],
             'email' => $input['email'],
             'dni' => $input['dni'],

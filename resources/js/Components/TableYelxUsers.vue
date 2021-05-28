@@ -19,18 +19,18 @@
                 </th>
 
                 <th id="Red" class="font-semibold text-left py-3 px-28  w-34 truncate">
-                
+
                 </th>
 
                 <th id="Green" class="font-semibold text-left py-3  w-32 truncate">
-                    
+
                 </th>
             </tr>
         </thead>
         <tbody class="flex w-full flex-col flex-1 min-h-0  px-4">
             <tr v-for="(user,index) in users" @key="index"  role="row" class="hover:bg-blue-100 border-b flex cursor-pointer items-center ">
                 <td role="cell" headers="Mesa" class="py-3 pl-3 pr-1 w-32 flex items-start">
-                    <span>{{ user.dni }}</span>           
+                    <span>{{ user.dni }}</span>
                 </td>
                 <td  headers="Puesto" class="py-3 px-1 w-24">
                     <!-- <div class="ml-auto relative group"> -->
@@ -55,10 +55,10 @@
                     {{ user.email }}
                 </td>
                 <td  headers="Email" class="py-3 pl-28 w-34 ">
-                    <button @click="deleteUser(user.id)" class="border-2 border-transparent bg-red-400 ml-3 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-red-500 hover:bg-transparent hover:text-red-500">Borrar</button>
+                    <button @click="deleteUser(user.id);showModalDel()" class="border-2 border-transparent bg-red-400 ml-3 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-red-500 hover:bg-transparent hover:text-red-500">Borrar</button>
                 </td>
                 <td  headers="Email" class="py-3 pl-8 w-32 ">
-                    <button @click="editUser(user.id)" class="border-2 border-transparent bg-green-400 ml-3 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-green-500 hover:bg-transparent hover:text-green-500">Editar</button>
+                    <button @click="editUser(user.id); showModal()" class="border-2 border-transparent bg-green-400 ml-3 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-green-500 hover:bg-transparent hover:text-green-500">Editar</button>
                 </td>
             </tr>
             <!-- END ROW -->
@@ -75,16 +75,16 @@
                 users: []
             }
         },
-
+        props:['userDelete','cupdate'],
         methods: {
-            
+
             async getUsers(){
 
                 await axios.get('/users-list')
                     .then(response =>{
 
                         this.users = response.data
-                        
+
                     })
             },
 
@@ -96,8 +96,34 @@
             deleteUser(id){
 
                 this.$emit('deleteUser', id)
+            },
+            showModal(){
+
+                this.$emit('showModal', true)
+            },
+            showModalDel(){
+                console.log('EMITO')
+                this.$emit('patata', true)
             }
 
+
+        },
+
+        watch: {
+            userDelete: function(val){
+
+                if(this.userDelete == true){
+                    console.log(this.userDelete)
+                    this.getUsers()
+                }
+            },
+            cupdate: function(val){
+
+                if(this.cupdate == true){
+
+                    this.getUsers()
+                }
+            }
         },
 
         mounted(){

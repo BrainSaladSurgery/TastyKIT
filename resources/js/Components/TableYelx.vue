@@ -35,7 +35,7 @@
         <tr role="row" class="hover:bg-blue-100 border-b flex cursor-pointer">
         <td role="cell" headers="Mesa" class="py-3 pl-3 pr-1 w-24 flex items-start">
             <span>21</span>
-            
+
             <!-- dropdown -->
             <!-- <span class="hidden group-hover:block ml-4 mt-10 w-screen max-w-lg absolute top-0 border shadow-lg p-6 bg-white rounded-md z-50 text-gray-900">
                 <article>
@@ -78,7 +78,7 @@
                 </article>
             </span> -->
             <!-- end dropdown -->
-            
+
         </td>
         <td  headers="Comanda" class="py-3 px-1 w-24">
             <!-- <div class="ml-auto relative group"> -->
