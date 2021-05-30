@@ -9,7 +9,7 @@
                     Puesto
                 </th>
                 <th id="Nombre" class="font-semibold text-left py-3 px-1 w-60 truncate">
-                    Nombre
+                    Nick
                 </th>
                 <th id="Telefono" class="font-semibold text-left py-3 px-1 w-32 truncate">
                     Teléfono
@@ -45,7 +45,7 @@
                 </td>
                 <td headers="Nombre" class="py-3 px-1 w-60 max-w-xs xl:max-w-lg">
                     <div class="relative group w-full truncate">
-                        {{ user.firstName }} {{ user.lastName }}
+                        {{ user.name }}
                     </div>
                 </td>
                 <td headers="Telefono" class="py-3 px-1 w-32 truncate">
@@ -102,8 +102,8 @@
                 this.$emit('showModal', true)
             },
             showModalDel(){
-                console.log('EMITO')
-                this.$emit('patata', true)
+
+                this.$emit('ModalDelete', true)
             }
 
 
@@ -113,8 +113,10 @@
             userDelete: function(val){
 
                 if(this.userDelete == true){
-                    console.log(this.userDelete)
+
                     this.getUsers()
+                    this.$emit('changeBorrado',false)
+
                 }
             },
             cupdate: function(val){
@@ -122,6 +124,7 @@
                 if(this.cupdate == true){
 
                     this.getUsers()
+                    this.$emit('changeUpdate',false)
                 }
             }
         },

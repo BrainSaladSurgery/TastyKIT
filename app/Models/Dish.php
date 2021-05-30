@@ -9,11 +9,14 @@ class Dish extends Model
 {
     use HasFactory;
 
-    protected $filllable = [
+    protected $fillable = [
         'name',
         'price',
         'description',
-        'dish_categories_id'
+        'type',
+        'image',
+        'amount',
+        'categories_id'
     ];
 
     public function dishes_orders()
@@ -31,8 +34,8 @@ class Dish extends Model
         return $this->belongsToMany(Product::class);//muchos a muchos
     }
 
-    public function dishes_category()
+    public function category()
     {
-        return $this->belongsTo(DishCategory::class);//muchos a 1
+        return $this->belongsTo(DishCategory::class, 'categories_id', 'id');//1 a muchos
     }
 }

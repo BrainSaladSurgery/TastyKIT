@@ -11,7 +11,7 @@
             <h1 id="page-caption" class="font-semibold text-lg ">Usuarios</h1>
         </header>
 
-        <nav-top  @changeModalCreate="showModalUser = $event"/>
+        <nav-top  @changeModal="showModalUser = $event" :tipo ="type" @modalData="userID = $event"/>
         <!-- main content -->
         <main class="flex-grow flex min-h-0 border-t">
             <section aria-label="main content" class="flex min-h-0 flex-col flex-auto border-l container">
@@ -19,7 +19,7 @@
                 <!-- content caption -->
                 <head-tab />
 
-                <table-yelx-users  :cupdate="change" @patata="showDele = $event" :userDelete="borrado" @editUser="editUsuario = $event" @deleteUser="deleteUsuario = $event" @showModal="showModalUser = $event"/>
+                <table-yelx-users @ModalDelete="showDele = $event"  @deleteUser="deleteUsuario = $event" :userDelete="borrado" @changeBorrado="borrado = $event" :cupdate="change" @changeUpdate="change = $event" @editUser="editUsuario = $event"  @showModal="showModalUser = $event"/>
             </section>
 
             <!-- section Tickets-->
@@ -131,19 +131,21 @@
                 showDele: false,
                 dato: [],
                 borrado: false,
-                change: false
+                change: false,
+                userID:'',
+                type: 'Usuario'
 
 
             }
 
         },
         methods: {
-            async deleteUsuarioMethod(id){
+            async sendData(id){
 
                 await axios.get('/user/'+id).
                     then((response) =>{
+
                         this.dato = response.data
-                        this.borrado = true
                     })
             },
 
@@ -188,18 +190,31 @@
             deleteUsuario: function (val){
                 if(this.deleteUsuario != ''){
 
-                    this.deleteUsuarioMethod(this.deleteUsuario)
+                    this.sendData(this.deleteUsuario)
                 }
             },
+
+            // Reset de la modal
+            borrado: function(val){
+                if(this.borrado == true){
+
+                    this.dato = []
+                    this.showDele = false
+
+                }
+            },
+
+            //MODIFY
             editUsuario: function(val){
                 if(this.editUsuario != ''){
-                    console.log(this.editUsuario)
-                    console.log(this.showModalUser)
+
                     this.getUser(val)
                 }
             },
-            showModalDelete: function(val){
 
+            userID: function(val){
+
+                this.getUser(val)
             }
 
 

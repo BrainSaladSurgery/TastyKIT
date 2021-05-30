@@ -10,7 +10,7 @@
             </div>
             <div class="p-4 flex space-x-4">
                 <button @click="changeModal();changeModalStatus()" class="w-1/2 px-4 py-3 text-center bg-gray-100 text-gray-400 hover:bg-gray-200 hover:text-black font-bold rounded-lg text-sm">Cancelar</button>
-                <button @click="deleteData(data.id); changeModal()" class="w-1/2 px-4 py-3 text-center text-pink-100 bg-yellow-600 rounded-lg hover:bg-yellow-700 hover:text-white font-bold text-sm">Borrar</button>
+                <button @click="deleteData(data); changeModal()" class="w-1/2 px-4 py-3 text-center text-pink-100 bg-yellow-600 rounded-lg hover:bg-yellow-700 hover:text-white font-bold text-sm">Borrar</button>
             </div>
         </div>
     </modal>
@@ -35,12 +35,26 @@
                 this.showModale = !this.showModale
             },
 
-            async deleteData(id){
+            async deleteData(data){
 
-                await axios.delete('/user-delete/'+id).
-                    then((response) =>{
-                        this.emit('changeStatusDelete',true)
-                    })
+                switch (data.type) {
+
+                    case 'Usuario':
+                        await axios.delete('/user-delete/'+data.id).
+                            then((response) =>{
+                                this.$emit('changeStatusDelete',true)
+                            })
+                        break;
+
+                    case 'Plato':
+                        await axios.delete('/delete-dish/'+data.id).
+                            then((response) =>{
+                                this.$emit('changeStatusDelete',true)
+                            })
+                        break;
+
+                }
+
             },
             changeModalStatus(){
 

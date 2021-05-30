@@ -3,7 +3,7 @@
 
         <ul aria-label="top bar left" aria-orientation="horizontal" class="flex">
             <!-- add button -->
-            <li class="group relative flex items-center">
+            <li v-if="tipo != 'Usuario'" class="group relative flex items-center">
                 <button @click="modalModifyCreate" aria-controls="add" class="flex items-center h-12 px-4 text-sm bg-blue-400 text-white rounded ml-3 focus:outline-none focus:ring focus:border-blue-700">
                     <i>
                     <svg class="fill-current w-3 h-3 mx-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -12,6 +12,9 @@
                     </i>
                     <span class="ml-2">Add</span>
                 </button>
+            </li>
+            <li v-if="tipo == 'Usuario'" class="group relative flex items-center">
+                <p class="pl-4 text-gray-400 text-bold">Tastyer</p>
             </li>
         </ul>
 
@@ -33,7 +36,7 @@
                     <div v-if="datos.length > 0">
                         <div   v-for="(dato,index) in datos" :key="index"  class="block flex items-center py-2 px-3 hover:bg-gray-100">
                             <div @click=" modalModify();modalData(dato.id)" class="ml-2">
-                                <span  class="block font-bold text-gray-700 text-sm cursor-pointer">{{ dato.name }}</span>
+                                <span class="block font-bold text-gray-700 text-sm cursor-pointer">{{ dato.name }}</span>
                             </div>
                         </div>
                     </div>
@@ -71,7 +74,7 @@
 
             async dataSearch(tipoData){
                 if(this.search != ''){
-                    
+
                     console.log(tipoData)
                     await axios.get('/search/'+ this.search +'/'+ tipoData)
                         .then(response =>{

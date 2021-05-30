@@ -22,7 +22,7 @@ class DishSeeder extends Seeder
         for($i = 0 ; $i < 10; $i++){
 
             Dish::create([
-                'price' => $faker->randomFloat(4,8),
+                'price' => $faker->randomFloat(2,4,8),
                 'description' =>$fkr->text(),
                 'name' =>$faker->foodName(),
                 'type' => 'Plato',
@@ -35,7 +35,7 @@ class DishSeeder extends Seeder
         for($i = 0 ; $i < 8; $i++){
 
             Dish::create([
-                'price' => $faker->randomFloat(8,12),
+                'price' => $faker->randomFloat(2,8,12),
                 'description' =>$fkr->text(),
                 'name' =>$faker->foodName(),
                 'type' => 'Plato',
@@ -48,7 +48,7 @@ class DishSeeder extends Seeder
         for($i = 0 ; $i < 7; $i++){
 
             Dish::create([
-                'price' => $faker->randomFloat(11,21),
+                'price' => $faker->randomFloat(2,11,21),
                 'description' =>$fkr->text(),
                 'name' =>$faker->foodName(),
                 'type' => 'Plato',
@@ -61,7 +61,7 @@ class DishSeeder extends Seeder
         for($i = 0 ; $i < 6; $i++){
 
             Dish::create([
-                'price' => $faker->randomFloat(4,8),
+                'price' => $faker->randomFloat(2,4,8),
                 'description' =>$fkr->text(),
                 'name' =>$faker->foodName(),
                 'type' => 'Plato',

@@ -59,6 +59,10 @@ Route::middleware(['auth:sanctum', 'verified'])->group( function () {
 
     //Dishes
     Route::get('/dishes', [DishController::class, 'index'])->name('dishes');
+    Route::get('/dishes-list', [DishController::class, 'getDishes'])->name('dishes-list');
+    Route::post('/create-dish', [DishController::class, 'store'])->name('create-dish');
+    Route::get('/dish/{id}',[DishController::class, 'show'])->name('dish');
+    Route::delete('/delete-dish/{id}', [DishController::class, 'destroy'])->name('delete-dish');
 
     //Shop
     Route::get('/shop', [ShopController::class, 'index'])->name('shop');

@@ -15,14 +15,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        
+
         $this->call([
             RolesSeeder::class,
             AddressesSeeder::class,
             ProductCategorySeeder::class,
             ProductSeeder::class,
             DrinkCategorySeeder::class,
-            DrinkSeeder::class
+            DrinkSeeder::class,
+            DishCategorySeeder::class,
+            DishSeeder::class
         ]);
 
         \App\Models\Address::factory(60)->create();

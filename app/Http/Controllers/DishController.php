@@ -3,11 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dish;
+use App\Models\DishCategory;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use \Illuminate\Http\Response;
 
 class DishController extends Controller
 {
+
+    public function __construct(Dish $dish){
+
+        $this->dish = $dish;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +22,29 @@ class DishController extends Controller
      */
     public function index()
     {
+        $allCategories = DishCategory::all();
+        $dish = Dish::all()->first();
+        return Inertia::render('Admin/Dishes', ['allCategories' => $allCategories,
+                                                'type' => $dish->type] );
+    }
 
+    public function getDishes()
+    {
+        $dishes = Dish::all();
+
+        $datos = [];
+            foreach($dishes as $dish){
+                array_push($datos, [
+                                        "id"=>$dish->id,
+                                        "name"=>$dish->name,
+                                        "description"=>$dish->description,
+                                        'price' => $dish->price,
+                                        "type"=>$dish->type,
+                                        "cat_id"=>$dish->categories_id,
+                                        "category"=>$dish->category->name,
+                                ]);
+            }
+        return $datos ;
     }
 
     /**
@@ -23,9 +52,9 @@ class DishController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+
     }
 
     /**
@@ -36,7 +65,14 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        Dish::create([
+                'price' => $request->price,
+                'description' =>$request->description,
+                'name' =>$request->name,
+                'type' => 'Plato',
+                'categories_id' => $request->cat_id
+        ]);
     }
 
     /**
@@ -45,9 +81,20 @@ class DishController extends Controller
      * @param  \App\Models\Dish  $dish
      * @return \Illuminate\Http\Response
      */
-    public function show(Dish $dish)
+    public function show($id)
     {
-        //
+        $dish = Dish::find($id);
+        $datos = [
+                    "id"=>$dish->id,
+                    "name"=>$dish->name,
+                    "description"=>$dish->description,
+                    'price' => $dish->price,
+                    "type"=>$dish->type,
+                    "cat_id"=>$dish->categories_id,
+                    "category"=>$dish->category->name,
+        ];
+
+        return $datos ;
     }
 
     /**
@@ -79,8 +126,9 @@ class DishController extends Controller
      * @param  \App\Models\Dish  $dish
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Dish $dish)
+    public function destroy($id)
     {
-        //
+        Dish::destroy($id);
+        return response(null, Response::HTTP_OK);
     }
 }

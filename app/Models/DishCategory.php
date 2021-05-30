@@ -9,13 +9,13 @@ class DishCategory extends Model
 {
     use HasFactory;
 
-    protected $filllable = [
+    protected $fillable = [
         'name',
         'description'
     ];
 
-    public function dishes_category()
+    public function dishes()
     {
-        return $this->hasOne(Dish::class);//1 a muchos
+        return $this->hasMany(Dish::class, 'categories_id', 'id');//1 a muchos
     }
 }
