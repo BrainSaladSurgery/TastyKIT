@@ -21,7 +21,7 @@ class CreateDrinksTable extends Migration
             $table->double('price');
             $table->text('description')->nullable();
             $table->boolean('default_img')->default(false)->nullable();
-            $table->string('type');
+            $table->string('type')->default('Bebida');
             $table->foreignId('categories_id')->constrained('drink_categories');
             $table->timestamps();
         });

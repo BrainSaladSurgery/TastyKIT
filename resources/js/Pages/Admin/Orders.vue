@@ -1,4 +1,3 @@
-
 <template>
     <app-layout>
         <template #navSide>
@@ -9,10 +8,10 @@
         </template>
         <template #content>
         <header aria-label="page caption" class="flex-none flex h-16 bg-gray-100 border-t px-4 items-center ">
-            <h1 id="page-caption" class="font-semibold text-lg ">Usuarios</h1>
+            <h1 id="page-caption" class="font-bold text-lg text-gray-500">Comandas</h1>
         </header>
 
-        <nav-top  @changeModalCreate="showModalDish = $event" :tipo ="type" @modalData="dishID = $event"  @changeModal="showModalDishMod = $event"/>
+        <!-- <nav-top  @changeModalCreate="showModalDish = $event" :tipo ="type" @modalData="dishID = $event"  @changeModal="showModalDishMod = $event"/> -->
         <!-- main content -->
         <main class="flex-grow flex min-h-0 border-t w-full justify-center bg-gray-100">
             <section aria-label="main content" class="flex min-h-0  container  w-full bg-white ">
@@ -20,7 +19,7 @@
                 <!-- content caption -->
                 <!-- <head-tab /> -->
 
-                <table-dish @ModalDelete="showDele = $event"  @deleteDish="deleteDish = $event"  :dishDelete="borrado"  @changeBorrado="borrado = $event" :cupdate="change" @changeUpdate="change = $event" @editDish="dishID = $event"  @showModal="showModalDishMod = $event"/>
+                <table-comanda @ModalDelete="showDele = $event"  @deleteDish="deleteDish = $event"  :dishDelete="borrado"  @changeBorrado="borrado = $event" :cupdate="change" @changeUpdate="change = $event" @editDish="dishID = $event"  @showModal="showModalDishMod = $event"/>
             </section>
 
             <!-- section content -->
@@ -125,7 +124,7 @@
     import Stats from '@/Components/Stats'
     import TicketsResume from '@/Components/TicketsResume'
     import HeadTab from '@/Components/HeadTab'
-    import TableDish from '@/Components/TableDish'
+    import TableComanda from '@/Components/TableComanda'
     import NavTop from '@/Components/NavTop'
     import Modal from '@/Jetstream/Modal'
     import ModalAlert from '@/Components/ModalAlert'
@@ -137,7 +136,7 @@
             TicketsResume,
             Stats,
             HeadTab,
-            TableDish,
+            TableComanda,
             NavTop,
             Modal,
             ModalAlert

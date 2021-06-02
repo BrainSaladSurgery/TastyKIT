@@ -57,8 +57,14 @@ class Drink extends Model
         return $this->belongsToMany(Order::class);//muchos a muchos
     }
 
+    public function category()
+    {
+        return $this->belongsTo(DrinkCategory::class, 'categories_id', 'id');//1 a muchos
+    }
+
     public function drinks_users()
     {
         return $this->belongsToMany(User::class);//muchos a muchos
+
     }
 }

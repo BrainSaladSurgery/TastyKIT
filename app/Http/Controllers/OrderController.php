@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
+use \Illuminate\Http\Response;
 
 class OrderController extends Controller
 {
@@ -14,7 +16,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('Admin/Orders');
     }
 
     /**

@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->double('price');
             $table->text('description')->nullable();
             $table->boolean('default_img')->default(false)->nullable();
-            $table->string('type');
+            $table->string('type')->default('Producto');
             $table->foreignId('categories_id')->constrained('product_categories');
             $table->timestamps();
         });

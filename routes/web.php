@@ -62,6 +62,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group( function () {
     Route::get('/dishes-list', [DishController::class, 'getDishes'])->name('dishes-list');
     Route::post('/create-dish', [DishController::class, 'store'])->name('create-dish');
     Route::get('/dish/{id}',[DishController::class, 'show'])->name('dish');
+    Route::put('/update-dish/{id}', [DishController::class, 'updateDish'])->name('update-dish');
     Route::delete('/delete-dish/{id}', [DishController::class, 'destroy'])->name('delete-dish');
 
     //Shop
@@ -72,6 +73,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group( function () {
 
     //Tables
     Route::get('/tables', [TableController::class, 'index'])->name('tables');
+    Route::get('/tables-list', [TableController::class, 'getTables'])->name('tables-list');
 
     //Users
     Route::get('/users', [UserController::class, 'index'])->name('users');

@@ -14,8 +14,9 @@ class DrinkCategory extends Model
         'description'
     ];
 
-    public function drink()
+    public function drinks()
     {
-        return $this->hasOne(Drink::class);//1 a muchos
+        return $this->hasMany(Drink::class, 'categories_id', 'id');//1 a muchos
     }
+
 }

@@ -115,9 +115,15 @@ class DishController extends Controller
      * @param  \App\Models\Dish  $dish
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Dish $dish)
+    public function updateDish(Request $request, $id)
     {
-        //
+        $dish = Dish::findOrfail($id);
+        $dish->name = $request->name;
+        $dish->description = $request->description;
+        $dish->price = $request->price;
+        $dish->categories_id = $request->cat_id;
+
+        $dish->update();
     }
 
     /**

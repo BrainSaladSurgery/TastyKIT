@@ -19,6 +19,7 @@ class CreateTablesTable extends Migration
             $table->string('name');
             $table->integer('min_pax');
             $table->integer('max_pax');
+            $table->string('type')->default('Mesa');
             $table->string('photo')->nullable();
             $table->timestamps();
         });

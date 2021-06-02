@@ -17,6 +17,7 @@ class CreateInvoicesTable extends Migration
             $table->id();
             $table->double('total');
             $table->boolean('status');
+            $table->string('Factura');
             $table->timestamps();
         });
     }

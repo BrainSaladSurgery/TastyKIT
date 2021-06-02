@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Drink;
 use App\Models\User;
+use App\Models\Dish;
 
 class SearchController extends Controller
 {
@@ -24,6 +25,11 @@ class SearchController extends Controller
 
             case 'Usuario':
                 return User::select('id','name','firstName','lastName')->where('name','like','%'.$name.'%')->get();
+
+                break;
+
+            case 'Plato':
+                return Dish::select('id','name','price','description')->where('name','like','%'.$name.'%')->get();
 
                 break;
         }

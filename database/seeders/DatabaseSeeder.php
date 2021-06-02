@@ -24,11 +24,13 @@ class DatabaseSeeder extends Seeder
             DrinkCategorySeeder::class,
             DrinkSeeder::class,
             DishCategorySeeder::class,
-            DishSeeder::class
+            DishSeeder::class,
         ]);
 
         \App\Models\Address::factory(60)->create();
         \App\Models\User::factory(30)->create();
+        \App\Models\Table::factory(20)->create();
+
 
     }
 }

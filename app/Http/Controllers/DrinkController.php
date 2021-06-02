@@ -32,7 +32,21 @@ class DrinkController extends Controller
 
     public function getDrinks()
     {
-        return $drinks = Drink::all();
+        $drinks = Drink::all();
+        $datos = [];
+            foreach($drinks as $drink){
+                array_push($datos, [
+                                        'price' => $drink->price,
+                                        'amount' => $drink->amount,
+                                        'image' => $drink->image,
+                                        'description' =>$drink->description,
+                                        'name' =>$drink->name,
+                                        'type' => 'Bebida',
+                                        'categories_id' => 4,
+                                        'category' => $drink->category->name
+                                ]);
+            }
+        return $datos ;
     }
 
     /**

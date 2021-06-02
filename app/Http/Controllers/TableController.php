@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Table;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
+use \Illuminate\Http\Response;
 
 class TableController extends Controller
 {
@@ -14,7 +16,7 @@ class TableController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('Admin/Tables');
     }
 
     /**
@@ -22,6 +24,11 @@ class TableController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function getTables(){
+
+        return $mesa = Table::all();
+    }
+
     public function create()
     {
         //
