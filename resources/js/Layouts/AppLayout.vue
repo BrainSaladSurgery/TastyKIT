@@ -4,7 +4,7 @@
         <!-- section body side nav -->
         <slot name="navSide" />
 
-        <div class="flex-1 flex flex-col">
+        <div class="flex-1 flex flex-col w-full">
             <slot name="content" />
         </div>
     </div>

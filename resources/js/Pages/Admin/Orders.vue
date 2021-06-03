@@ -7,24 +7,30 @@
             <div style="width: 80.5px; heigth: auto;"></div>
         </template>
         <template #content>
+
         <header aria-label="page caption" class="flex-none flex h-16 bg-gray-100 border-t px-4 items-center ">
             <h1 id="page-caption" class="font-bold text-lg text-gray-500">Comandas</h1>
         </header>
 
         <!-- <nav-top  @changeModalCreate="showModalDish = $event" :tipo ="type" @modalData="dishID = $event"  @changeModal="showModalDishMod = $event"/> -->
         <!-- main content -->
-        <main class="flex-grow flex min-h-0 border-t w-full justify-center bg-gray-100">
-            <section aria-label="main content" class="flex min-h-0  container  w-full bg-white ">
+        <main class=" flex min-h-0 border-t w-full  bg-gray-100">
+            <section aria-label="main content" class="flex min-h-0 w-2/3 bg-white ">
 
-                <!-- content caption -->
-                <!-- <head-tab /> -->
 
-                <table-comanda @ModalDelete="showDele = $event"  @deleteDish="deleteDish = $event"  :dishDelete="borrado"  @changeBorrado="borrado = $event" :cupdate="change" @changeUpdate="change = $event" @editDish="dishID = $event"  @showModal="showModalDishMod = $event"/>
+                <table-comanda  @addItem="item = $event" @ModalDelete="showDele = $event"  @deleteDish="deleteDish = $event"  :dishDelete="borrado"  @changeBorrado="borrado = $event" :cupdate="change" @changeUpdate="change = $event" @editDish="dishID = $event"  @showModal="showModalDishMod = $event"/>
             </section>
 
-            <!-- section content -->
+            <!-- section Tickets-->
+            <div class="w-auto bg-gray-100 ">
+                <ultimos-users :items="item"/>
+            </div>
 
-            <!-- START MODAL CREATE -->
+
+
+
+        </main>
+        <!-- START MODAL CREATE -->
             <modal class="flex flex-col w-11/12 sm:w-5/6 lg:w-1/2 max-w-2xl mx-auto rounded-lg border border-gray-300 shadow-xl" :show="showModalDish" @close="changeStateModal">
                 <div >
                     <div class="flex flex-row justify-between p-6 bg-white border-b border-gray-200 rounded-tl-lg rounded-tr-lg">
@@ -111,8 +117,6 @@
             <!-- END MODAL MODIFY -->
 
             <modal-alert :data="dato" @changeStatusDelete="borrado = $event" :showDele="showDele" @changeModalStatus="showDele = $event" />
-
-        </main>
         </template>
     </app-layout>
 </template>
@@ -128,6 +132,7 @@
     import NavTop from '@/Components/NavTop'
     import Modal from '@/Jetstream/Modal'
     import ModalAlert from '@/Components/ModalAlert'
+    import UltimosUsers from '@/Components/UltimosUsers'
 
     export default {
         components: {
@@ -139,7 +144,8 @@
             TableComanda,
             NavTop,
             Modal,
-            ModalAlert
+            ModalAlert,
+            UltimosUsers
         },
 
         data(){
@@ -155,7 +161,8 @@
                 borrado: false,
                 change: false,
                 dishID:'',
-                type: 'Plato'
+                type: 'Plato',
+                item: [],
 
 
             }
@@ -236,12 +243,6 @@
         },
 
         watch: {
-            deleteDish: function (val){
-                if(this.deleteDish != ''){
-
-                    this.sendData(this.deleteDish)
-                }
-            },
 
             // Reset de la modal
             borrado: function(val){
@@ -273,4 +274,6 @@
     #navSide{
         position: fixed;
     }
+
+
 </style>
