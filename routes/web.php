@@ -70,6 +70,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group( function () {
 
     //Order
     Route::get('/orders', [OrderController::class, 'index'])->name('orders');
+    Route::get('/order-numticket', [OrderController::class, 'getNumTicket'])->name('order-numticket');
 
     //Tables
     Route::get('/tables', [TableController::class, 'index'])->name('tables');

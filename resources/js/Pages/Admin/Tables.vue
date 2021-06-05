@@ -8,7 +8,7 @@
     </template>
     <template #content class="h-screen bg-gray-100">
     <header aria-label="page caption" class="flex-none flex h-16 bg-gray-100 border-t px-4 items-center ">
-        <h1 id="page-caption" class="font-bold text-lg text-gray-500 ">Mesas</h1>
+        <h1 id="page-caption" class="font-bold text-lg text-gray-500">Mesas</h1>
     </header>
 
     <nav-top @changeModal="showModalMod = $event"  @changeModalCreate="showModal = $event" @modalData="drinkID = $event" :tipo="type" />
@@ -147,14 +147,6 @@
                         </div>
                     </modal>
                     <!-- END MODAL Modify -->
-
-
-
-
-            <!-- content footer, currently hidden -->
-            <footer aria-label="content footer" class="flex p-3 bg-white border-t hidden">
-              footer
-            </footer>
         </section>
       </main>
     </template>

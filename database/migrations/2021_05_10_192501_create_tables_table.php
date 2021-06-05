@@ -15,7 +15,8 @@ class CreateTablesTable extends Migration
     {
         Schema::create('tables', function (Blueprint $table) {
             $table->id();
-            $table->boolean('status');
+            $table->boolean('status')->default(false);
+            $table->boolean('origin')->default(false);
             $table->string('name');
             $table->integer('min_pax');
             $table->integer('max_pax');

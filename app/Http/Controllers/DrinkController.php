@@ -43,7 +43,8 @@ class DrinkController extends Controller
                                         'name' =>$drink->name,
                                         'type' => 'Bebida',
                                         'categories_id' => 4,
-                                        'category' => $drink->category->name
+                                        'category' => $drink->category->name,
+                                        'ud' =>$drink->ud
                                 ]);
             }
         return $datos ;

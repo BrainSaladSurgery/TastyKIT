@@ -25,6 +25,7 @@ class DishSeeder extends Seeder
                 'price' => $faker->randomFloat(2,4,8),
                 'description' =>$fkr->text(),
                 'name' =>$faker->foodName(),
+                'ud' =>$faker->numberBetween(1,4),
                 'type' => 'Plato',
                 'categories_id' => 2
             ]);
@@ -38,6 +39,7 @@ class DishSeeder extends Seeder
                 'price' => $faker->randomFloat(2,8,12),
                 'description' =>$fkr->text(),
                 'name' =>$faker->foodName(),
+                'ud' =>$faker->numberBetween(1,4),
                 'type' => 'Plato',
                 'categories_id' => 3
             ]);
@@ -51,6 +53,7 @@ class DishSeeder extends Seeder
                 'price' => $faker->randomFloat(2,11,21),
                 'description' =>$fkr->text(),
                 'name' =>$faker->foodName(),
+                'ud' =>$faker->numberBetween(1,4),
                 'type' => 'Plato',
                 'categories_id' => 4
             ]);
@@ -64,6 +67,7 @@ class DishSeeder extends Seeder
                 'price' => $faker->randomFloat(2,4,8),
                 'description' =>$fkr->text(),
                 'name' =>$faker->foodName(),
+                'ud' =>$faker->numberBetween(1,4),
                 'type' => 'Plato',
                 'categories_id' => 5
             ]);

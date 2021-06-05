@@ -22,8 +22,7 @@ class TableFactory extends Factory
     public function definition()
     {
         return [
-            'status' => false,
-            'name'=> $this->faker->word,
+            'name'=> $this->faker->randomDigit,
             'min_pax' => '1',
             'max_pax' => $this->faker->numberBetween(1,10),
         ];

@@ -19,6 +19,7 @@ class CreateDrinksTable extends Migration
             $table->string('image');
             $table->string('name');
             $table->double('price');
+            $table->integer('ud')->nullable();
             $table->text('description')->nullable();
             $table->boolean('default_img')->default(false)->nullable();
             $table->string('type')->default('Bebida');

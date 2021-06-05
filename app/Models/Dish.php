@@ -16,7 +16,8 @@ class Dish extends Model
         'type',
         'image',
         'amount',
-        'categories_id'
+        'categories_id',
+        'ud'
     ];
 
     public function dishes_orders()

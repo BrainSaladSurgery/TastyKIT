@@ -16,7 +16,8 @@ class Drink extends Model
         'name',
         'type',
         'default_img',
-        'categories_id'
+        'categories_id',
+        'ud'
     ];
 
     public static function createDrink($request)
@@ -47,6 +48,7 @@ class Drink extends Model
             'default_img' => $default_img,
             'categories_id' => $request->categoryCreate,
             'type' => 'Bebida',
+
         ]);
 
         return $drink;

@@ -42,6 +42,7 @@ class DishController extends Controller
                                         "type"=>$dish->type,
                                         "cat_id"=>$dish->categories_id,
                                         "category"=>$dish->category->name,
+                                        'ud' =>$dish->ud
                                 ]);
             }
         return $datos ;

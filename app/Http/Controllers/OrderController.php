@@ -19,6 +19,12 @@ class OrderController extends Controller
         return Inertia::render('Admin/Orders');
     }
 
+    public function getNumTicket(){
+
+        $order = Order::all();
+        return $order->last();
+    }
+
     /**
      * Show the form for creating a new resource.
      *

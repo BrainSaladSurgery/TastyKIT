@@ -40,7 +40,7 @@
     .h-16 {
         height: 50px;
     }
-    .bg-teal-900 {
+    /* .bg-teal-900 {
         background: #03363d;
     }
     .bg-gray-100 {
@@ -48,7 +48,7 @@
     }
     .hover\:border-green-500:hover {
         border-color: #78a300;
-    }
+    } */
 
     /* SVG aguacate */
     .cls-1{fill:#a7aece;}

@@ -5,7 +5,7 @@
     </template>
     <template #content>
       <header aria-label="page caption" class="flex-none flex h-16 bg-gray-100 border-t px-4 items-center ">
-        <h1 id="page-caption" class="font-semibold text-lg ">Home</h1>
+        <h1 id="page-caption" class="font-bold text-lg text-gray-500">Inicio</h1>
       </header>
 
       <!-- main content -->
@@ -24,9 +24,9 @@
             <table-yelx />
 
             <!-- content footer, currently hidden -->
-            <footer aria-label="content footer" class="flex p-3 bg-white border-t hidden">
+            <!-- <footer aria-label="content footer" class="flex p-3 bg-white border-t hidden">
               footer
-            </footer>
+            </footer> -->
         </section>
       </main>
     </template>

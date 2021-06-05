@@ -8,7 +8,7 @@
         </template>
         <template #content>
         <header aria-label="page caption" class="flex-none flex h-16 bg-gray-100 border-t px-4 items-center ">
-            <h1 id="page-caption" class="font-semibold text-lg ">Usuarios</h1>
+            <h1 id="page-caption" class="font-bold text-lg text-gray-500">Usuarios</h1>
         </header>
 
         <nav-top  @changeModal="showModalUser = $event" :tipo ="type" @modalData="userID = $event"/>
