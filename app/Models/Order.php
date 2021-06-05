@@ -11,15 +11,15 @@ class Order extends Model
 
     protected $fillable = [
         'type',
+        'ticket',
         'status',
         'comment',
-        'hour',
-        'hour_Entry',
         'table_id',
-        'product_id',
         'dish_id',
         'drink_id',
-        'invoice_id'
+        'ud',
+        'user_id',
+        'total'
     ];
 
     public function orders_table()

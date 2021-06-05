@@ -36,6 +36,7 @@ class DrinkController extends Controller
         $datos = [];
             foreach($drinks as $drink){
                 array_push($datos, [
+                                        'id' => $drink->id,
                                         'price' => $drink->price,
                                         'amount' => $drink->amount,
                                         'image' => $drink->image,

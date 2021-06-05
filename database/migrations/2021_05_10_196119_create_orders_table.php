@@ -16,12 +16,14 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('type')->default('Comanda');
+            $table->integer('ticket');
+            $table->float('total', 8,2);
             $table->enum('status',['open','close'])->nullable();
             $table->string('comment')->nullable();
-            $table->foreignId('product_id')->nullable()->constrained();
             $table->foreignId('drink_id')->nullable()->constrained();
             $table->foreignId('table_id')->nullable()->constrained();
             $table->foreignId('dish_id')->nullable()->constrained();
+            $table->integer('ud')->nullable();
             $table->foreignId('user_id')->nullable()->constrained();
             $table->timestamps();
         });

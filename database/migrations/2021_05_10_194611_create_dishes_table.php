@@ -21,7 +21,7 @@ class CreateDishesTable extends Migration
             $table->string('description')->nullable();
             $table->integer('amount')->nullable();
             $table->string('image')->nullable();
-            $table->string('type');
+            $table->string('type')->default('Plato');
             $table->foreignId('categories_id')->constrained('dish_categories');
             $table->timestamps();
 

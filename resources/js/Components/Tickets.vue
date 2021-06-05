@@ -25,17 +25,41 @@
                     </ul>
                 </article>
                 <vue-pag :current="currentPage" :total="total" :perPage="perPage" @page-changed="current = $event"/>
-                <button class="w-full border-2 border-transparent bg-blue-400  py-2  mt-4 font-bold uppercase text-white rounded transition-all hover:border-blue-500 hover:bg-blue-600">Generar Comanda</button>
+                <button @click="changeModal()" class="w-full border-2 border-transparent bg-yellow-600  py-2  mt-4 font-bold uppercase text-white rounded transition-all hover:border-yellow-700 hover:bg-yellow-700">Generar Comanda</button>
+
+                <modal styles="width: 330px !important; margin-top: 10%" :show="showModal" @close="changeModal">
+                    <div class="bg-white rounded-lg w-96">
+                        <div class="w-96 border-t-8 border-yellow-600 rounded-lg flex">
+                            <div class="w-full pt-9 pr-4 text-center">
+                                <h3 class="font-bold text-yellow-700">Generador de Ticket</h3>
+                                <p v-if="table == 0 && items.length == 0 " class="py-4 text-sm text-gray-400">Debe seleccionar una mesa y añadir algún producto antes de continuar</p>
+                                <div v-else>
+                                    <p v-if="table == 0 " class="py-4 text-sm text-gray-400">Debe seleccionar una mesa antes de continuar</p>
+                                    <p v-if="items.length == 0" class="py-4 text-sm text-gray-400">Debe añadir algún plato o bebida antes de continuar</p>
+                                </div>
+                                <p v-if="table != 0 && items.length > 0" class="py-4 text-sm text-gray-400">Se va a generar el Ticket <b>#{{ numTicket }}</b> ¿Estas seguro?</p>
+                            </div>
+                        </div>
+                        <div class="p-4 flex space-x-4 justify-center">
+                            <button @click="changeModal()" class="w-1/2 px-4 py-3 text-center bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-black font-bold rounded-lg text-sm">Cancelar</button>
+                            <button v-if="table != 0 && items.length > 0" @click="createTicket(items, table, total, num); changeModal()" class="w-1/2 px-4 py-3 text-center text-pink-100 bg-yellow-600 rounded-lg hover:bg-yellow-700 hover:text-white font-bold text-sm">Crear</button>
+                        </div>
+                    </div>
+                </modal>
         </section>
     </div>
+
 
 </template>
 
 <script>
     import VuePag from '@ocrv/vue-tailwind-pagination';
+    import Modal from '@/Jetstream/Modal';
+
     export default {
         components:{
-            VuePag
+            VuePag,
+            Modal
         },
         data(){
             return {
@@ -45,10 +69,12 @@
                 perPage: 8,
                 total: 0,
                 elements: [],
-                numTicket: ''
+                numTicket: '',
+                num: 0,
+                showModal: false
             }
         },
-        props:['items','table', 'increments', 'incrementsUd', 'resta'],
+        props:['items','table', 'increments'],
         methods:{
 
             async getNumTicket(){
@@ -57,18 +83,46 @@
                     .then(response =>{
 
                         if(response.data != ''){
-                            var result = response.data.id + 1
-                            this.numTicket = result.toString().padStart(5,0)
-                            console.log(this.numTicket)
+
+                            this.num = response.data.ticket + 1
+                            this.numTicket = this.num.toString().padStart(5,0)
 
                         }else{
 
                             this.numTicket = '1'.padStart(5,0)
+                            this.num = 1
                         }
 
                     })
-            }
+            },
+
+            async createTicket(items, table, total, num){
+
+
+                var datos = {
+
+                    'items' : [items],
+                    'table' : table ,
+                    'total' : total,
+                    'ticket' : num
+                }
+                await axios.post('/create-order',datos)
+                    .then(response =>{
+
+                    }).catch(error =>{
+
+                        console.log(error)
+                    })
+            },
+
+            changeModal(){
+
+                this.showModal = !this.showModal
+            },
         },
+
+
+
         watch: {
             increments: function(val){
 

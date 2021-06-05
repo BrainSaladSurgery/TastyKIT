@@ -30,10 +30,43 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $data)
     {
-        //
+
+        $mesa = $data->table;
+        $total = $data->total;
+        $ticket = $data->ticket;
+
+        for($i= 0; count($data->items[0]) > $i; $i++){
+
+            if($data->items[0][$i]['type'] == 'Bebida'){
+
+
+                Order::create([
+                    'ticket' => $ticket,
+                    'status' => 'open',
+                    'drink_id' => $data->items[0][$i]['id'],
+                    'ud' => $data->items[0][$i]['ud'],
+                    'table_id' => $mesa,
+                    'total' => $total
+                ]);
+
+            }
+            if($data->items[0][$i]['type'] == 'Plato'){
+
+                Order::create([
+                    'ticket' => $ticket,
+                    'status' => 'open',
+                    'dish_id' => $data->items[0][$i]['id'],
+                    'ud' => $data->items[0][$i]['ud'],
+                    'table_id' => $mesa,
+                    'total' => $total
+                ]);
+            }
+        }
     }
+
+
 
     /**
      * Store a newly created resource in storage.
