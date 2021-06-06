@@ -333,22 +333,4 @@
     }
 </script>
 
-<style>
-    #navSide{
-        position: fixed;
-    }
-
-    #grid{
-        display: grid;
-        grid-gap: 20px;
-        grid-template-columns: repeat(auto-fill, 300px);
-        justify-content: center
-
-    }
-
-    #grid>* {
-        height: 350px;
-    }
-
-</style>
 

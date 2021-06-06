@@ -1,10 +1,17 @@
 <template>
     <nav aria-label="top bar" class="flex-none flex justify-between bg-white h-16">
 
-        <ul aria-label="top bar left" aria-orientation="horizontal" class="flex">
+        <ul aria-orientation="horizontal" class="flex">
             <!-- add button -->
-            <li v-if="tipo != 'Usuario'" class="group relative flex items-center">
-                <button @click="modalModifyCreate" aria-controls="add" class="flex items-center h-12 px-4 text-sm bg-blue-400 text-white rounded ml-3 focus:outline-none focus:ring focus:border-blue-700">
+            <li class="group relative flex items-center">
+                <p class="pl-4 text-gray-400 text-bold">Tastyer</p>
+            </li>
+        </ul>
+
+        <!-- to bar right  -->
+        <ul aria-label="top bar right" aria-orientation="horizontal" class="px-8 flex items-center">
+            <li v-if="tipo != 'Usuario'" class="group relative flex items-center mr-4">
+                <button @click="modalModifyCreate" aria-controls="add" class="flex items-center h-10 px-4 text-sm bg-blue-400 text-white rounded ml-3 focus:outline-none focus:ring focus:border-blue-700">
                     <i>
                     <svg class="fill-current w-3 h-3 mx-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path d="M24 10h-10v-10h-2v10h-10v2h10v10h2v-10h10z" />
@@ -13,13 +20,7 @@
                     <span class="ml-2">Add</span>
                 </button>
             </li>
-            <li v-if="tipo == 'Usuario'" class="group relative flex items-center">
-                <p class="pl-4 text-gray-400 text-bold">Tastyer</p>
-            </li>
-        </ul>
 
-        <!-- to bar right  -->
-        <ul aria-label="top bar right" aria-orientation="horizontal" class="px-8 flex items-center">
             <dropdown>
                 <template #trigger>
                     <li class="relative">

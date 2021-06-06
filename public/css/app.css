@@ -1,3 +1,191 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.group:hover .group-hover\:block {
+  display: block;
+}
+
+.focus\:cursor-text:focus {
+  cursor: text;
+}
+
+.focus\:w-64:focus {
+  width: 16rem;
+}
+
+/* zendesk styles */
+.h-16 {
+  height: 50px;
+}
+
+.bg-orange {
+  background-color: #e67e3f;
+}
+
+.orange100 {
+  background-color: #a85d2d;
+}
+
+#navSide {
+  position: fixed;
+}
+
+#grid {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, 300px);
+  justify-content: center;
+}
+
+#grid > * {
+  height: 350px;
+}
+
+.texto {
+  position: absolute;
+}
+
+.contenedor {
+  width: 600px;
+  height: 400.5px;
+  border: 4px solid #e67e50;
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+}
+
+.controls {
+  width: 100%;
+  height: 85px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e67e50;
+  opacity: 0.9;
+}
+.controls .a {
+  fill: #d3d4ed;
+}
+.controls .rigth {
+  display: flex;
+  margin-top: 3px;
+  margin-right: 20px;
+}
+.controls .left {
+  display: flex;
+  text-align: right;
+  margin-top: 3px;
+  margin-left: 20px;
+}
+.controls .icons {
+  color: #d3d4ed;
+  fill: #d3d4ed;
+  margin-left: 10px;
+}
+.controls .progress {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #3b3b3b;
+  height: 10px;
+  border-radius: 5px;
+  margin-top: 14px;
+}
+.controls .bar {
+  width: 0%;
+  background-color: #35befa;
+  height: 10px;
+  border-radius: 5px;
+  height: 10px;
+  border-radius: 5px;
+  margin-top: 0px;
+}
+.controls .pointer {
+  cursor: pointer;
+}
+
+.central {
+  position: absolute;
+  font-size: 5em;
+  left: 40%;
+  top: 20%;
+  visibility: hidden;
+}
+
+/* SVG aguacate */
+.cls-1 {
+  fill: #a7aece;
+}
+
+.cls-12,
+.cls-2,
+.cls-6,
+.cls-9 {
+  fill: #fff;
+}
+
+.cls-2 {
+  opacity: 0.3;
+}
+
+.cls-3 {
+  fill: #8f5653;
+}
+
+.cls-4 {
+  fill: #4bc190;
+}
+
+.cls-5 {
+  fill: #f8dc25;
+}
+
+.cls-5,
+.cls-6 {
+  opacity: 0.5;
+}
+
+.cls-7 {
+  fill: #515570;
+}
+
+.cls-8 {
+  fill: #393c54;
+}
+
+.cls-10 {
+  fill: none;
+  stroke: #515570;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+}
+
+.cls-10,
+.cls-12 {
+  opacity: 0.2;
+}
+
+.cls-11 {
+  fill: #f85565;
+}
+
+/* FIN SVG aguacate */
 /*! tailwindcss v2.1.2 | MIT License | https://tailwindcss.com */
 
 /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */

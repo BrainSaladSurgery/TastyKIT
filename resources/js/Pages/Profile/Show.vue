@@ -1,7 +1,7 @@
 <template>
     <app-layout>
         <template #content>
-            <header-nav :pag="'Perfil'" :white="white" :classe="'w-full flex-none flex h-16 bg-yellow-600  px-4 items-center justify-between'"/>
+            <header-nav :pag="'Perfil'" :white="white" :classe="'w-full flex-none flex h-16 bg-yellow-600 shadow-xl  px-4 items-center justify-between'"/>
             <div>
                 <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
                     <div v-if="$page.props.jetstream.canUpdateProfileInformation">

@@ -328,23 +328,3 @@
         }
     }
 </script>
-
-<style>
-    #navSide{
-        position: fixed;
-    }
-
-    #grid{
-        display: grid;
-        grid-gap: 20px;
-        grid-template-columns: repeat(auto-fill, 230px);
-        justify-content: center;
-        align-items: center;
-
-    }
-
-    #grid>* {
-        height: 230px;
-    }
-
-</style>

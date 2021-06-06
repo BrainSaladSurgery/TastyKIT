@@ -61,7 +61,7 @@
 </template>
 
 <script>
-    import VuePag from '@ocrv/vue-tailwind-pagination';
+
     import Modal from '@/Jetstream/Modal';
 
     export default {

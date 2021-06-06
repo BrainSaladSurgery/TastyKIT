@@ -1,5 +1,5 @@
 <template>
-    <nav  class=" mt-0  shadow-xl items-center flex justify-between p-5" style="height:60px; background-color:#e6822eff" >
+    <nav  class=" mt-0  shadow-xl items-center flex justify-between p-5 bg-orange" style="height:60px" >
         <ul class="flex">
             <li class="mr-6 ml-3 ">
                 <inertia-link href="/" class="fontS text-white font-bold hover:text-gray-600" >
@@ -7,23 +7,23 @@
                 </inertia-link>
             </li>
             <li class="mr-6 ml-3 ">
-                <inertia-link   class="fontS text-white font-bold hover:text-gray-600" href="/">Home</inertia-link>
+                <inertia-link   class="fontS text-white font-bold hover:text-gray-600 focus:text-gray-300" href="/">Inicio</inertia-link>
             </li>
             <li class="mr-6">
-                <a class="fontS text-white font-bold hover:text-gray-600" href="#">Images/Video</a>
+                <inertia-link class="fontS text-white font-bold hover:text-gray-600 focus:text-gray-300" :href="route('images')">Imagenes/Video</inertia-link>
             </li>
             <li class="mr-6">
-                <a class="fontS text-white font-bold hover:text-gray-600" href="#">About us</a>
+                <inertia-link class="fontS text-white font-bold hover:text-gray-600 focus:text-gray-300" :href="route('reservations')">Reservas</inertia-link>
             </li>
             <li class="mr-6">
-                <a class="fontS text-white font-bold hover:text-gray-600" href="#">Contact</a>
+                <a class="fontS text-white font-bold hover:text-gray-600 focus:text-gray-300" href="#">Contact</a>
             </li>
         </ul>
         <div>
-            <inertia-link href="/register"  class=" hover:text-gray-600 text-white font-bold py-2 px-4">
+            <inertia-link href="/register"  class=" hover:text-gray-600 focus:text-gray-300 text-white font-bold py-2 px-4">
                 Registro
             </inertia-link>
-            <inertia-link href="/login"  class="bg-gray-100 hover:bg-gray-100 text-gray-600 font-bold py-2 px-4 border border-gray-400 rounded-full shadow-lg">
+            <inertia-link href="/login"  class="bg-gray-100 hover:bg-gray-200 focus:ring-2 hover:border-gray-500 text-gray-600 font-bold py-2 px-4 border border-gray-400 rounded-full shadow-lg">
                 Login
             </inertia-link>
 

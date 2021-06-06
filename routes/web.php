@@ -11,6 +11,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\InnvoiceController;
+use App\Http\Controllers\ReservationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,6 +37,18 @@ Route::get('/login',function(){
 Route::get('/register',function(){
     return Inertia::render('Auth/Register');
 })->name('register');
+
+//Images
+Route::get('/images/video',function(){
+    return Inertia::render('Client/Images');
+})->name('images');
+
+//Reservation
+Route::get('/reservation',function(){
+    return Inertia::render('Client/Reservation');
+})->name('reservations');
+
+    Route::post('/create-reservation', [ReservationController::class, 'create'])->name('create-reservation');
 
 //Utilizamos un grupo con middleware para que todos los que tengan acceso a esta sección deban estar logeados
 Route::middleware(['auth:sanctum', 'verified'])->group( function () {
@@ -88,6 +101,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group( function () {
     Route::get('/user/{id}',[UserController::class, 'show'])->name('user');
     Route::put('/update-user/{id}', [UserController::class, 'updateUser'])->name('update-user');
     Route::delete('/user-delete/{id}', [UserController::class, 'destroy'])->name('user-delete');
+
+
 
     //Innvoices
     Route::get('/innvoices', [InnvoiceController::class, 'index'])->name('innvoices');

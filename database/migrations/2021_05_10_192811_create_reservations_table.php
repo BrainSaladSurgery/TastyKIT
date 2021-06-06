@@ -17,10 +17,10 @@ class CreateReservationsTable extends Migration
             $table->id();
             $table->string('firstName');
             $table->string('lastName');
-            $table->date('date');
+            $table->date('day');
             $table->integer('pax');
-            $table->time('hour');
-            $table->foreignId('table_id')->constrained();
+            $table->String('hour');
+            $table->time('time');
             $table->timestamps();
         });
     }

@@ -54,9 +54,3 @@
 
     }
 </script>
-
-<style>
-    #navSide{
-        position: fixed;
-    }
-</style>

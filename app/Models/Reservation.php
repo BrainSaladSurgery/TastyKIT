@@ -12,10 +12,10 @@ class Reservation extends Model
     protected $fillable = [
         'firstName',
         'lastName',
-        'date',
+        'day',
         'pax',
         'hour',
-        'table_id'
+        'time'
     ];
 
     public function reservations_users()
