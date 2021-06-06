@@ -1,4 +1,5 @@
 <template>
+    <nav-bar />
     <authentication-card classesCard="w-3/4 h-1/4 mt-0 px-8 pt-5 bg-white shadow-xl overflow-hidden sm:rounded-lg">
         <template #letras>
             <inertia-link href="/">
@@ -76,9 +77,10 @@
     import JetAuthenticationCardLogo from '@/Jetstream/AuthenticationCardLogo'
     import YelxButton from '@/Components/Button'
     import JetInput from '@/Jetstream/Input'
-    import JetCheckbox from "@/Jetstream/Checkbox";
+    import JetCheckbox from "@/Jetstream/Checkbox"
     import JetLabel from '@/Jetstream/Label'
     import JetValidationErrors from '@/Jetstream/ValidationErrors'
+    import NavBar from '@/Components/NavBar'
 
     export default {
         components: {
@@ -89,7 +91,8 @@
             JetCheckbox,
             JetLabel,
             JetValidationErrors,
-            Letras
+            Letras,
+            NavBar
         },
 
         data() {

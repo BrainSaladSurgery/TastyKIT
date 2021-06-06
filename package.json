@@ -27,6 +27,6 @@
     },
     "dependencies": {
         "@ocrv/vue-tailwind-pagination": "^0.0.4",
-        "vue-paginate": "^3.6.0"
+        "jw-vue-pagination": "^1.0.3"
     }
 }

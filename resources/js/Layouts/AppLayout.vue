@@ -1,7 +1,9 @@
 <template>
+
     <div class="h-full w-full flex overflow-hidden antialiased text-gray-800 bg-white">
 
         <!-- section body side nav -->
+
         <slot name="navSide" />
 
         <div class="flex-1 flex flex-col w-full">
@@ -13,10 +15,10 @@
 <style>
     html {
         font-size: 14px;
-        line-height: 1.285;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        /* line-height: 1.285; */
+        /* font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial,
-        sans-serif;
+        sans-serif; */
     }
     html, body {
         width: 100%;

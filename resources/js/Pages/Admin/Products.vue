@@ -7,9 +7,7 @@
         <div style="width: 80.5px; heigth: auto;"></div>
     </template>
     <template #content>
-    <header aria-label="page caption" class="flex-none flex h-16 bg-gray-100 border-t px-4 items-center ">
-        <h1 id="page-caption" class="font-bold text-lg text-gray-500">Productos</h1>
-    </header>
+    <header-nav :pag="'Productos'" :classe="'w-full flex-none flex h-16 bg-gray-100 border-t px-4 items-center justify-between'"/>
 
     <nav-top @changeModal="showModalMod = $event" @changeModalCreate="showModal = $event" @modalData="productID = $event" :tipo="type"/>
 
@@ -158,6 +156,7 @@
     import AppLayout from '@/Layouts/AppLayout'
     import NavTop from '@/Components/NavTop'
     import NavSide from '@/Components/NavSide'
+    import HeaderNav from '@/Components/HeaderNav'
     import CardData from '@/Components/CardData'
     import Modal from '@/Jetstream/Modal'
 
@@ -189,7 +188,8 @@
             NavTop,
             NavSide,
             CardData,
-            Modal
+            Modal,
+            HeaderNav
 
         },
         methods: {

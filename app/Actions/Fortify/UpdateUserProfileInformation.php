@@ -22,6 +22,8 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'photo' => ['nullable', 'mimes:jpg,jpeg,png', 'max:1024'],
+            'dni' => ['required', 'string', 'max:9','unique:users'],
+            'phone' => ['required', 'string', 'max:9','unique:users'],
         ])->validateWithBag('updateProfileInformation');
 
         if (isset($input['photo'])) {
@@ -35,6 +37,11 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $user->forceFill([
                 'name' => $input['name'],
                 'email' => $input['email'],
+                'dni' => $input['dni'],
+                'phone' => $input['phone'],
+                // Por defecto agrego que sea User y que no tenga dirección para rellenarla luego más tarde en el perfil
+                'rol_id' => '3',
+                'addresses_id' => '1',
             ])->save();
         }
     }

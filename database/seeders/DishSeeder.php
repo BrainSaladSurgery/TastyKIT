@@ -19,7 +19,7 @@ class DishSeeder extends Seeder
         $fkr = \Faker\Factory::create();
 
         //Entrantes
-        for($i = 0 ; $i < 10; $i++){
+        for($i = 0 ; $i < 6; $i++){
 
             Dish::create([
                 'price' => $faker->randomFloat(2,4,8),
@@ -32,12 +32,12 @@ class DishSeeder extends Seeder
         }
 
         //Primeros
-        for($i = 0 ; $i < 8; $i++){
+        for($i = 0 ; $i < 5; $i++){
 
             Dish::create([
                 'price' => $faker->randomFloat(2,8,12),
                 'description' =>$fkr->text(),
-                'name' =>$faker->foodName(),
+                'name' =>$faker->unique()->foodName(),
                 'ud' =>$faker->numberBetween(1,4),
                 'categories_id' => 3
             ]);
@@ -45,12 +45,12 @@ class DishSeeder extends Seeder
         }
 
         //Segundos
-        for($i = 0 ; $i < 7; $i++){
+        for($i = 0 ; $i < 8; $i++){
 
             Dish::create([
                 'price' => $faker->randomFloat(2,11,21),
                 'description' =>$fkr->text(),
-                'name' =>$faker->foodName(),
+                'name' =>$faker->unique()->foodName(),
                 'ud' =>$faker->numberBetween(1,4),
                 'categories_id' => 4
             ]);
@@ -63,9 +63,22 @@ class DishSeeder extends Seeder
             Dish::create([
                 'price' => $faker->randomFloat(2,4,8),
                 'description' =>$fkr->text(),
-                'name' =>$faker->foodName(),
+                'name' =>$faker->unique()->foodName(),
                 'ud' =>$faker->numberBetween(1,4),
                 'categories_id' => 5
+            ]);
+
+        }
+
+         //Otros
+        for($i = 0 ; $i < 4; $i++){
+
+            Dish::create([
+                'price' => $faker->randomFloat(2,4,8),
+                'description' =>$fkr->text(),
+                'name' =>$faker->foodName(),
+                'ud' =>$faker->numberBetween(1,4),
+                'categories_id' => 1
             ]);
 
         }

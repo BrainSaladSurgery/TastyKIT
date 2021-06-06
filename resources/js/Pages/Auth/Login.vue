@@ -1,4 +1,6 @@
 <template>
+    <nav-bar />
+
     <authentication-card>
         <!-- Letras del logo este nos redirige pulsandolo al Home -->
         <template #letras>
@@ -69,6 +71,7 @@
     import JetCheckbox from '@/Jetstream/Checkbox'
     import JetLabel from '@/Jetstream/Label'
     import JetValidationErrors from '@/Jetstream/ValidationErrors'
+    import NavBar from '@/Components/NavBar'
 
     export default {
         components: {
@@ -78,7 +81,8 @@
             JetInput,
             JetCheckbox,
             JetLabel,
-            JetValidationErrors
+            JetValidationErrors,
+            NavBar
         },
 
         props: {

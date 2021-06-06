@@ -1,6 +1,6 @@
 <template>
     <modal :show="show" :max-width="maxWidth" :closeable="closeable" @close="close">
-        <div class="px-6 py-4">
+        <div class="px-6 py-4 border-t-4 border-yellow-600 rounded-md">
             <div class="text-lg">
                 <slot name="title">
                 </slot>

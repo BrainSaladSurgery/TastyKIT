@@ -20,7 +20,7 @@ class DrinkSeeder extends Seeder
         $fkr = \Faker\Factory::create();
 
         //Vinos
-        for($i = 0 ; $i < 18; $i++){
+        for($i = 0 ; $i < 8; $i++){
 
             Drink::create([
                 'price' => $faker->randomFloat(2,3,10),
@@ -36,7 +36,7 @@ class DrinkSeeder extends Seeder
         }
 
         //Refrescos
-        for($i = 0 ; $i < 12; $i++){
+        for($i = 0 ; $i < 6; $i++){
 
             Drink::create([
                 'price' => $faker->randomFloat(2,2,4),
@@ -52,7 +52,7 @@ class DrinkSeeder extends Seeder
         }
 
         //Cocteles
-        for($i = 0 ; $i < 11; $i++){
+        for($i = 0 ; $i < 10; $i++){
 
             Drink::create([
                 'price' => $faker->randomFloat(2,4,8),
@@ -68,14 +68,14 @@ class DrinkSeeder extends Seeder
         }
 
         //Otros
-        for($i = 0 ; $i < 11; $i++){
+        for($i = 0 ; $i < 6; $i++){
 
             Drink::create([
                 'price' => $faker->randomFloat(2,1,3),
                 'amount' => $fkr->numberBetween(1,30),
                 'image' => 'https://cdn2.iconfinder.com/data/icons/beverage-packaging-free-pack-1/512/bottle-package-free-01-256.png',
                 'description' =>$fkr->text(),
-                'name' =>$faker->beverageName(),
+                'name' =>$faker->unique()->beverageName(),
                 'ud' =>$faker->numberBetween(1,6),
                 'type' => 'Bebida',
                 'categories_id' => 1

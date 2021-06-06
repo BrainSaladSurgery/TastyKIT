@@ -13,7 +13,7 @@
                             <span> <b>Nº Ticket:</b> #{{ numTicket }} </span> <span class="ml-5"><b>Mesa: </b> {{ table.padStart(3,0) }} </span>
                         </li>
                         <hr />
-                        <div v-for="(item,index) in items" @key="index">
+                        <div v-for="(item,index) in items" @key="index" v-show="(pag - 1) * NUM_RESULTS <= index  && pag * NUM_RESULTS > index">
                             <li class="w-full flex items-center justify-center py-3 mt-1" v-if="item != ''">
                                 <span   span class="w-1/3"> <b>- {{ item.name }}</b></span><span class="w-1/6 text-center">{{ item.ud }}Ud  </span><span class="w-1/6 text-center">{{ item.price }}€</span>
                             </li>
@@ -24,7 +24,15 @@
                         </li>
                     </ul>
                 </article>
-                <vue-pag :current="currentPage" :total="total" :perPage="perPage" @page-changed="current = $event"/>
+                <nav aria-label="Page navigation" class="text-center w-full h-10 flex flex-row justify-center">
+                    <div  class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l" aria-label="Previous" v-show="pag != 1" @click.prevent="pag -= 1">
+                        <span aria-hidden="true">Anterior</span>
+                    </div>
+
+                    <div v-if="(items.length / NUM_RESULTS) > pag" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r " v-show="pag * NUM_RESULTS / array.length > 1 " @click.prevent="pag += 1">
+                        <span aria-hidden="true">Siguiente</span>
+                    </div>
+                </nav>
                 <button @click="changeModal()" class="w-full border-2 border-transparent bg-yellow-600  py-2  mt-4 font-bold uppercase text-white rounded transition-all hover:border-yellow-700 hover:bg-yellow-700">Generar Comanda</button>
 
                 <modal styles="width: 330px !important; margin-top: 10%" :show="showModal" @close="changeModal">
@@ -63,18 +71,18 @@
         },
         data(){
             return {
-                array:[],
-                currentPage: 1,
-                total: 4,
-                perPage: 8,
-                total: 0,
+                NUM_RESULTS: 8,
+                pag: 1,
+                array: this.items,
                 elements: [],
                 numTicket: '',
                 num: 0,
-                showModal: false
+                showModal: false,
+                total: 0
             }
         },
         props:['items','table', 'increments'],
+
         methods:{
 
             async getNumTicket(){
@@ -119,9 +127,12 @@
 
                 this.showModal = !this.showModal
             },
+
+            pageChange(pageNumber){
+                this.currentPage = pageNumber
+            },
+
         },
-
-
 
         watch: {
             increments: function(val){
@@ -154,6 +165,7 @@
             },
 
         },
+
         mounted: function(){
             this.getNumTicket()
         }

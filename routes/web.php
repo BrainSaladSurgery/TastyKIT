@@ -32,6 +32,11 @@ Route::get('/login',function(){
     return Inertia::render('Auth/Login');
 })->name('login');
 
+//Register
+Route::get('/register',function(){
+    return Inertia::render('Auth/Register');
+})->name('register');
+
 //Utilizamos un grupo con middleware para que todos los que tengan acceso a esta sección deban estar logeados
 Route::middleware(['auth:sanctum', 'verified'])->group( function () {
 

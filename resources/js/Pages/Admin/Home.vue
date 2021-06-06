@@ -4,9 +4,8 @@
       <nav-side />
     </template>
     <template #content>
-      <header aria-label="page caption" class="flex-none flex h-16 bg-gray-100 border-t px-4 items-center ">
-        <h1 id="page-caption" class="font-bold text-lg text-gray-500">Inicio</h1>
-      </header>
+
+      <header-nav :pag="'Inicio'" :classe="'w-full flex-none flex h-16 bg-gray-100 border-t px-4 items-center justify-between'"/>
 
       <!-- main content -->
       <main class="flex-grow flex min-h-0 border-t">
@@ -40,6 +39,7 @@
     import Stats from '@/Components/Stats'
     import TicketsResume from '@/Components/TicketsResume'
     import HeadTab from '@/Components/HeadTab'
+    import HeaderNav from '@/Components/HeaderNav'
     import TableYelx from '@/Components/TableYelx'
 
     export default {
@@ -49,7 +49,8 @@
             TicketsResume,
             Stats,
             HeadTab,
-            TableYelx
+            TableYelx,
+            HeaderNav
         },
 
     }
