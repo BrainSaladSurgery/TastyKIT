@@ -45,6 +45,7 @@ class Drink extends Model
             'image' => $url,
             'name' => $request->name,
             'amount' => $request->amount,
+            'price' => $request->price,
             'default_img' => $default_img,
             'categories_id' => $request->categoryCreate,
             'type' => 'Bebida',

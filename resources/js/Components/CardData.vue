@@ -1,14 +1,14 @@
 <template>
     <!-- Start CARD -->
-   <article  class="overflow-hidden rounded-lg shadow-lg w-80 h-120 ">
-        <div  @click="modalModify();modalData(data.id)" class="w-full h-60 flex justify-center hover:bg-gray-500 hover:object-cover">
+   <article  class="overflow-hidden rounded-lg shadow-lg w-80 h-auto ">
+        <div  @click="modalModify();modalData(data.id)" class="w-full h-4/5 flex justify-center hover:bg-gray-500 hover:object-cover">
             <img class="object-contain" :src="data.image" alt="imagen del producto">
         </div>
         <div class="flex-wrap mr-3">
-            <header class="flex items-center justify-center p-2 ml-4 w-full ">
-                <div class="text-gray-600 font-bold cursor-default w-1/3 h-8 mt-3">{{ data.name }}</div>
-                <div class="flex items-center justify-center w-1/2">
-                    <p class="cursor-default">Cantidad:</p>
+            <header class="grid grid-cols-2 w-full items-center text-right">
+                <div class="text-gray-600 font-bold cursor-default w-10/12 col-span-1 h-8 ">{{ data.name }}</div>
+                <div class="col-span-1 flex w-full h-8">
+                    <div class="cursor-default">Cantidad:</div>
                     <div name="cantidad" class=" ml-5 mb-1  text-center text-gray-600 font-bold cursor-default" >{{ data.amount }}</div>
                 </div>
             </header>
@@ -17,10 +17,7 @@
                 <button @click="changeModal" class="border-2 border-transparent bg-red-500 ml-3 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-red-500 hover:bg-transparent hover:text-red-500">
                     Borrar
                 </button>
-                <button class="border-2 border-transparent bg-yellow-500 ml-3 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-yellow-500 hover:bg-transparent hover:text-yellow-500">
-                    <svg height="48" viewBox="0 0 48 48" width="48" class="w-8 h-8 fill-current hover:text-gray-300" xmlns="http://www.w3.org/2000/svg"><path d="M14 36c-2.21 0-3.98 1.79-3.98 4s1.77 4 3.98 4 4-1.79 4-4-1.79-4-4-4zM2 4v4h4l7.19 15.17-2.7 4.9c-.31.58-.49 1.23-.49 1.93 0 2.21 1.79 4 4 4h24v-4H14.85c-.28 0-.5-.22-.5-.5 0-.09.02-.17.06-.24L16.2 26h14.9c1.5 0 2.81-.83 3.5-2.06l7.15-12.98c.16-.28.25-.61.25-.96 0-1.11-.9-2-2-2H10.43l-1.9-4H2zm32 32c-2.21 0-3.98 1.79-3.98 4s1.77 4 3.98 4 4-1.79 4-4-1.79-4-4-4z"/><path d="M0 0h48v48H0z" fill="none"/></svg>
-                </button>
-                <button @click="modalModify();modalData(data.id)" class="border-2 border-transparent bg-green-400 ml-3 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-green-500 hover:bg-transparent hover:text-green-500">
+                <button @click="modalModify();modalData(data.id)" class="border-2 border-transparent bg-green-400 ml-3 py-2  px-4 font-bold uppercase text-white rounded transition-all hover:border-green-500 hover:bg-transparent hover:text-green-500">
                     Editar
                 </button>
             </footer>

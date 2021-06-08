@@ -103,10 +103,6 @@ class User extends Authenticatable
         return $this->belongsToMany(Drink::class);//muchos a muchos
     }
 
-    public function menus_users()
-    {
-        return $this->belongsToMany(Menu::class);//muchos a muchos
-    }
 
     public function users_dishes()
     {
@@ -118,10 +114,6 @@ class User extends Authenticatable
         return $this->belongsToMany(Product::class);//muchos a muchos
     }
 
-    public function users_allergens()
-    {
-        return $this->belongsToMany(Allergen::class);//muchos a muchos
-    }
 
     public function users_invoices()
     {

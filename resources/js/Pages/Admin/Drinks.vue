@@ -34,18 +34,22 @@
                                 <p class="font-semibold text-gray-800">Alta Bebida</p>
                                 <svg  @click="changeStateModal" class="w-6 h-6 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" ></path></svg>
                             </div>
-                            <div class="flex flex-col m-5 sm:flex-row items-center mb-5 sm:space-x-5">
-                                <div class="w-full sm:w-3/5">
-                                    <p class="mb-2 font-semibold text-gray-700">Nombre de la Bebida</p>
-                                    <input v-model="drinkName" class="bg-white border border-gray-200 rounded shadow-sm w-full focus:ring-0 focus:border-gray-500 " type="text" name="name">
+                            <div class="w-full justify-around flex text-start mt-5 pb-5">
+                                <div class="flex-col w-1/3 col-1">
+                                    <p class="mb-2 font-semibold text-gray-700">Nombre de la bebida</p>
+                                    <input v-model="drinkName" class="bg-white border border-gray-200 rounded shadow-sm w-full focus:ring-0 focus:border-gray-500 " type="text" name="name" required >
                                 </div>
-                                <div class="w-full sm:w-1/3 mt-2 sm:mt-0">
+                                <div class="flex-col  col-span-1 "  style="width:10%">
                                     <p class="mb-2 font-semibold text-gray-700">Cantidad</p>
-                                    <input  v-model="drinkAmount" class=" bg-white border border-gray-200 rounded shadow-sm  focus:ring-0 focus:border-gray-500" type="text" name="amount" >
+                                    <input  v-model="drinkAmount" class=" w-full bg-white border border-gray-200 rounded shadow-sm  focus:ring-0 focus:border-gray-500" type="text" name="amount" required  >
                                 </div>
-                                <div class="w-full sm:w-1/3 mt-2 sm:mt-0">
+                                <div class="flex-col  col-span-1 " style="width:10%">
+                                    <p class="mb-2 font-semibold text-gray-700">Precio</p>
+                                    <input  v-model="drinkPrice" class=" w-full bg-white border border-gray-200 rounded shadow-sm  focus:ring-0 focus:border-gray-500" type="text" name="amount" required  >
+                                </div>
+                                <div class="flex-col w-1/4 col-span-1 ">
                                     <p class="mb-2 font-semibold text-gray-700">Categoría</p>
-                                <select v-model="categoryCreate" type="text" name="category" class="w-full p-2 cursor-pointer bg-white border border-gray-200 rounded shadow-sm appearance-none focus:ring-0 focus:border-gray-500">
+                                <select v-model="categoryCreate" type="text" name="category" class="w-full p-2 cursor-pointer bg-white border border-gray-200 rounded shadow-sm appearance-none focus:ring-0 focus:border-gray-500" required >
                                     <option value="2">Refrescos</option>
                                     <option value="3">Con Alcohol</option>
                                     <option value="4">Cocteles</option>
@@ -94,16 +98,20 @@
                                 <p class="font-semibold text-gray-800">Modificar Bebida</p>
                                 <svg  @click="changeStateModalMod" class="w-6 h-6 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" ></path></svg>
                             </div>
-                            <div class="flex flex-col m-5 sm:flex-row items-center mb-5 sm:space-x-5">
-                                <div class="w-full sm:w-3/5">
+                            <div class="w-full justify-around flex text-start mt-5 pb-5">
+                                <div class="flex-col w-1/3 col-1">
                                     <p class="mb-2 font-semibold text-gray-700">Nombre de la bebida</p>
                                     <input v-model="drink.name" class="bg-white border border-gray-200 rounded shadow-sm w-full focus:ring-0 focus:border-gray-500 " type="text" name="name" required >
                                 </div>
-                                <div class="w-full sm:w-1/3 mt-2 sm:mt-0">
+                                <div class="flex-col  col-span-1 "  style="width:10%">
                                     <p class="mb-2 font-semibold text-gray-700">Cantidad</p>
-                                    <input  v-model="drink.amount" class=" bg-white border border-gray-200 rounded shadow-sm  focus:ring-0 focus:border-gray-500" type="text" name="amount" required  >
+                                    <input  v-model="drink.amount" class=" w-full bg-white border border-gray-200 rounded shadow-sm  focus:ring-0 focus:border-gray-500" type="text" name="amount" required  >
                                 </div>
-                                <div class="w-full sm:w-1/3 mt-2 sm:mt-0">
+                                <div class="flex-col  col-span-1 " style="width:10%">
+                                    <p class="mb-2 font-semibold text-gray-700">Precio</p>
+                                    <input  v-model="drink.price" class=" w-full bg-white border border-gray-200 rounded shadow-sm  focus:ring-0 focus:border-gray-500" type="text" name="amount" required  >
+                                </div>
+                                <div class="flex-col w-1/4 col-span-1 ">
                                     <p class="mb-2 font-semibold text-gray-700">Categoría</p>
                                 <select v-model="drink.categories_id" type="text" name="category" class="w-full p-2 cursor-pointer bg-white border border-gray-200 rounded shadow-sm appearance-none focus:ring-0 focus:border-gray-500" required >
                                     <option value="2">Refrescos</option>
@@ -170,6 +178,7 @@
                 image: null,
                 drinkName:'',
                 drinkAmount: '',
+                drinkPrice: '',
                 descriptionDrink: '',
                 imageDefault: false,
                 url: null,
@@ -177,7 +186,6 @@
                 bebidas : [],
                 drinkID: '',
                 drink: [],
-                change: false,
                 deletePro: false,
                 error: ''
 
@@ -226,6 +234,7 @@
                 formData.append('image', this.image)
                 formData.append('name', this.drinkName)
                 formData.append('amount', this.drinkAmount)
+                formData.append('price', this.drinkPrice)
                 formData.append('description', this.descriptionDrink)
                 formData.append('imageDefault', this.imageDefault)
                 formData.append('categoryCreate', this.categoryCreate)
@@ -237,7 +246,7 @@
                 }).
                     then((response) => {
 
-                        this.bebidas.unshift(response.data)
+                        this.getDrinks()
                         this.resetData()
 
                     }).catch(error =>{
@@ -252,6 +261,7 @@
                 this.image = null
                 this.drinkName =''
                 this.drinkAmount = ''
+                this.drinkPrice = ''
                 this.descriptiondrink = ''
                 this.imageDefault = false
                 this.url = null
@@ -274,7 +284,6 @@
                 await axios.put(url ,this.drink).
                     then((response) => {
 
-                        this.change = true
                         this.resetDataUp()
 
                     }).catch(error =>{
@@ -294,6 +303,7 @@
 
                 this.showModalMod = false
                 this.drink = []
+                this.getDrinks()
 
             },
 
@@ -301,7 +311,9 @@
 
                 await axios.get('/drink/'+id).
                     then((response) =>{
+                        this.drink = []
                         this.drink = response.data
+                        this.drinkID = ''
                         console.log(this.drink)
                     })
             }
@@ -317,14 +329,13 @@
 
         watch: {
             drinkID: function(val){
-                this.getDrink(val)
-            },
-            change: function(val){
 
-                if(val == true){
-                    this.getDrinks()
+                if(this.drinkID != ''){
+                    this.getDrink(val)
                 }
+
             },
+
             deletePro: function(val){
 
                 if(val == true){
