@@ -2,7 +2,7 @@
     <header class="bg-white border-t flex items-center py-3 px-4">
         <div class="flex">
             <h2 id="content-caption" class="font-semibold">
-            Listado de usuarios completo (6)
+            Listado completo de reservas ({{ data }})
             </h2>
             <span class="ml-3 group relative">
             <button role="details" aria-controls="info-popup" class="text-blue-700 border-b border-dotted border-blue-700 focus:outline-none text-sm">
@@ -29,9 +29,7 @@
 </template>
 
 <script>
-export default {
-
-}
+    export default {
+        props:['data']
+    }
 </script>
-
-<style lang="scss" scoped></style>

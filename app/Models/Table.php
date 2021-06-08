@@ -27,8 +27,8 @@ class Table extends Model
         return $this->belongsToMany(User::class);//muchos a muchos
     }
 
-    public function table_orders()
+    public function order()
     {
-        return $this->hasMany(Order::class,'order_id');//1 a muchos
+        return $this->hasMany(Order::class,'order_id','id');//1 a muchos
     }
 }

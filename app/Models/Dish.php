@@ -20,14 +20,9 @@ class Dish extends Model
         'ud'
     ];
 
-    public function dishes_orders()
+    public function orders()
     {
-        return $this->belongsToMany(Order::class);//muchos a muchos
-    }
-
-    public function dishes_users()
-    {
-        return $this->belongsToMany(User::class);//muchos a muchos
+        return $this->belongsToMany(Order::class, 'order_id' , 'id');//muchos a muchos
     }
 
     public function dishes_products()

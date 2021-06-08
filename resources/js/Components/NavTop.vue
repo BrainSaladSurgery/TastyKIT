@@ -63,7 +63,6 @@
                 search: '',
                 datoExists: true,
                 datos: [],
-                showModal: false,
 
             }
         },
@@ -99,6 +98,7 @@
             modalModifyCreate(){
 
                 this.$emit('changeModalCreate', true)
+
             },
 
             modalModify(){

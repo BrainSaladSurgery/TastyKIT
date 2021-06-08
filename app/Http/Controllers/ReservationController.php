@@ -29,7 +29,12 @@ class ReservationController extends Controller
 
     public function getReserv()
     {
-        return $reserv = reserv::all();
+        return $reserv = Reservation::all();
+    }
+
+    public function getTotal()
+    {
+        return count(Reservation::all());
     }
 
     public function show($id){
@@ -44,9 +49,8 @@ class ReservationController extends Controller
      */
     public function create(Request $request)
     {
-
         Reservation::create([
-            'firstName' => $request->name,
+            'firstName' => $request->firstName,
             'lastName' => $request->lastName,
             'day' => $request->day,
             'pax' => $request->pax,
@@ -62,26 +66,31 @@ class ReservationController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function updateProduct(Request $request,  $id)
+    public function updateReserv(Request $request,  $id)
     {
-        $producto = Product::findOrfail($id);
-        $producto->name = $request->name;
-        $producto->amount = $request->amount;
-        $producto->description = $request->description;
-        $producto->categories_id = $request->categories_id;
+        $reserv = Reservation::findOrfail($id);
+        $reserv->firstName = $request->firstName;
+        $reserv->pax = $request->pax;
+        if($request->table_id != null){
+            $reserv->table_id = $request->table_id;
+        }
+        //$reserv->comment = $request->description;
+        $reserv->day = $request->day;
+        $reserv->time = $request->time;
+        $reserv->hour = $request->hour;
 
-        $producto->update();
+        $reserv->update();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\Reservation  $product
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        Product::destroy($id);
+        Reservation::destroy($id);
         return response(null, Response::HTTP_OK);
     }
 }

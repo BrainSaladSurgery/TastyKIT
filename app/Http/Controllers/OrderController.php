@@ -36,6 +36,7 @@ class OrderController extends Controller
         $mesa = $data->table;
         $total = $data->total;
         $ticket = $data->ticket;
+        $user = $data->user_id;
 
         for($i= 0; count($data->items[0]) > $i; $i++){
 
@@ -48,7 +49,8 @@ class OrderController extends Controller
                     'drink_id' => $data->items[0][$i]['id'],
                     'ud' => $data->items[0][$i]['ud'],
                     'table_id' => $mesa,
-                    'total' => $total
+                    'total' => $total,
+                    'user_id' => $user
                 ]);
 
             }
@@ -60,7 +62,8 @@ class OrderController extends Controller
                     'dish_id' => $data->items[0][$i]['id'],
                     'ud' => $data->items[0][$i]['ud'],
                     'table_id' => $mesa,
-                    'total' => $total
+                    'total' => $total,
+                    'user_id' => $user
                 ]);
             }
         }

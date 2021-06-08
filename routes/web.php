@@ -10,7 +10,7 @@ use App\Http\Controllers\DishController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\InnvoiceController;
+use App\Http\Controllers\InvoicesController;
 use App\Http\Controllers\ReservationController;
 /*
 |--------------------------------------------------------------------------
@@ -48,7 +48,7 @@ Route::get('/reservation',function(){
     return Inertia::render('Client/Reservation');
 })->name('reservations');
 
-    Route::post('/create-reservation', [ReservationController::class, 'create'])->name('create-reservation');
+Route::post('/create-reservation', [ReservationController::class, 'create'])->name('create-reservation');
 
 //Utilizamos un grupo con middleware para que todos los que tengan acceso a esta sección deban estar logeados
 Route::middleware(['auth:sanctum', 'verified'])->group( function () {
@@ -58,6 +58,13 @@ Route::middleware(['auth:sanctum', 'verified'])->group( function () {
     })->name('home');
 
     Route::get('/search/{name}/{type}', [SearchController::class, 'search'])->name('search');
+
+    //Reservation
+    Route::get('/reservation-list', [ReservationController::class, 'getReserv'])->name('reservation-list');
+    Route::get('/reservation-total', [ReservationController::class, 'getTotal'])->name('reservation-total');
+    Route::get('/reservation/{id}', [ReservationController::class, 'show'])->name('reservation-show');
+    Route::put('/reservation-update/{id}', [ReservationController::class, 'updateReserv'])->name('reservation-update');
+    Route::delete('/delete-reservation/{id}', [ReservationController::class, 'destroy'])->name('delete-reservation');
 
     //Products
     Route::get('/products', [ProductController::class, 'index'])->name('products');
@@ -105,6 +112,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group( function () {
 
 
     //Innvoices
-    Route::get('/innvoices', [InnvoiceController::class, 'index'])->name('innvoices');
+    Route::get('/invoices', [InvoicesController::class, 'index'])->name('invoices');
+    Route::get('/invoices-list', [InvoicesController::class, 'getInvoices'])->name('invoices-list');
 
 });

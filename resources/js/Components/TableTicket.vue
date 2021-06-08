@@ -1,40 +1,29 @@
 <template>
   <table aria-describedby="info-popup" aria-label="open tickets" class="border-t w-full min-h-0 h-full flex flex-col">
     <thead class="flex w-full flex-col px-4">
-        <tr class="border-b flex">
-        <!-- <th class="font-semibold text-left py-3 pl-3 pr-1 w-24">
-            <input type="checkbox" name="" id="" />
-        </th> -->
-        <th id="Mesa" class="font-semibold text-left py-3 px-1 w-24 truncate">
+        <tr class="border-b flex w-full justify-start">
+        <th id="Mesa" class="font-semibold text-left py-3 px-1 w-1/12 truncate">
             Mesa
         </th>
-        <th id="Comanda" class="font-semibold text-left py-3 px-1 w-24 truncate">
+        <th id="Comanda" class="font-semibold text-left py-3 px-1 w-1/12 truncate">
+            Nº Ticket
+        </th>
+        <th id="Ticket" class="font-semibold text-left py-3 px-1 w-1/2 truncate">
             Comanda
         </th>
-        <th id="Ticket" class="font-semibold text-left py-3 px-1 w-60 truncate">
-            Ticket
-        </th>
-        <th id="Camarero" class="font-semibold text-left py-3 px-1 w-32 truncate">
+        <th id="Camarero" class="font-semibold text-left py-3 px-4 mr-8 w-1/12 truncate">
             Camarero
         </th>
-        <th id="Precio" class="font-semibold text-left py-3 px-1 w-32 truncate">
+        <th id="Precio" class="font-semibold text-left py-3 px-1 w-1/12 truncate">
             Precio
         </th>
 
         </tr>
     </thead>
-    <tbody class="flex w-full flex-col flex-1 min-h-0 overflow-hidden px-4">
-        <!-- low -->
-        <!-- <tr class="border-b flex">
-        <th class="bg-gray-100 text-left px-3 py-2 flex-1" colspan="7">
-            <h2 class="text-sm">
-            <span class="font-normal mr-1">Priority</span><span>Low</span>
-            </h2>
-        </th>
-        </tr> -->
-        <tr role="row" class="hover:bg-blue-100 border-b flex cursor-pointer">
-        <td role="cell" headers="Mesa" class="py-3 pl-3 pr-1 w-24 flex items-start">
-            <span>21</span>
+    <tbody class="flex w-full flex-col  min-h-0 overflow-hidden px-4 ">
+        <tr v-for="(ticket,index) in data" @key="index" role="row" class="border-b flex w-full justify-start hover:bg-blue-100 cursor-pointer">
+        <td role="cell" headers="Mesa" class="text-left py-3 px-1 w-1/12 ">
+            <span>{{ ticket.tableName }}</span>
 
             <!-- dropdown -->
             <!-- <span class="hidden group-hover:block ml-4 mt-10 w-screen max-w-lg absolute top-0 border shadow-lg p-6 bg-white rounded-md z-50 text-gray-900">
@@ -80,7 +69,7 @@
             <!-- end dropdown -->
 
         </td>
-        <td  headers="Comanda" class="py-3 px-1 w-24">
+        <td  headers="Comanda" class="text-left py-3 px-1 w-1/12">
             <!-- <div class="ml-auto relative group"> -->
             <span style="
                     padding: 2px 5px;
@@ -89,12 +78,11 @@
                     bottom: 2px;
                     " class="font-mono rounded-sm bg-red-600 text-white leading-none">O</span>
                 <!-- </div> -->
-            #12534
+            #{{ ticket.ticket }}
         </td>
-        <td headers="Ticket" class="py-3 px-1 w-60 max-w-xs xl:max-w-lg">
+        <td headers="Ticket" class="text-left py-3 px-1 w-1/2  ">
             <div class="relative group w-full truncate">
-                Quo laudantium error corporis accusamus unde, labore
-                quidem non officiis.
+                {{ ticket.item }}
 
             <!-- dropdown -->
             <!-- <span class="hidden group-hover:block ml-4 mt-10 w-screen max-w-lg absolute top-0 border shadow-lg p-6 bg-white rounded-md z-50 text-gray-900">
@@ -140,32 +128,34 @@
             <!-- end dropdown -->
             </div>
         </td>
-        <td headers="Camarero" class="py-3 px-1 w-32 truncate">
-            Marla Darsuz
+        <td headers="Camarero" class="text-left py-3 px-1 mr-8 w-1/12 truncate">
+            {{ ticket.userName }}
         </td>
-        <td  headers="Precio" class="py-3 px-1 w-32 truncate">
-            Tuesday 09:56
+        <td  headers="Precio" class="text-left py-3 px-1 w-1/12 truncate">
+            {{ ticket.total }}
         </td>
         </tr>
         <!-- END ROW -->
 
-        <!-- high -->
-        <tr class="border-b flex hidden">
-        <th class="bg-gray-100 text-left px-3 py-2 flex-1" colspan="7">
-            <h2 class="text-sm">
-            <span class="font-normal mr-1">Priority</span>
-            <span>High</span>
-            </h2>
-        </th>
-        </tr>
     </tbody>
   </table>
 </template>
 
 <script>
-  export default {
+    export default {
 
-  }
+        data(){
+            return{
+
+            }
+        },
+        props:['data'],
+        methods:{
+
+
+
+        },
+
+    }
 </script>
 
-<style lang="scss" scoped></style>

@@ -66,7 +66,6 @@
 
     export default {
         components:{
-            VuePag,
             Modal
         },
         data(){
@@ -106,13 +105,13 @@
 
             async createTicket(items, table, total, num){
 
-
                 var datos = {
 
                     'items' : [items],
                     'table' : table ,
                     'total' : total,
-                    'ticket' : num
+                    'ticket' : num,
+                    'user_id': this.$page.props.user.id
                 }
                 await axios.post('/create-order',datos)
                     .then(response =>{

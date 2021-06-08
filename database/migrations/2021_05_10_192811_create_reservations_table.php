@@ -21,6 +21,7 @@ class CreateReservationsTable extends Migration
             $table->integer('pax');
             $table->String('hour');
             $table->time('time');
+            $table->foreignId('table_id')->nullable()->constrained();
             $table->timestamps();
         });
     }

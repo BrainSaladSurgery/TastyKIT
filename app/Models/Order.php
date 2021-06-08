@@ -22,38 +22,24 @@ class Order extends Model
         'total'
     ];
 
-    public function orders_table()
+    public function table()
     {
-        return $this->belongsTo(Table::class);//muchos a 1
+        return $this->belognsTo(Table::class, 'table_id' , 'id');//1 a muchos
     }
 
-    public function orders_client()
+    public function user()
     {
-        return $this->belongsTo(Client::class);//muchos a 1
+        return $this->hasOne(User::class, 'user_id' ,'id');//1 a 1
     }
 
-    public function orders_users()
+    public function drinks()
     {
-        return $this->belongsToMany(User::class);//muchos a muchos
+        return $this->belongsToMany(Drink::class, 'drink_order', 'order_id', 'drink_id');//muchos a muchos
     }
 
-    public function orders_drinks()
+    public function dishes()
     {
-        return $this->belongsToMany(Drink::class);//muchos a muchos
+        return $this->belongsToMany(Dish::class, 'dish_id', 'id');//muchos a muchos
     }
 
-    public function orders_menu()
-    {
-        return $this->belongsToMany(Menu::class);//muchos a muchos
-    }
-
-    public function orders_dishes()
-    {
-        return $this->belongsToMany(Dish::class);//muchos a muchos
-    }
-
-    public function order_facture()
-    {
-        return $this->hasOne(Invoice::class);
-    }
 }

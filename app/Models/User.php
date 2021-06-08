@@ -93,9 +93,9 @@ class User extends Authenticatable
         return $this->belongsToMany(Client::class);//muchos a muchos
     }
 
-    public function users_orders()
+    public function order()
     {
-        return $this->belongsToMany(Order::class);//muchos a muchos
+        return $this->hasOne(Order::class,'order_id' , 'id');//1 a 1
     }
 
     public function users_drinks()
