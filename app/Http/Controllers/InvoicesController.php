@@ -14,14 +14,15 @@ class InvoicesController extends Controller
 
         $this->order = $order;
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         return Inertia::render('Admin/Invoices');
+    }
+
+    public function getTotal()
+    {
+        return Order::distinct()->get('ticket');
     }
 
     public function getInvoices()
@@ -44,6 +45,7 @@ class InvoicesController extends Controller
         $tik = $order[0]->ticket;
         $mesa = $order[0]->mesa($order[0]->table_id)->name;
         $status = $order[0]->status;
+        $tim = $order[0]->created_at;
         $items = [];
 
         $total = $order[0]->total;
@@ -75,6 +77,7 @@ class InvoicesController extends Controller
         array_push($invoice,["total" => $total]);
         array_push($invoice,["status" => $status]);
         array_push($invoice,["user" =>$userName]);
+        array_push($invoice,["created_at" =>$tim]);
 
         return $invoice;
 
@@ -93,6 +96,7 @@ class InvoicesController extends Controller
                 "total" => $datos[$i][3]['total'],
                 "status" => $datos[$i][4]['status'],
                 "user" => $datos[$i][5]['user'],
+                "created_at" => $datos[$i][6]['created_at'],
 
             ]);
 

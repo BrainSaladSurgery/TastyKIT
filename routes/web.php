@@ -109,11 +109,10 @@ Route::middleware(['auth:sanctum', 'verified'])->group( function () {
     Route::put('/update-user/{id}', [UserController::class, 'updateUser'])->name('update-user');
     Route::delete('/user-delete/{id}', [UserController::class, 'destroy'])->name('user-delete');
 
-
-
     //Innvoices
     Route::get('/invoices', [InvoicesController::class, 'index'])->name('invoices');
     Route::get('/invoices-list', [InvoicesController::class, 'getInvoices'])->name('invoices-list');
     Route::put('/invoices-close/{numTicket}', [InvoicesController::class, 'updateTicket'])->name('invoices-close');
+    Route::get('/invoices-total', [InvoicesController::class, 'getTotam'])->name('invoices-total');
 
 });

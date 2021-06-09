@@ -3,7 +3,8 @@
         <ul class="flex">
             <li class="mr-6 ml-3 ">
                 <inertia-link href="/" class="fontS text-white font-bold hover:text-gray-600" >
-                    <svg class="fill-current h-6 w-6  fontS" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
+                    <!-- <letras :width="'50%'" /> -->
+                    <!-- <svg class="fill-current h-6 w-6  fontS" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg> -->
                 </inertia-link>
             </li>
             <li class="mr-6 ml-3 ">
@@ -20,10 +21,10 @@
             </li>
         </ul>
         <div>
-            <inertia-link href="/register"  class=" hover:text-gray-600 focus:text-gray-300 text-white font-bold py-2 px-4">
+            <inertia-link href="/register"  class=" fontS hover:text-gray-600 focus:text-gray-300 text-white font-bold py-2 px-4">
                 Registro
             </inertia-link>
-            <inertia-link href="/login"  class="bg-gray-100 hover:bg-gray-200 focus:ring-2 hover:border-gray-500 text-gray-600 font-bold py-2 px-4 border border-gray-400 rounded-full shadow-lg">
+            <inertia-link href="/login"  class="fontS bg-gray-100 hover:bg-gray-200 focus:ring-2 hover:border-gray-500 text-gray-600 font-bold py-2 px-4 border border-gray-400 rounded-full shadow-lg">
                 Login
             </inertia-link>
 
@@ -32,16 +33,13 @@
 </template>
 
 <script>
-    import Dropdown from '@/Components/Dropdown'
+
+    import Letras from '@/Components/Letras'
     export default {
         components: {
-            Dropdown
+            Letras
         },
-        methods:{
-            logout() {
-                this.$inertia.post(route('logout'));
-            },
-        }
+
     }
 </script>
 

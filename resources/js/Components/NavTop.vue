@@ -20,8 +20,8 @@
                     <span class="ml-2">Add</span>
                 </button>
             </li>
-
-            <dropdown>
+<!-- //OJOO -->
+            <dropdown v-if="tipo == 'Mesa'">
                 <template #trigger>
                     <li class="relative">
                         <input title="Search Bar" v-model="search" @keyup="dataSearch(tipo)" aria-label="search bar" role="search" class="pr-8 pl-4 py-2 rounded-md cursor-pointer focus:border-black focus:cursor-text w-48 placeholder-gray-500" type="text" placeholder="Buscar..." />
@@ -63,6 +63,7 @@
                 search: '',
                 datoExists: true,
                 datos: [],
+                mesa:''
 
             }
         },

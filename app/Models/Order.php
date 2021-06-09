@@ -20,7 +20,8 @@ class Order extends Model
         'drink_id',
         'ud',
         'user_id',
-        'total'
+        'total',
+        'created_at'
     ];
 
     public function table()

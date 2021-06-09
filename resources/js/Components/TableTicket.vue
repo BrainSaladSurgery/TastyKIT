@@ -32,7 +32,8 @@
                             <article>
                             <header>
                                 <div>
-                                <span class="px-3 py-1 uppercase text-xs leading-none rounded-sm bg-blue-600 text-white">Open</span>
+                                <span v-if="ticket.status == 'open'" class="px-3 py-1 uppercase text-xs leading-none rounded-sm bg-blue-600 text-white">Abierto</span>
+                                <span v-if="ticket.status == 'close'" class="px-3 py-1 uppercase text-xs leading-none rounded-sm bg-gray-600 text-white">Cerrado</span>
                                 <span class="ml-2 text-gray-700">Ticket #00{{ ticket.ticket }}</span>
                                 </div>
                             </header>
@@ -92,7 +93,8 @@
                     {{ ticket.total }}€
                 </td>
                 <td  headers="Precio" class="text-left col-span-1 flex items-center py-1  w-full truncate">
-                    <button @click="changeModal()" class="border-2 border-transparent bg-orange  h-10 w-10/12 font-bold uppercase text-white rounded transition-all hover:border-red-blue hover:bg-yellow-700 hover:text-red-blue">Cerrar</button>
+                    <button v-if="ticket.status == 'open'"  @click="changeModal()" class="border-2 border-transparent bg-orange  h-10 w-10/12 font-bold uppercase text-white rounded transition-all hover:border-red-blue hover:bg-yellow-700 hover:text-red-blue">Cerrar</button>
+                    <button v-if="ticket.status == 'close'"  class="cursor-none border-2 border-transparent bg-gray-500 h-10 w-10/12 font-bold uppercase text-white rounded ">Cerrado</button>
                 </td>
 
                 <!-- START MODAL CLOSE -->
@@ -131,6 +133,7 @@
             return{
                 tickets: [],
                 showModal: false,
+                totalcount: 0
 
             }
         },
@@ -180,6 +183,16 @@
                 await axios.put('/invoices-close/'+ ticket)
                     .then((response) =>{
                         this.getInvoices()
+                        this.getTotal()
+                    })
+            },
+
+            async getTotal(){
+
+                await axios.get('/invoices-total')
+                    .then((response) =>{
+                        this.totalcount = response.data
+                        this.$emit('totalcount',this.totalcount)
                     })
             }
 
@@ -187,6 +200,7 @@
         mounted() {
 
             this.getInvoices()
+            this.getTotal()
         }
 
     }

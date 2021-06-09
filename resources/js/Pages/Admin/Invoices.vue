@@ -9,9 +9,9 @@
             <main class="flex-grow flex min-h-0 border-t">
             <!-- section content -->
                 <section aria-label="main content" class="flex min-h-0 flex-col flex-auto border-l">
-                    <stats :total="total" :open="open" :clos="clos" />
+                    <stats :total="total" :open="open" :clos="clos" :totalcount="totalcount"/>
                     <head-tab  />
-                    <table-ticket   @totalFac="total =$event" @open="open = $event" @clos="clos = $event"/>
+                    <table-ticket   @totalFac="total =$event" @open="open = $event" @clos="clos = $event" @totalcount="totalcount"/>
                 </section>
             </main>
         </template>
@@ -41,7 +41,8 @@
                 ticket: [],
                 total: 0,
                 clos: 0,
-                open: 0
+                open: 0,
+                totalcount:0
             }
         },
         methods: {

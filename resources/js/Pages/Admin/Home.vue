@@ -35,20 +35,20 @@
                                         Nombre de la Reserva
                                     </label>
                                 <p v-if="errorName == true" class="text-red-500 text-xs italic">Obligatorio</p>
-                                <input v-model="reserv.firstName" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 bg-white border border-gray-200 rounded shadow-sm w-full focus:ring-0 focus:border-gray-500 " type="text" name="name" required >
+                                <input v-model="reserv.firstName" class="block appearance-none  text-gray-700 py-3 px-4 pr-8  leading-tight focus:outline-none focus:bg-white focus:border-gray-500 bg-white border border-gray-200 rounded shadow-sm w-full focus:ring-0  " type="text" name="name" required >
                             </div>
                             <div class="w-full sm:w-1/3 mt-2 sm:mt-0">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="time">
                                     Apellidos
                                 </label>
-                                <input  v-model="reserv.lastName" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 bg-white border border-gray-200 rounded shadow-sm  focus:ring-0 focus:border-gray-500" type="text" name="amount" required  >
+                                <input  v-model="reserv.lastName" class="block appearance-none w-full  text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white bg-white border border-gray-200  shadow-sm  focus:ring-0 focus:border-gray-500" type="text" name="amount" required  >
                             </div>
                             <div class="w-full sm:w-1/3 mt-2 sm:mt-0">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="time">
                                     Horario
                                 </label>
                                 <p v-if="errorHour == true" class="text-red-500 text-xs italic">Obligatorio</p>
-                                <select v-model="reserv.hour" type="text" name="category" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 w-full p-2 cursor-pointer bg-white border border-gray-200 rounded shadow-sm appearance-none focus:ring-0 focus:border-gray-500" required >
+                                <select v-model="reserv.hour" type="text" name="category" class="block  text-gray-700 py-3 px-4 pr-8  leading-tight focus:outline-none focus:bg-white  w-full p-2 cursor-pointer bg-white border border-gray-200 rounded shadow-sm appearance-none focus:ring-0 focus:border-gray-500" required >
                                     <option value="1">Almuerzo</option>
                                     <option value="2">Cena</option>
                                 </select>
@@ -58,7 +58,7 @@
                             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
                                 Descripción
                             </label>
-                            <textarea type="text" name="" placeholder="Escribe aquí..." class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 p-5 mb-5 border border-gray-200 rounded shadow-sm h-24 focus:ring-0 focus:border-gray-500" ></textarea>
+                            <textarea type="text" name="" placeholder="Escribe aquí..." class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8  leading-tight focus:outline-none focus:bg-white  p-5 mb-5   rounded shadow-sm h-24 focus:ring-0 focus:border-gray-500" ></textarea>
 
                             <hr />
 
@@ -69,7 +69,7 @@
                                             Pax
                                         </label>
                                         <p v-if="errorPax == true" class="text-red-500 text-xs italic">Obligatorio</p>
-                                        <input  v-model="reserv.pax" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 bg-white border border-gray-200 rounded shadow-sm  focus:ring-0 focus:border-gray-500" type="text" name="amount" required  >
+                                        <input  v-model="reserv.pax" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500  shadow-sm  focus:ring-0 " type="text" name="amount" required  >
                                     </div>
                                     <div class="w-full sm:w-2/5">
                                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="day">
@@ -137,20 +137,20 @@
                                     Nombre de la Reserva
                                 </label>
                                 <p v-if="errorName == true" class="text-red-500 text-xs italic">Obligatorio</p>
-                                <input v-model="reserva.firstName" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 bg-white border border-gray-200 rounded shadow-sm w-full focus:ring-0 focus:border-gray-500 " type="text" name="name" required >
+                                <input v-model="reserva.firstName" class="block appearance-none  text-gray-700 py-3 px-4 pr-8  leading-tight focus:outline-none focus:bg-white focus:border-gray-500 bg-white border border-gray-200 rounded shadow-sm w-full focus:ring-0  " type="text" name="name" required >
                             </div>
                             <div class="w-full sm:w-1/3 mt-2 sm:mt-0">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="time">
                                     Apellidos
                                 </label>
-                                <input v-model="reserva.lastName" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 bg-white border border-gray-200 rounded shadow-sm  focus:ring-0 focus:border-gray-500" type="text" name="amount" required  >
+                                <input v-model="reserva.lastName" class="block appearance-none w-full  text-gray-700 py-3 px-4 pr-8  leading-tight focus:outline-none focus:bg-white focus:border-gray-500 bg-white border border-gray-200 rounded shadow-sm  focus:ring-0 " type="text" name="amount" required  >
                             </div>
                             <div class="w-full sm:w-1/3 mt-2 sm:mt-0">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="time">
                                     Horario
                                 </label>
 
-                                <select v-model="reserva.hour" type="text" name="category" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 w-full p-2 cursor-pointer bg-white border border-gray-200 rounded shadow-sm appearance-none focus:ring-0 focus:border-gray-500" required >
+                                <select v-model="reserva.hour" type="text" name="category" class="block  text-gray-700 py-3 px-4 pr-8  leading-tight focus:outline-none focus:bg-white  w-full p-2 cursor-pointer bg-white border border-gray-200 rounded shadow-sm appearance-none focus:ring-0 focus:border-gray-500" required >
                                     <option value="1">Almuerzo</option>
                                     <option value="2">Cena</option>
                                 </select>
@@ -160,7 +160,7 @@
                             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="time">
                                 Descripción
                             </label>
-                            <textarea type="text" name="" placeholder="Escribe aquí..." class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 p-5 mb-5 border border-gray-200 rounded shadow-sm h-24 focus:ring-0 focus:border-gray-500" ></textarea>
+                            <textarea type="text" name="" placeholder="Escribe aquí..." class="block appearance-none w-full bg-gray-200  text-gray-700 py-3 px-4 pr-8  leading-tight focus:outline-none focus:bg-white f p-5 mb-5 border border-gray-200 rounded shadow-sm h-24 focus:ring-0 focus:border-gray-500" ></textarea>
 
                             <hr />
 
@@ -171,13 +171,13 @@
                                             Pax
                                         </label>
                                         <p v-if="errorPax == true" class="text-red-500 text-xs italic">Obligatorio</p>
-                                        <input  v-model="reserva.pax" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 bg-white border border-gray-200 rounded shadow-sm  focus:ring-0 focus:border-gray-500" type="text" name="amount" required  >
+                                        <input  v-model="reserva.pax" class="block appearance-none w-full  text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white  bg-white border border-gray-200  shadow-sm  focus:ring-0 focus:border-gray-500" type="text" name="amount" required  >
                                     </div>
                                     <div class="w-full sm:w-2/12 mt-2 sm:mt-0">
                                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="time">
                                             Mesa
                                         </label>
-                                        <input  v-model="reserva.table_id" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 bg-white border border-gray-200 rounded shadow-sm  focus:ring-0 focus:border-gray-500" type="text" name="amount" required  >
+                                        <input  v-model="reserva.table_id" class="block appearance-none w-full  text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white  bg-white border border-gray-200  shadow-sm  focus:ring-0 focus:border-gray-500" type="text" name="amount" required  >
                                     </div>
                                     <div class="w-full sm:w-1/3">
                                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="day">
