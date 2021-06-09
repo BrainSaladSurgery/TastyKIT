@@ -114,5 +114,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group( function () {
     //Innvoices
     Route::get('/invoices', [InvoicesController::class, 'index'])->name('invoices');
     Route::get('/invoices-list', [InvoicesController::class, 'getInvoices'])->name('invoices-list');
+    Route::put('/invoices-close/{numTicket}', [InvoicesController::class, 'updateTicket'])->name('invoices-close');
 
 });

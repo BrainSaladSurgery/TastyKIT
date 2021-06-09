@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Drink extends Model
 {
@@ -57,7 +58,7 @@ class Drink extends Model
 
     public function orders()
     {
-        return $this->belongsToMany(Order::class, 'drink_order','drink_id','order_id');//muchos a muchos
+        return $this->belongsToMany(Order::class, 'ticket_order', 'id', 'drink_id');//muchos a muchos
     }
 
     public function category()

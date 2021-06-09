@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use Inertia\Inertia;
 use \Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 
 class InvoicesController extends Controller
 {
@@ -25,60 +26,80 @@ class InvoicesController extends Controller
 
     public function getInvoices()
     {
-        $invoices = Order::all();
-
-
+        $invoices = Order::distinct()->get('ticket');
         $datos = [];
-            foreach($invoices as $item){
+        foreach($invoices as $invoice){
 
-                if($item->drink_id == ''){
-                    array_push($datos, [
-                                        "type_item" => 'plato',
-                                        "id"=>$item->id,
-                                        "ticket"=>$item->ticket,
-                                        "total"=>$item->total,
-                                        //'item' =>$item->dishes->name,
-                                        //"tableName"=>$item->table->name,
-                                        //"userName"=>$item->user->name,
-                                        'ud' =>$item->ud
-                    ]);
-                }
+            array_push($datos,$this->findOrderByTicket($invoice->ticket));
+        }
+        $order = InvoicesController::setArray($datos);
+        return $order;
+    }
 
-                if($item->dish_id == ''){
-                    array_push($datos, [
-                                        "type_item" => 'bebida',
-                                        "id"=>$item->id,
-                                        "ticket"=>$item->ticket,
-                                        "total"=>$item->total,
-                                        //'item' =>$item->drinks->name,
-                                        //"tableName"=>$item->table->name,
-                                        //"userName"=>$item->user->name,
-                                        'ud' =>$item->ud
-                    ]);
-                    print_r($item->drinks);
-                }
+    public function findOrderByTicket($ticket){
 
+        $order = Order::where('ticket',$ticket)->get();
 
+        $invoice = [];
+        $tik = $order[0]->ticket;
+        $mesa = $order[0]->mesa($order[0]->table_id)->name;
+        $status = $order[0]->status;
+        $items = [];
+
+        $total = $order[0]->total;
+        $userName = $order[0]->owner($order[0]->user_id)->name;
+
+        foreach($order as $orde){
+
+            if($orde->drink_id != ''){
+                array_push($items,[ 'name' => $orde->drink($orde->drink_id)->name,
+                                    'price' => $orde->drink($orde->drink_id)->price,
+                                    'ud' =>$orde->ud,
+                                    'type' => 'Bebida'
+                ]);
             }
-        return $datos ;
+
+            if($orde->dish_id != ''){
+                array_push($items,  ['name' => $orde->dish($orde->dish_id)->name,
+                                    'price' => $orde->dish($orde->dish_id)->price,
+                                    'ud' =>$orde->ud,
+                                    'type' => 'Plato'
+                ]);
+            }
+
+        }
+
+        array_push($invoice, ["ticket" => $tik]);
+        array_push($invoice,["table" => $mesa]);
+        array_push($invoice,["items" => $items]);
+        array_push($invoice,["total" => $total]);
+        array_push($invoice,["status" => $status]);
+        array_push($invoice,["user" =>$userName]);
+
+        return $invoice;
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create(Request $request)
-    {
+    public static function  setArray($datos){
+        $orders=[];
 
+        for($i = 0; count($datos) > $i; $i++){
+
+            array_push($orders, [
+
+                "ticket" => $datos[$i][0]['ticket'],
+                "table" => $datos[$i][1]['table'],
+                "items" => $datos[$i][2]['items'],
+                "total" => $datos[$i][3]['total'],
+                "status" => $datos[$i][4]['status'],
+                "user" => $datos[$i][5]['user'],
+
+            ]);
+
+        }
+        return $orders;
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
 
@@ -94,7 +115,7 @@ class InvoicesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Dish  $dish
+     * @param  \App\Models\Order  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -111,18 +132,9 @@ class InvoicesController extends Controller
         ];
 
         return $datos ;
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Dish  $dish
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Dish $dish)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -131,21 +143,25 @@ class InvoicesController extends Controller
      * @param  \App\Models\Dish  $dish
      * @return \Illuminate\Http\Response
      */
-    public function updateDish(Request $request, $id)
+    public function updateTicket(Request $request, $ticket)
     {
-        $dish = Dish::findOrfail($id);
-        $dish->name = $request->name;
-        $dish->description = $request->description;
-        $dish->price = $request->price;
-        $dish->categories_id = $request->cat_id;
+        $orders = Order::where('ticket',$ticket)->get();
 
-        $dish->update();
+        foreach ($orders as $order) {
+
+            $order->status = 'close';
+
+            $order->update();
+        }
+
+        return response(null, Response::HTTP_OK);
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Dish  $dish
+     * @param  \App\Models\Order  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

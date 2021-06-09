@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Order extends Model
 {
@@ -24,7 +25,7 @@ class Order extends Model
 
     public function table()
     {
-        return $this->belognsTo(Table::class, 'table_id' , 'id');//1 a muchos
+        return $this->belognsTo(Table::class, 'table_id' , 'id');//muchos a 1
     }
 
     public function user()
@@ -32,14 +33,24 @@ class Order extends Model
         return $this->hasOne(User::class, 'user_id' ,'id');//1 a 1
     }
 
-    public function drinks()
+    public function drink($drinkId)
     {
-        return $this->belongsToMany(Drink::class, 'drink_order', 'order_id', 'drink_id');//muchos a muchos
+        return DB::table('orders')->join('drinks','orders.drink_id','=','drinks.id')->where('drinks.id', $drinkId)->first();
     }
 
-    public function dishes()
+    public function dish($dishId)
     {
-        return $this->belongsToMany(Dish::class, 'dish_id', 'id');//muchos a muchos
+        return DB::table('orders')->join('dishes','orders.dish_id','=','dishes.id')->where('dishes.id', $dishId)->first();
+    }
+
+    public function mesa($mesaId)
+    {
+        return DB::table('orders')->join('tables','orders.table_id','=','tables.id')->where('tables.id', $mesaId)->first();
+    }
+
+    public function owner($userId)
+    {
+        return DB::table('orders')->join('users','orders.user_id','=','users.id')->where('users.id', $userId)->first();
     }
 
 }

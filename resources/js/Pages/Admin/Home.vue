@@ -15,8 +15,7 @@
 
             <!-- section content -->
             <section aria-label="main content" class="flex min-h-0 flex-col flex-auto border-l">
-                <!-- content navigation -->
-                <stats />
+
 
                 <!-- content caption -->
                 <head-tab :data="total" />
@@ -529,6 +528,7 @@
 
                     this.getReservas()
                     this.getTotal()
+                    this.upda = false
                 }
             }
         },

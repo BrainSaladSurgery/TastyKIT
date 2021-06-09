@@ -13,10 +13,11 @@ class DrinkOrderTable extends Migration
      */
     public function up()
     {
-        Schema::create('drink_order', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('drink_id');
-            $table->bigInteger('order_id');
+        Schema::create('ticket_order', function (Blueprint $table) {
+            $table->increments('id');
+            $table->foreignId('drink_id')->constrained();
+            $table->foreignId('table_id')->constrained();
+            $table->foreignId('dish_id')->constrained();
         });
     }
 

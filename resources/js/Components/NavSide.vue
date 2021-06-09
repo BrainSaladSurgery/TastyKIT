@@ -38,7 +38,6 @@
                 </i>
                 </inertia-link>
             </li>
-
             <li>
             <inertia-link title="bandeja" :href="route('orders')" class="h-16 px-6 flex items-center hover:text-white w-full">
                 <i class="mx-auto">
@@ -85,147 +84,118 @@
     id="svg8"
     inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
     sodipodi:docname="letras.svg">
-    <defs
-      id="defs2">
-      <inkscape:path-effect
-        effect="powerclip"
-        id="path-effect1040"
-        is_visible="true"
-        lpeversion="1"
-        inverse="true"
-        flatten="false"
-        hide_clip="false"
-        message="Utilice la regla de relleno parimpar en el diálogo &lt;b&gt;Relleno y borde&lt;/b&gt; si el resultado no está aplanada después de convertir el recorte en trayectos." />
-      <inkscape:path-effect
-        effect="powerclip"
-        id="path-effect1024"
-        is_visible="true"
-        lpeversion="1"
-        inverse="true"
-        flatten="false"
-        hide_clip="false"
-        message="" />
-      <rect
-        x="12.902776"
-        y="53.258266"
-        width="175.14832"
-        height="57.925228"
-        id="rect835" />
-      <clipPath
-        clipPathUnits="userSpaceOnUse"
-        id="clipPath1020">
-        <ellipse
-          style="display:none;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.628999;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-          id="ellipse1022"
-          cx="48.073338"
-          cy="62.414391"
-          rx="6.8966322"
-          ry="1.5556368"
-          transform="rotate(-0.26108281)" />
-      </clipPath>
-      <clipPath
-        clipPathUnits="userSpaceOnUse"
-        id="clipPath1036">
-        <ellipse
-          style="display:block;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.627798;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-          id="ellipse1038"
-          cx="46.665543"
-          cy="61.670872"
-          rx="6.1082287"
-          ry="1.612847"
-          transform="rotate(-0.26108281)" />
-      </clipPath>
-    </defs>
-    <sodipodi:namedview
-      id="base"
-      pagecolor="#ffffff"
-      bordercolor="#666666"
-      borderopacity="1.0"
-      inkscape:pageopacity="0.0"
-      inkscape:pageshadow="2"
-      inkscape:zoom="2.5221128"
-      inkscape:cx="245.57681"
-      inkscape:cy="84.696375"
-      inkscape:document-units="px"
-      inkscape:current-layer="layer1"
-      inkscape:document-rotation="0"
-      showgrid="false"
-      inkscape:window-width="1920"
-      inkscape:window-height="1017"
-      inkscape:window-x="1352"
-      inkscape:window-y="-8"
-      inkscape:window-maximized="1"
-      units="px"
-      scale-x="0.20001"
-      fit-margin-top="0"
-      fit-margin-left="0"
-      fit-margin-right="0"
-      fit-margin-bottom="0" />
-    <metadata
-      id="metadata5">
-      <rdf:RDF>
-        <cc:Work
-          rdf:about="">
-          <dc:format>image/svg+xml</dc:format>
-          <dc:type
-            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-          <dc:title></dc:title>
-        </cc:Work>
-      </rdf:RDF>
-    </metadata>
-    <g
-      inkscape:label="Capa 1"
-      inkscape:groupmode="layer"
-      id="layer1"
-      transform="translate(-60.149094,-57.431172)">
-      <g
-        id="Letras"
-        transform="translate(5.128937,-18.264149)">
-        <text
-          xml:space="preserve"
-          id="text833"
-          style="font-style:normal;font-weight:normal;font-size:14.1111px;line-height:0;font-family:sans-serif;white-space:pre;shape-inside:url(#rect835);fill:#000000;fill-opacity:1;stroke:none;"
-          transform="translate(30.982854,12.902775)"
-          x="111.86553"
-          y="0"><tspan
-            x="60.784845"
-            y="84.533316"><tspan
-              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5778px;line-height:2.35;font-family:Hestina;-inkscape-font-specification:Hestina;text-align:center;text-anchor:middle;fill:#e6822f;fill-opacity:0.971888">Tastyer</tspan></tspan></text>
+        <defs
+        id="defs2">
+        <inkscape:path-effect
+            effect="powerclip"
+            id="path-effect1040"
+            is_visible="true"
+            lpeversion="1"
+            inverse="true"
+            flatten="false"
+            hide_clip="false"
+            message="Utilice la regla de relleno parimpar en el diálogo &lt;b&gt;Relleno y borde&lt;/b&gt; si el resultado no está aplanada después de convertir el recorte en trayectos." />
+        <inkscape:path-effect
+            effect="powerclip"
+            id="path-effect1024"
+            is_visible="true"
+            lpeversion="1"
+            inverse="true"
+            flatten="false"
+            hide_clip="false"
+            message="" />
+        <rect
+            x="12.902776"
+            y="53.258266"
+            width="175.14832"
+            height="57.925228"
+            id="rect835" />
+        <clipPath
+            clipPathUnits="userSpaceOnUse"
+            id="clipPath1020">
+            <ellipse
+            style="display:none;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.628999;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+            id="ellipse1022"
+            cx="48.073338"
+            cy="62.414391"
+            rx="6.8966322"
+            ry="1.5556368"
+            transform="rotate(-0.26108281)" />
+        </clipPath>
+        <clipPath
+            clipPathUnits="userSpaceOnUse"
+            id="clipPath1036">
+            <ellipse
+            style="display:block;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.627798;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+            id="ellipse1038"
+            cx="46.665543"
+            cy="61.670872"
+            rx="6.1082287"
+            ry="1.612847"
+            transform="rotate(-0.26108281)" />
+        </clipPath>
+        </defs>
+        <sodipodi:namedview
+        id="base"
+        pagecolor="#ffffff"
+        bordercolor="#666666"
+        borderopacity="1.0"
+        inkscape:pageopacity="0.0"
+        inkscape:pageshadow="2"
+        inkscape:zoom="2.5221128"
+        inkscape:cx="245.57681"
+        inkscape:cy="84.696375"
+        inkscape:document-units="px"
+        inkscape:current-layer="layer1"
+        inkscape:document-rotation="0"
+        showgrid="false"
+        inkscape:window-width="1920"
+        inkscape:window-height="1017"
+        inkscape:window-x="1352"
+        inkscape:window-y="-8"
+        inkscape:window-maximized="1"
+        units="px"
+        scale-x="0.20001"
+        fit-margin-top="0"
+        fit-margin-left="0"
+        fit-margin-right="0"
+        fit-margin-bottom="0" />
+        <metadata
+        id="metadata5">
+        <rdf:RDF>
+            <cc:Work
+            rdf:about="">
+            <dc:format>image/svg+xml</dc:format>
+            <dc:type
+                rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+            <dc:title></dc:title>
+            </cc:Work>
+        </rdf:RDF>
+        </metadata>
+        <g
+        inkscape:label="Capa 1"
+        inkscape:groupmode="layer"
+        id="layer1"
+        transform="translate(-60.149094,-57.431172)">
+        <g
+            id="Letras"
+            transform="translate(5.128937,-18.264149)">
+            <text
+            xml:space="preserve"
+            id="text833"
+            style="font-style:normal;font-weight:normal;font-size:14.1111px;line-height:0;font-family:sans-serif;white-space:pre;shape-inside:url(#rect835);fill:#000000;fill-opacity:1;stroke:none;"
+            transform="translate(30.982854,12.902775)"
+            x="111.86553"
+            y="0"><tspan
+                x="60.784845"
+                y="84.533316"><tspan
+                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5778px;line-height:2.35;font-family:Hestina;-inkscape-font-specification:Hestina;text-align:center;text-anchor:middle;fill:#e6822f;fill-opacity:0.971888">Tastyer</tspan></tspan></text>
+                </g>
             </g>
-        </g>
-      </svg>
-      </div>
+        </svg>
+    </div>
 
-      </nav>
+    </nav>
 </template>
 
-<script>
-export default {
 
-}
-</script>
-
-<style >
-
-   /* SVG aguacate */
-   .cls-1{fill:#a7aece;}
-    .cls-12,.cls-2,.cls-6,.cls-9{fill:#fff;}
-    .cls-2{opacity:0.3;}
-    .cls-3{fill:#8f5653;}
-    .cls-4{fill:#4bc190;}
-    .cls-5{fill:#f8dc25;}
-    .cls-5,.cls-6{opacity:0.5;}
-    .cls-7{fill:#515570;}
-    .cls-8{fill:#393c54;}
-    .cls-10{fill:none;stroke:#515570;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}
-    .cls-10,.cls-12{opacity:0.2;}
-    .cls-11{fill:#f85565;}
-
-    /* Bandeja Servicio */
-    .st0{fill-rule:evenodd;clip-rule:evenodd;}
-
-    /* Zanahoria */
-    .sst0{display:none;}
-	  .st1{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-
-</style>

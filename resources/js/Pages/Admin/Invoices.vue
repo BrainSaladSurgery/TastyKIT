@@ -9,9 +9,9 @@
             <main class="flex-grow flex min-h-0 border-t">
             <!-- section content -->
                 <section aria-label="main content" class="flex min-h-0 flex-col flex-auto border-l">
-                    <stats />
-                    <head-tab />
-                    <table-ticket  :data="ticket" @updateTicket="TicketId = $event" @updateList="upda = $event" @resetID="TicketId = $event"/>
+                    <stats :total="total" :open="open" :clos="clos" />
+                    <head-tab  />
+                    <table-ticket   @totalFac="total =$event" @open="open = $event" @clos="clos = $event"/>
                 </section>
             </main>
         </template>
@@ -38,28 +38,15 @@
         },
         data(){
             return {
-                ticket: []
+                ticket: [],
+                total: 0,
+                clos: 0,
+                open: 0
             }
         },
         methods: {
 
-            async getInvoices(){
-
-                await axios.get('/invoices-list')
-                    .then((response) =>{
-
-                        this.ticket = response.data
-
-                    }).catch(err => {
-                        console.log(err)
-                    })
-            }
         },
-
-        mounted(){
-
-            this.getInvoices()
-        }
 
     }
 </script>
