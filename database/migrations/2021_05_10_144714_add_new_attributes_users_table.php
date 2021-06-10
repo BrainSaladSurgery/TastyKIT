@@ -20,7 +20,6 @@ class AddNewAttributesUsersTable extends Migration
             $table->date('Bir_Date')->nullable();
             $table->string('phone')->unique();
             $table->string('type')->default('Usuario');
-            $table->foreignId('rol_id')->constrained('roles');
             $table->foreignId('addresses_id')->constrained();
         });
     }

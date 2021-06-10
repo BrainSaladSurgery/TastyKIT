@@ -15,7 +15,8 @@ class Reservation extends Model
         'day',
         'pax',
         'hour',
-        'time'
+        'time',
+        'description'
     ];
 
     public function reservations_users()

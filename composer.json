@@ -11,10 +11,12 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "inertiajs/inertia-laravel": "^0.3.5",
         "jzonta/faker-restaurant": "^2.0",
+        "laravel-lang/lang": "~7.0",
         "laravel/framework": "^8.12",
         "laravel/jetstream": "^2.3",
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
+        "spatie/laravel-permission": "^4.2",
         "tightenco/ziggy": "^1.0"
     },
     "require-dev": {

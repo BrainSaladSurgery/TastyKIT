@@ -51,9 +51,9 @@ class TableController extends Controller
      * @param  \App\Models\Table  $table
      * @return \Illuminate\Http\Response
      */
-    public function show(Table $table)
+    public function getTable($id)
     {
-        //
+        return Table::where('id', $id)->first();
     }
 
     /**

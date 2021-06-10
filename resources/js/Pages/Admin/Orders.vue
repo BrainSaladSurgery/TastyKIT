@@ -10,14 +10,14 @@
 
         <header-nav :pag="'Comandas'" :classe="'w-full flex-none flex h-16 bg-gray-100 border-t px-4 items-center justify-between'"/>
 
-        <main class=" flex min-h-0 border-t w-full  bg-gray-100">
-            <section aria-label="main content" class="flex min-h-0 w-2/3 bg-white ">
+        <main class=" flex-grow flex min-h-0 border-t">
+            <section aria-label="main content" class="flex min-h-0 flex-col  flex-auto border-l container ">
                 <table-comanda  @addTable="mesa = $event" @addItem="item = $event" @increments="incremento = $event" />
             </section>
 
             <!-- section Tickets-->
-            <div class="w-auto bg-gray-100 ">
-                <tickets :items="item" :table="mesa" :increments="incremento" @incremento="incremento = $event" />
+            <div class="w-1/2 bg-gray-100 ">
+                <tickets :items="item" :table="mesa" :increments="incremento" @incremento="incremento = $event" @resetProps="resetProp = $event" />
             </div>
         </main>
         </template>
@@ -47,10 +47,20 @@
                 item: [],
                 mesa: '',
                 incremento: false,
-
+                resetProp: false
             }
 
         },
+
+        watch:{
+
+            resetProp: function(val){
+
+                this.item = []
+                this.resetProp = false
+                this.mesa = ''
+            }
+        }
 
     }
 </script>

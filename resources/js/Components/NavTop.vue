@@ -1,5 +1,5 @@
 <template>
-    <nav aria-label="top bar" class="flex-none flex justify-between bg-white h-16">
+    <nav aria-label="top bar" class="flex-none flex justify-between bg-white h-16 ">
 
         <ul aria-orientation="horizontal" class="flex">
             <!-- add button -->

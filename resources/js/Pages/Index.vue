@@ -9,7 +9,7 @@
                     Welcome Tastyer
                 </h1>
                 <!-- Letras del logo -->
-                <div class="flex justify-center" style="width: 100%;">
+                <div class="flex justify-center" @click="audio()" style="width: 100%;">
                     <letras  width="50%"/>
                 </div>
 
@@ -21,12 +21,27 @@
 <script>
     import Letras from '@/Components/Letras'
     import NavBar from '@/Components/NavBar'
-
+    import anime from 'animejs'
+    import * as Tone from 'tone'
     export default {
         components: {
             Letras,
             NavBar
+        },
+        methods: {
+
+            audio(){
+
+                var player = new Tone.Player("@/../audio/pop.mp3").toMaster();
+        
+                player.autostart = true;
+                setTimeout(() => {
+                    player.autostart = false
+                }, 1000);
+
+            }
         }
+        
     }
 </script>
 

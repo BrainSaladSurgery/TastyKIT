@@ -14,9 +14,6 @@
         <main class="flex-grow flex min-h-0 border-t">
             <section aria-label="main content" class="flex min-h-0 flex-col flex-auto border-l container">
 
-                <!-- content caption -->
-                <head-tab />
-
                 <table-yelx-users @ModalDelete="showDele = $event"  @deleteUser="deleteUsuario = $event" :userDelete="borrado" @changeBorrado="borrado = $event" :cupdate="change" @changeUpdate="change = $event" @editUser="editUsuario = $event"  @showModal="showModalUser = $event"/>
             </section>
 
@@ -32,7 +29,7 @@
             <modal class="flex flex-col w-11/12 sm:w-5/6 lg:w-1/2 max-w-2xl mx-auto rounded-lg border border-gray-300 shadow-xl" :show="showModalUser" @close="changeStateModal">
                 <div >
                     <div class="flex flex-row justify-between p-6 bg-white border-b border-gray-200 rounded-tl-lg rounded-tr-lg">
-                        <p class="font-semibold text-gray-800">Alta Usuario</p>
+                        <p class="font-semibold text-gray-800">Modificar Usuario</p>
                         <svg  @click="changeStateModal" class="w-6 h-6 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" ></path></svg>
                     </div>
                     <div class="flex flex-col  sm:flex-row items-center mb-5 py-8 px-6 bg-gray-50 sm:space-x-5">
@@ -47,8 +44,8 @@
                         <div class="w-full sm:w-1/4 mt-2  sm:mt-0">
                             <p class="mb-2 font-semibold pl-2 text-gray-700">Rol</p>
                             <select v-model="user.rol" type="text" name="category" class="w-full  cursor-pointer bg-white border border-gray-200 rounded shadow-sm appearance-none focus:ring-0 focus:border-gray-500">
-                                <option value="2">Usuario</option>
-                                <option value="1">Admin</option>
+                                <option value="User">Usuario</option>
+                                <option value="Admin">Admin</option>
                             </select>
                         </div>
 
@@ -154,13 +151,13 @@
                 await axios.get('/user/'+id).
                     then((response) =>{
                         this.user = response.data
-
                     })
             },
 
             changeStateModal(){
 
                 this.showModalUser = !this.showModalUser
+
             },
 
             async modifyUser(id){

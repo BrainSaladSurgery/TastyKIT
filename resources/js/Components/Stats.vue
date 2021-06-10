@@ -29,8 +29,8 @@
             <label id="ticket-statistics-tabs-label" class="font-semibold block mb-1 text-sm">Total ganado en caja</label>
             <ul class="flex justify-center">
                 <li>
-                    <button class="focus:outline-none focus:bg-yellow-200 p-2 rounded-l-md border  bg-white flex flex-col items-center w-24">
-                    <p class="font-semibold text-lg">{{ total }}€</p>
+                    <button class="focus:outline-none focus:bg-yellow-200 p-2 rounded-l-md border  bg-white flex flex-col items-center w-60">
+                    <p class="font-semibold text-lg">{{ changeTotal(total) }}€</p>
                     <p class="uppercase text-gray-600 text-sm">
                         Total
                     </p>
@@ -43,6 +43,12 @@
 
 <script>
 export default {
-    props:['total','clos','open']
+    props:['total','clos','open'],
+    methods: {
+        changeTotal(total){
+            return parseFloat(total).toFixed(2)
+        }
+    }
 }
+
 </script>

@@ -23,7 +23,7 @@ use App\Http\Controllers\ReservationController;
 |
 */
 
-//Pagina Home
+//Pagina Index
 Route::get('/', function () {
     return Inertia::render('Index');
 });
@@ -90,8 +90,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group( function () {
     Route::put('/update-dish/{id}', [DishController::class, 'updateDish'])->name('update-dish');
     Route::delete('/delete-dish/{id}', [DishController::class, 'destroy'])->name('delete-dish');
 
-    //Shop
-    Route::get('/shop', [ShopController::class, 'index'])->name('shop');
 
     //Order
     Route::get('/orders', [OrderController::class, 'index'])->name('orders');
@@ -101,18 +99,19 @@ Route::middleware(['auth:sanctum', 'verified'])->group( function () {
     //Tables
     Route::get('/tables', [TableController::class, 'index'])->name('tables');
     Route::get('/tables-list', [TableController::class, 'getTables'])->name('tables-list');
+    Route::get('/table/{$id}', [TableController::class, 'getTable'])->name('table');
 
-    //Users
-    Route::get('/users', [UserController::class, 'index'])->name('users');
-    Route::get('/users-list', [UserController::class, 'getUsers'])->name('users-list');
+    //Users(solo rol Admin)
+    Route::get('/users', [UserController::class, 'index'])->middleware('can:users.index')->name('users');
+    Route::get('/users-list', [UserController::class, 'getUsers'])->middleware('can:users.list')->name('users-list');
     Route::get('/user/{id}',[UserController::class, 'show'])->name('user');
-    Route::put('/update-user/{id}', [UserController::class, 'updateUser'])->name('update-user');
-    Route::delete('/user-delete/{id}', [UserController::class, 'destroy'])->name('user-delete');
+    Route::put('/update-user/{id}', [UserController::class, 'updateUser'])->middleware('can:users.update')->name('update-user');
+    Route::delete('/user-delete/{id}', [UserController::class, 'destroy'])->middleware('can:users.delete')->name('user-delete');
 
     //Innvoices
     Route::get('/invoices', [InvoicesController::class, 'index'])->name('invoices');
     Route::get('/invoices-list', [InvoicesController::class, 'getInvoices'])->name('invoices-list');
     Route::put('/invoices-close/{numTicket}', [InvoicesController::class, 'updateTicket'])->name('invoices-close');
-    Route::get('/invoices-total', [InvoicesController::class, 'getTotam'])->name('invoices-total');
+    Route::get('/invoices-total', [InvoicesController::class, 'getTotal'])->name('invoices-total');
 
 });

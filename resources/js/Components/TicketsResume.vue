@@ -1,5 +1,5 @@
 <template>
-    <section class="flex flex-col p-4 w-full max-w-sm flex-none bg-gray-100 min-h-0 h-full overflow-auto">
+    <section class="hidden md:block flex flex-col p-4 w-full max-w-sm flex-none bg-gray-100 min-h-0 h-full overflow-auto">
         <h1 class="font-semibold mb-3">
         Tickets
         </h1>

@@ -52,6 +52,7 @@ class ReservationController extends Controller
         Reservation::create([
             'firstName' => $request->firstName,
             'lastName' => $request->lastName,
+            'description' => $request->description,
             'day' => $request->day,
             'pax' => $request->pax,
             'hour' => $request->hour,

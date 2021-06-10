@@ -44,7 +44,7 @@ class Order extends Model
         return DB::table('orders')->join('dishes','orders.dish_id','=','dishes.id')->where('dishes.id', $dishId)->first();
     }
 
-    public function mesa($mesaId)
+    public static function mesa($mesaId)
     {
         return DB::table('orders')->join('tables','orders.table_id','=','tables.id')->where('tables.id', $mesaId)->first();
     }

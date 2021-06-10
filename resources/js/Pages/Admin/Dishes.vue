@@ -207,7 +207,9 @@
                     then((response) =>{
 
                         this.change = true
+                        this.showModalDish = !this.showModalDish
                         this.resetDataUp()
+
 
                     }).catch(error =>{
 
@@ -220,6 +222,7 @@
                     then((response) =>{
 
                         this.change = true
+                        this.showModalDishMod = !this.showModalDishMod
                         this.resetDataUp()
 
                     }).catch(error =>{
@@ -230,7 +233,6 @@
 
             resetDataUp(){
 
-                this.showModalDishMod = false
                 this.dish = []
 
             },

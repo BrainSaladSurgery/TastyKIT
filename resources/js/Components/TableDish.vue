@@ -1,26 +1,26 @@
 <template>
     <table aria-describedby="info-popup" aria-label="open tickets" class="border-t w-full min-h-0 h-full flex flex-col ">
         <thead class="flex w-full flex-col px-4">
-            <tr class="border-b flex ">
+            <tr class="border-b grid grid-cols-7 py-3">
 
-                <th id="Categoria" class="font-semibold text-left py-3 px-3 w-32 truncate">
+                <th id="Categoria" class="font-semibold text-center w-full col-span-1 truncate hidden md:block">
                     Categoría
                 </th>
-                <th id="Nombre" class="font-semibold text-left py-3 px-1 w-60 truncate">
+                <th id="Nombre" class="font-semibold text-left w-full col-span-1 truncate">
                     Nombre
                 </th>
-                <th id="Descripción" class="font-semibold text-left py-3 px-1 w-80 truncate">
+                <th id="Descripción" class="font-semibold text-left w-full col-span-2 truncate hidden lg:block">
                     Descripción
                 </th>
-                <th id="Precio" class="font-semibold text-left py-3 px-1 pl-8 w-32 truncate">
+                <th id="Precio" class="font-semibold text-center w-full col-span-1 truncate">
                     Precio
                 </th>
 
-                <th id="Red" class="font-semibold text-left py-3 px-28 pl-8  w-34 truncate">
+                <th id="Red" class="font-semibold text-left  w-full col-span-1  lg:col-span-2 truncate">
 
                 </th>
 
-                <th id="Green" class="font-semibold text-left py-3  w-32 truncate">
+                <th id="Green" class="font-semibold text-left w-full col-span-1 lg:col-span-2 truncate">
 
                 </th>
             </tr>
@@ -39,8 +39,8 @@
                 </th>
             </tr>
             <div v-for="(dish,index) in dishes" @key="index" :class="ocultoEn">
-                <tr  v-if="dish.category == 'Entrantes' "  role="row" class="hover:bg-blue-100 border-b flex cursor-pointer items-center ">
-                    <td  headers="Puesto" class="py-3 px-1 w-32">
+                <tr  v-if="dish.category == 'Entrantes' "  role="row" class="hover:bg-blue-100 border-b grid grid-cols-7 gap-2 cursor-pointer items-center py-3">
+                    <td  headers="Puesto" class=" text-center w-full col-span-1 hidden md:block">
                         <!-- <div class="ml-auto relative group"> -->
                         <span style="
                                 padding: 2px 5px;
@@ -51,22 +51,22 @@
                             <!-- </div> -->
                         <span class="pr-2"></span>{{ dish.category }}
                     </td>
-                    <td headers="Nombre" class="py-3 px-1 w-60 max-w-xs xl:max-w-lg">
+                    <td headers="Nombre" class="w-full col-span-1">
                         <div class="relative group w-full truncate">
                             {{ dish.name }}
                         </div>
                     </td>
-                    <td headers="Descripción" class="py-3 px-1  w-80 truncate">
+                    <td headers="Descripción" class="w-full col-span-2 truncate hidden lg:block">
                         {{ dish.description }}
                     </td>
-                    <td  headers="Precio" class="py-3 px-1 pl-8 w-32 truncate ">
+                    <td  headers="Precio" class="text-center w-full col-span-1 truncate ">
                         {{ dish.price }}€
                     </td>
-                    <td  headers="Email" class="py-3 pl-28 w-34 ">
-                        <button @click="deleteDish(dish.id);showModalDel()" class="border-2 border-transparent bg-red-400 ml-8 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-red-500 hover:bg-transparent hover:text-red-500">Borrar</button>
+                    <td  headers="delete" class="w-full col-span-1 sm:col-span-2 md:col-span-1">
+                        <button @click="deleteDish(dish.id);showModalDel()" class="border-2 border-transparent bg-red-400 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-red-500 hover:bg-transparent hover:text-red-500">Borrar</button>
                     </td>
-                    <td  headers="Email" class="py-3 pl-8 w-32 ">
-                        <button @click="editDish(dish.id); showModal()" class="border-2 border-transparent bg-green-400 ml-8 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-green-500 hover:bg-transparent hover:text-green-500">Editar</button>
+                    <td  headers="edit" class="w-full col-span-1 sm:col-span-2 md:col-span-1">
+                        <button @click="editDish(dish.id); showModal()" class="border-2 border-transparent bg-green-400  py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-green-500 hover:bg-transparent hover:text-green-500">Editar</button>
                     </td>
                 </tr>
             </div>
@@ -83,8 +83,8 @@
                 </th>
             </tr>
             <div v-for="(dish,index) in dishes" @key="index" :class="ocultoPi">
-                <tr  v-if="dish.category == 'Primeros' "  role="row" class="hover:bg-blue-100 border-b flex cursor-pointer items-center ">
-                    <td  headers="Puesto" class="py-3 px-1 w-32">
+                <tr  v-if="dish.category == 'Primeros' "  role="row" class="hover:bg-blue-100 border-b grid grid-cols-7 gap-2 cursor-pointer items-center py-3">
+                    <td  headers="Puesto" class="w-full col-span-1 text-center hidden md:block">
                         <!-- <div class="ml-auto relative group"> -->
                         <span style="
                                 padding: 2px 5px;
@@ -95,22 +95,22 @@
                             <!-- </div> -->
                         <span class="pr-2"></span>{{ dish.category }}
                     </td>
-                    <td headers="Nombre" class="py-3 px-1 w-60 max-w-xs xl:max-w-lg">
+                    <td headers="Nombre" class="w-full col-span-1">
                         <div class="relative group w-full truncate">
                             {{ dish.name }}
                         </div>
                     </td>
-                    <td headers="Descripción" class="py-3 px-1  w-80 truncate">
+                    <td headers="Descripción" class="w-full col-span-2 truncate hidden lg:block">
                         {{ dish.description }}
                     </td>
-                    <td  headers="Precio" class="py-3 px-1  pl-8 w-32 truncate ">
+                    <td  headers="Precio" class="w-full text-center col-span-1 truncate ">
                         {{ dish.price }}€
                     </td>
-                    <td  headers="Email" class="py-3 pl-28 w-34 ">
-                        <button @click="deleteDish(dish.id);showModalDel()" class="border-2 border-transparent bg-red-400 ml-8 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-red-500 hover:bg-transparent hover:text-red-500">Borrar</button>
+                    <td  headers="delete" class="w-full col-span-1 sm:col-span-2 md:col-span-1">
+                        <button @click="deleteDish(dish.id);showModalDel()" class="border-2 border-transparent bg-red-400  py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-red-500 hover:bg-transparent hover:text-red-500">Borrar</button>
                     </td>
-                    <td  headers="Email" class="py-3 pl-8 w-32 ">
-                        <button @click="editDish(dish.id); showModal()" class="border-2 border-transparent bg-green-400 ml-8 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-green-500 hover:bg-transparent hover:text-green-500">Editar</button>
+                    <td  headers="edit" class="w-full col-span-1 sm:col-span-2 md:col-span-1">
+                        <button @click="editDish(dish.id); showModal()" class="border-2 border-transparent bg-green-400  py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-green-500 hover:bg-transparent hover:text-green-500">Editar</button>
                     </td>
                 </tr>
             </div>
@@ -127,8 +127,8 @@
                 </th>
             </tr>
             <div v-for="(dish,index) in dishes" @key="index" :class="ocultoSe">
-                <tr  v-if="dish.category == 'Segundos' "  role="row" class="hover:bg-blue-100 border-b flex cursor-pointer items-center ">
-                    <td  headers="Puesto" class="py-3 px-1 w-32">
+                <tr  v-if="dish.category == 'Segundos' "  role="row" class="hover:bg-blue-100 border-b grid grid-cols-7 gap-2 cursor-pointer items-center py-3">
+                    <td  headers="Puesto" class="w-full col-span-1 text-center hidden md:block">
                         <!-- <div class="ml-auto relative group"> -->
                         <span style="
                                 padding: 2px 5px;
@@ -139,22 +139,22 @@
                             <!-- </div> -->
                         <span class="pr-2"></span>{{ dish.category }}
                     </td>
-                    <td headers="Nombre" class="py-3 px-1 w-60 max-w-xs xl:max-w-lg">
+                    <td headers="Nombre" class="w-full col-span-1">
                         <div class="relative group w-full truncate">
                             {{ dish.name }}
                         </div>
                     </td>
-                    <td headers="Descripción" class="py-3 px-1  w-80 truncate">
+                    <td headers="Descripción" class="w-full col-span-2 truncate hidden lg:block">
                         {{ dish.description }}
                     </td>
-                    <td  headers="Precio" class="py-3 px-1 pl-8 w-32 truncate ">
+                    <td  headers="Precio" class="w-full text-center col-span-1 truncate ">
                         {{ dish.price }}€
                     </td>
-                    <td  headers="Email" class="py-3 pl-28 w-34 ">
-                        <button @click="deleteDish(dish.id);showModalDel()" class="border-2 border-transparent bg-red-400 ml-8 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-red-500 hover:bg-transparent hover:text-red-500">Borrar</button>
+                    <td  headers="delete" class="w-full col-span-1 sm:col-span-2 md:col-span-1">
+                        <button @click="deleteDish(dish.id);showModalDel()" class="border-2 border-transparent bg-red-400  py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-red-500 hover:bg-transparent hover:text-red-500">Borrar</button>
                     </td>
-                    <td  headers="Email" class="py-3 pl-8 w-32 ">
-                        <button @click="editDish(dish.id); showModal()" class="border-2 border-transparent bg-green-400 ml-8 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-green-500 hover:bg-transparent hover:text-green-500">Editar</button>
+                    <td  headers="edit" class="w-full col-span-1 sm:col-span-2 md:col-span-1">
+                        <button @click="editDish(dish.id); showModal()" class="border-2 border-transparent bg-green-400  py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-green-500 hover:bg-transparent hover:text-green-500">Editar</button>
                     </td>
                 </tr>
             </div>
@@ -171,34 +171,34 @@
                 </th>
             </tr>
             <div v-for="(dish,index) in dishes" @key="index" :class="ocultoPo">
-                <tr  v-if="dish.category == 'Postres' "  role="row" class="hover:bg-blue-100 border-b flex cursor-pointer items-center ">
-                    <td  headers="Puesto" class="py-3 px-1 w-32">
-                        <!-- <div class="ml-auto relative group"> -->
+                <tr  v-if="dish.category == 'Postres' "  role="row" class="hover:bg-blue-100 border-b grid grid-cols-7 cursor-pointer items-center py-3">
+                    <td  headers="Puesto" class="w-full col-span-1 text-center hidden md:block">
+
                         <span style="
                                 padding: 2px 5px;
                                 font-size: 0.7rem;
                                 position: relative;
                                 bottom: 2px;
                                 " class="font-mono rounded-sm bg-pink-400 text-white leading-none">P</span>
-                            <!-- </div> -->
+
                         <span class="pr-2"></span>{{ dish.category }}
                     </td>
-                    <td headers="Nombre" class="py-3 px-1 w-60 max-w-xs xl:max-w-lg">
+                    <td headers="Nombre" class="w-full col-span-1">
                         <div class="relative group w-full truncate">
                             {{ dish.name }}
                         </div>
                     </td>
-                    <td headers="Descripción" class="py-3 px-1  w-80 truncate">
+                    <td headers="Descripción" class="w-full col-span-2 truncate hidden lg:block">
                         {{ dish.description }}
                     </td>
-                    <td  headers="Precio" class="py-3 px-1 pl-8 w-32 truncate ">
+                    <td  headers="Precio" class="w-full col-span-1 truncate text-center">
                         {{ dish.price }}€
                     </td>
-                    <td  headers="Email" class="py-3 pl-28 w-34 ">
-                        <button @click="deleteDish(dish.id);showModalDel()" class="border-2 border-transparent bg-red-400 ml-8 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-red-500 hover:bg-transparent hover:text-red-500">Borrar</button>
+                    <td  headers="delete" class="w-full col-span-1 sm:col-span-2 md:col-span-1 ">
+                        <button @click="deleteDish(dish.id);showModalDel()" class="border-2 border-transparent bg-red-400 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-red-500 hover:bg-transparent hover:text-red-500">Borrar</button>
                     </td>
-                    <td  headers="Email" class="py-3 pl-8 w-32 ">
-                        <button @click="editDish(dish.id); showModal()" class="border-2 border-transparent bg-green-400 ml-8 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-green-500 hover:bg-transparent hover:text-green-500">Editar</button>
+                    <td  headers="edit" class="w-full col-span-1 sm:col-span-2 md:col-span-1">
+                        <button @click="editDish(dish.id); showModal()" class="border-2 border-transparent bg-green-400  py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-green-500 hover:bg-transparent hover:text-green-500">Editar</button>
                     </td>
                 </tr>
             </div>
@@ -215,8 +215,8 @@
                 </th>
             </tr>
             <div v-for="(dish,index) in dishes" @key="index" :class="ocultoOt">
-                <tr  v-if="dish.category == 'Otros'"  role="row" class="hover:bg-blue-100 border-b flex cursor-pointer items-center ">
-                    <td  headers="Puesto" class="py-3 px-1 w-32">
+                <tr  v-if="dish.category == 'Otros'"  role="row" class="hover:bg-blue-100 border-b grid grid-cols-7 cursor-pointer items-center py-3">
+                    <td  headers="Puesto" class="w-full col-span-1 text-center hidden md:block">
                         <!-- <div class="ml-auto relative group"> -->
                         <span style="
                                 padding: 2px 5px;
@@ -227,22 +227,22 @@
                             <!-- </div> -->
                         <span class="pr-2"></span>{{ dish.category }}
                     </td>
-                    <td headers="Nombre" class="py-3 px-1 w-60 max-w-xs xl:max-w-lg">
+                    <td headers="Nombre" class="w-full col-span-1">
                         <div class="relative group w-full truncate">
                             {{ dish.name }}
                         </div>
                     </td>
-                    <td headers="Descripción" class="py-3 px-1  w-80 truncate">
+                    <td headers="Descripción" class="w-full col-span-2 truncate hidden lg:block">
                         {{ dish.description }}
                     </td>
-                    <td  headers="Precio" class="py-3 px-1 pl-8 w-32 truncate ">
+                    <td  headers="Precio" class="w-full col-span-1 text-center truncate ">
                         {{ dish.price }}€
                     </td>
-                    <td  headers="Email" class="py-3 pl-28 w-34 ">
-                        <button @click="deleteDish(dish.id);showModalDel()" class="border-2 border-transparent bg-red-400 ml-8 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-red-500 hover:bg-transparent hover:text-red-500">Borrar</button>
+                    <td  headers="delete" class="w-full col-span-1 sm:col-span-2 md:col-span-1">
+                        <button @click="deleteDish(dish.id);showModalDel()" class="border-2 border-transparent bg-red-400  py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-red-500 hover:bg-transparent hover:text-red-500">Borrar</button>
                     </td>
-                    <td  headers="Email" class="py-3 pl-8 w-32 ">
-                        <button @click="editDish(dish.id); showModal()" class="border-2 border-transparent bg-green-400 ml-8 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-green-500 hover:bg-transparent hover:text-green-500">Editar</button>
+                    <td  headers="edit" class="w-full col-span-1 sm:col-span-2 md:col-span-1">
+                        <button @click="editDish(dish.id); showModal()" class="border-2 border-transparent bg-green-400  py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-green-500 hover:bg-transparent hover:text-green-500">Editar</button>
                     </td>
                 </tr>
             </div>

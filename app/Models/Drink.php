@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class Drink extends Model
 {
@@ -18,14 +19,15 @@ class Drink extends Model
         'type',
         'default_img',
         'categories_id',
-        'ud'
+        'ud',
+        'price'
     ];
 
     public static function createDrink($request)
     {
         $url = null;
 
-        if($request->imageDefault == true){
+        if($request->imageDefault == 'true'){
 
             $url = 'https://cdn0.iconfinder.com/data/icons/vectr-examples/458/food-coke-256.png';
             $default_img = true;
@@ -46,10 +48,11 @@ class Drink extends Model
             'image' => $url,
             'name' => $request->name,
             'amount' => $request->amount,
-            'price' => $request->price,
+            'price' => floatval($request->price),
             'default_img' => $default_img,
             'categories_id' => $request->categoryCreate,
             'type' => 'Bebida',
+            'ud' => 1,
 
         ]);
 

@@ -21,8 +21,8 @@ class OrderController extends Controller
 
     public function getNumTicket(){
 
-        $order = Order::all();
-        return $order->last();
+        $order = Order::orderBy('ticket','desc')->get()->first();
+        return $order->ticket;
     }
 
     /**

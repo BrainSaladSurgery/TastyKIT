@@ -22,8 +22,8 @@
                 </th>
             </tr>
             <div v-for="(table,index) in tables" @key="index" :class="ocultoSel">
-                <tr  v-if="table.type == 'Mesa' "  role="row" class="hover:bg-blue-100 border-b flex cursor-pointer w-full items-center justify-center ">
-                    <td  headers="Puesto" class="py-3 w-32">
+                <tr  v-if="table.type == 'Mesa' "  role="row" class="hover:bg-blue-100 border-b grid grid-cols-7 gap-2 py-3 cursor-pointer w-full items-center justify-center ">
+                    <td  headers="Puesto" class="hidden md:block col-span-1 w-full ">
                         <span style="
                                 padding: 2px 5px;
                                 font-size: 0.7rem;
@@ -32,42 +32,42 @@
                                 " class="font-mono rounded-sm bg-green-400 text-white leading-none">E</span>
                         <span class="pr-2"></span> {{ table.type }}
                     </td>
-                    <td headers="Nombre" class="py-3  w-32 ">
+                    <td headers="Nombre" class="col-span-1 w-full text-center">
                         <div class="relative group w-full truncate">
                             {{ table.name }}
                         </div>
                     </td>
-                    <td headers="Descripción" class="py-3  w-1/12 truncate">
+                    <td headers="pax" class="col-span-1 w-full">
                         Pax: {{ table.min_pax }}-{{ table.max_pax }}
                     </td>
-                    <td  headers="Precio" class="py-3 ml-7 w-1/12 truncate ">
+                    <td  headers="status" class="col-span-1 w-full truncate text-center ">
                         <span v-if="table.status == false" class="font-bold uppercase text-green-400">Libre</span> <span v-else class="uppercase font-bold text-red-600">Ocupada</span>
                     </td>
                     <!-- NO OCUPADA -->
-                    <td  headers="des" class="py-3 w-1/12" v-if="table.status == false">
-                        <button @click="NoSelection(table)"  :class="table.status == false && select == true ? 'opacity-50 cursor-not-allowed border-2 border-transparent bg-red-400 ml-8 py-2 px-4 font-bold uppercase text-white rounded' : 'border-2 border-transparent bg-red-400 ml-8 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:bg-red-500'">X</button>
+                    <td  headers="des" class="col-span-1 w-full" v-if="table.status == false">
+                        <button @click="NoSelection(table)"  :class="table.status == false && select == true ? 'opacity-50 cursor-not-allowed border-2 border-transparent bg-red-400  py-2 px-4 font-bold uppercase text-white rounded' : 'border-2 border-transparent bg-red-400 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:bg-red-500'">X</button>
                     </td>
-                    <td  headers="sel" class="py-3 " v-if="table.status == false && select == false">
-                        <button @click="selection(table)" class="border-2 border-transparent bg-blue-400 ml-8 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-blue-500 hover:bg-blue-600" >Seleccionar</button>
+                    <td  headers="sel" class="col-span-2 w-full lg:w-2/3" v-if="table.status == false && select == false">
+                        <button @click="selection(table)" class="border-2 border-transparent bg-blue-400  py-2 w-full font-bold uppercase text-white rounded transition-all hover:border-blue-500 hover:bg-blue-600" >Seleccionar</button>
                     </td>
-                    <td  headers="sel" class="py-3 " v-if="table.status == false && select == true ">
-                        <button  class="opacity-50 cursor-not-allowed border-2 border-transparent bg-blue-400 ml-8 py-2 px-4 font-bold uppercase text-white rounded'" >Seleccionar</button>
+                    <td  headers="sel" class="col-span-2 w-full lg:w-2/3" v-if="table.status == false && select == true ">
+                        <button  class="opacity-50 cursor-not-allowed border-2 border-transparent bg-blue-400  py-2 w-full font-bold uppercase text-white rounded'" >Seleccionar</button>
                     </td>
 
                     <!-- OCUPADA -->
-                    <td  headers="des" class="py-3 w-1/12" v-if="table.status == true && select == true && table.origin == true">
+                    <td  headers="des" class="col-span-1 w-full " v-if="table.status == true && select == true && table.origin == true">
                     <!-- ORIGINALMENTE OCUPADA -->
-                        <button  class="opacity-50 cursor-not-allowed border-2 border-transparent bg-red-400 ml-8 py-2 px-4 font-bold uppercase text-white rounded" >X</button>
+                        <button  class="opacity-50 cursor-not-allowed border-2 border-transparent bg-red-400 py-2 w-full font-bold uppercase text-white rounded" >X</button>
                     </td>
-                    <td  headers="des" class="py-3 w-1/12" v-if="table.status == true && select == true && table.origin == false">
+                    <td  headers="des" class="col-span-1 w-full " v-if="table.status == true && select == true && table.origin == false">
                     <!-- ORIGINALMENTE NO OCUPADA -->
-                        <button @click="NoSelection(table)"  class="border-2 border-transparent bg-red-400 ml-8 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:bg-red-500" >X</button>
+                        <button @click="NoSelection(table)"  class="border-2 border-transparent bg-red-400  py-2 px-4 font-bold uppercase text-white rounded transition-all hover:bg-red-500" >X</button>
                     </td>
-                    <td  headers="des" class="py-3 w-1/12" v-if="table.status == true && select == false ">
-                        <button  class="opacity-50 cursor-not-allowed border-2 border-transparent bg-red-400 ml-8 py-2 px-4 font-bold uppercase text-white rounded" >X</button>
+                    <td  headers="des" class="col-span-1 w-full " v-if="table.status == true && select == false ">
+                        <button  class="opacity-50 cursor-not-allowed border-2 border-transparent bg-red-400  py-2 w-fullfont-bold uppercase text-white rounded" >X</button>
                     </td>
-                    <td  headers="sel" class="py-3" v-if="table.status == true ">
-                        <button class="opacity-50 cursor-not-allowed border-2 border-transparent bg-blue-400 ml-8 py-2 px-4 font-bold uppercase text-white rounded">Seleccionar</button>
+                    <td  headers="sel" class="col-span-2 w-full lg:w-2/3" v-if="table.status == true ">
+                        <button class="opacity-50 cursor-not-allowed border-2 border-transparent bg-blue-400  py-2 w-full font-bold uppercase text-white rounded">Seleccionar</button>
                     </td>
                 </tr>
             </div>
@@ -85,8 +85,8 @@
                 </th>
             </tr>
             <div v-for="(drink,index) in drinks" @key="index" :class="ocultoBe">
-                <tr  v-if="drink.type == 'Bebida' "  role="row" class="hover:bg-blue-100 border-b flex cursor-pointer w-full items-center justify-center">
-                    <td  headers="Puesto" class="py-3 w-2/12">
+                <tr  v-if="drink.type == 'Bebida' "  role="row" class="hover:bg-blue-100 border-b grid grid-cols-6 cursor-pointer w-full items-center justify-center">
+                    <td  headers="Puesto" class="col-span-1 w-full hidden lg:block">
                         <span v-if="drink.category =='Con Alcohol'" style="
                                 padding: 2px 5px;
                                 font-size: 0.7rem;
@@ -116,36 +116,38 @@
                                 " class="font-mono rounded-sm bg-green-400 text-white leading-none">O</span>
                         <span class="pr-2"></span>{{ drink.category }}
                     </td>
-                    <td headers="Nombre" class="py-3  px-1 w-2/12 ">
+                    <td headers="Nombre" class="col-span-1 w-full ">
                         <div class="relative group w-full ">
                             {{ drink.name }}
                         </div>
                     </td>
-                    <td  headers="Precio" class="py-3  w-16 truncate ">
+                    <td  headers="Precio" class="col-span-1 w-full truncate ">
                         {{ drink.price }}€
                     </td>
-                    <td  headers="deseleccionar" class="py-3 ml-8 w-16">
-                        <button @click="NoSelection(drink)" class="border-2 border-transparent bg-red-400  py-2 px-4 font-bold uppercase text-white rounded transition-all hover:bg-red-500 hover:border-red-500 ">X</button>
+                    <td  headers="deseleccionar" class="col-span-1 w-full text-center">
+                        <button @click="NoSelection(drink)" class=" border-2 border-transparent bg-red-400  py-2 px-4 font-bold uppercase text-white rounded transition-all hover:bg-red-500 hover:border-red-500 ">X</button>
                     </td>
-
-                    <td  headers="menos" class="py-3 ">
+                    <div class="col-span-1 w-full">
+                        <td  headers="menos" class="py-3 ">
                         <button @click="drink.ud > 0 ? drink.ud -- : '0' " class="border-2 border-transparent bg-gray-400  font-bold uppercase text-white rounded transition-all hover:border-gray-500 hover:bg-gray-500">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
                             </svg>
                         </button>
-                    </td>
-                    <td  headers="add" class="py-3 mx-1 w-16">
-                        <input v-model="drink.ud"  class="bg-white text-center border border-gray-200 py-2 px-4 rounded shadow-sm w-full focus:ring-0 focus:border-gray-500  " type="text" name="amountTable"/>
-                    </td>
-                    <td  headers="mas" class="py-3 ">
-                        <button @click="drink.ud ++" class="border-2 border-transparent bg-gray-400  font-bold uppercase text-white rounded transition-all hover:border-gray-500 hover:bg-gray-500">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
-                        </svg>
-                        </button>
-                    </td>
-                    <td  headers="sel" class="py-3 w-max ">
+                        </td>
+                        <td  headers="add" class="py-3 mx-1 w-16">
+                            <input v-model="drink.ud"  class="bg-white text-center border border-gray-200 py-2 px-4 rounded shadow-sm w-full focus:ring-0 focus:border-gray-500  " type="text" name="amountTable"/>
+                        </td>
+                        <td  headers="mas" class="py-3 ">
+                            <button @click="drink.ud ++" class="border-2 border-transparent bg-gray-400  font-bold uppercase text-white rounded transition-all hover:border-gray-500 hover:bg-gray-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+                            </svg>
+                            </button>
+                        </td>
+                    </div>
+                    
+                    <td  headers="sel" class="col-span-1 w-full">
                         <button @click="selection(drink, drink.ud)" class="border-2 border-transparent bg-blue-400 ml-4 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-blue-500 hover:bg-blue-600 ">Añadir</button>
                     </td>
                 </tr>
@@ -164,8 +166,8 @@
                 </th>
             </tr>
             <div v-for="(dish,index) in dishes" @key="index" :class="ocultoEn">
-                <tr  v-if="dish.category == 'Entrantes' "  role="row" class="w-full items-center justify-center hover:bg-blue-100 border-b flex cursor-pointer  ">
-                    <td  headers="Puesto" class="py-3 w-2/12">
+                <tr  v-if="dish.category == 'Entrantes' "  role="row" class="w-full items-center justify-center grid grid-cols-6 gap-2 hover:bg-blue-100 border-b  cursor-pointer  ">
+                    <td  headers="Puesto" class="w-full col-span-1 hidden lg:block">
                         <!-- <div class="ml-auto relative group"> -->
                         <span style="
                                 padding: 2px 5px;
@@ -176,40 +178,38 @@
                             <!-- </div> -->
                         <span class="pr-2"></span>{{ dish.category }}
                     </td>
-                    <td headers="Nombre" class="py-3 px-1 w-2/12">
+                    <td headers="Nombre" class="w-full col-span-1">
                         <div class="relative group w-full">
                             {{ dish.name }}
                         </div>
                     </td>
-                    <!-- <td headers="Descripción" class="py-3 px-1  w-1/12 truncate">
-                        {{ dish.description }}
-                    </td> -->
-                    <td  headers="Precio" class="py-3 w-16  truncate ">
+                    <td  headers="Precio" class="w-full col-span-1 truncate ">
                         {{ dish.price }}€
                     </td>
-                    <td  headers="deseleccionar" class="py-3 ml-8 w-16">
+                    <td  headers="deseleccionar" class="w-full col-span-1 text-center">
                         <button @click="NoSelection(dish)" class="border-2 border-transparent bg-red-400  py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-red-500 hover:bg-red-600">X</button>
                     </td>
-
-                    <td  headers="menos" class="py-3 ">
-                        <button @click="resta()" class="border-2 border-transparent bg-gray-400  font-bold uppercase text-white rounded transition-all hover:border-gray-500 hover:bg-gray-500">
+                    <div class="w-full col-span-1">
+                        <td  headers="menos" class="py-3 ">
+                            <button @click="dish.ud > 0 ? dish.ud -- : '0' " class="border-2 border-transparent bg-gray-400  font-bold uppercase text-white rounded transition-all hover:border-gray-500 hover:bg-gray-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </td>
+                        <td  headers="add" class="py-3 mx-1 w-16">
+                            <input v-model="dish.ud" class="bg-white text-center border border-gray-200 py-2 px-4 rounded shadow-sm w-full focus:ring-0 focus:border-gray-500  " type="text" name="add"/>
+                        </td>
+                        <td  headers="mas" class="py-3  ">
+                            <button @click="dish.ud++" class="border-2 border-transparent bg-gray-400  font-bold uppercase text-white rounded transition-all hover:border-gray-500 hover:bg-gray-500">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
+                            <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
                             </svg>
-                        </button>
-                    </td>
-                    <td  headers="add" class="py-3 mx-1 w-16">
-                        <input v-model="dish.ud" class="text-center bg-white border border-gray-200 mx-1 py-2 px-4 rounded shadow-sm w-full focus:ring-0 focus:border-gray-500  " type="text" name="add"/>
-                    </td>
-                    <td  headers="mas" class="py-3  ">
-                        <button @click="suma()" class="border-2 border-transparent bg-gray-400  font-bold uppercase text-white rounded transition-all hover:border-gray-500 hover:bg-gray-500">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
-                        </svg>
-                        </button>
-                    </td>
-                    <td  headers="Email" class="py-3  w-max">
-                        <button @click="selection(dish)" class="border-2 border-transparent bg-blue-400 ml-4 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-blue-500 hover:bg-blue-600">Añadir</button>
+                            </button>
+                        </td>
+                    </div>
+                    <td  headers="Email" class="w-full col-span-1">
+                        <button @click="selection(dish)" class="border-2 border-transparent bg-blue-400  ml-4 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-blue-500 hover:bg-blue-600">Añadir</button>
                     </td>
                 </tr>
             </div>
@@ -226,8 +226,8 @@
                 </th>
             </tr>
             <div v-for="(dish,index) in dishes" @key="index" :class="ocultoPi">
-                <tr  v-if="dish.category == 'Primeros' "  role="row" class="w-full items-center justify-center hover:bg-blue-100 border-b flex cursor-pointer">
-                    <td  headers="Puesto" class="py-3 w-2/12">
+                <tr  v-if="dish.category == 'Primeros' "  role="row" class="w-full items-center justify-center hover:bg-blue-100 border-b grid grid-cols-6 gap-2 cursor-pointer">
+                    <td  headers="Puesto" class="col-span-1 w-full hidden md:block">
 
                         <span style="
                                 padding: 2px 5px;
@@ -237,36 +237,38 @@
                                 " class="font-mono rounded-sm bg-blue-400 text-white leading-none">P</span>
                         <span class="pr-2"></span>{{ dish.category }}
                     </td>
-                    <td headers="Nombre" class="py-3 px-1 w-2/12">
+                    <td headers="Nombre" class="col-span-1 w-full">
                         <div class="relative group w-full ">
                             {{ dish.name }}
                         </div>
                     </td>
-                    <td  headers="Precio" class="py-3 w-16  truncate ">
+                    <td  headers="Precio" class="col-span-1 w-full truncate ">
                         {{ dish.price }}€
                     </td>
-                    <td  headers="deseleccionar" class="py-3 ml-8 w-16 ">
+                    <td  headers="deseleccionar" class="col-span-1 w-full text-center">
                         <button @click="NoSelection(dish)" class=" text-center border-2 border-transparent bg-red-400 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-red-500 hover:bg-red-600">X</button>
                     </td>
-
-                    <td  headers="menos" class="py-3 ">
-                        <button @click="resta()" class="border-2 border-transparent bg-gray-400 font-bold uppercase text-white rounded transition-all hover:border-gray-500 hover:bg-gray-500">
+                    <div class="col-span-1 w-full">
+                        <td  headers="menos" class="py-3 ">
+                            <button @click="dish.ud > 0 ? dish.ud -- : '0' " class="border-2 border-transparent bg-gray-400 font-bold uppercase text-white rounded transition-all hover:border-gray-500 hover:bg-gray-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </td>
+                        <td  headers="add" class="py-3 mx-1 w-16">
+                            <input v-model="dish.ud" class="bg-white text-center border border-gray-200 py-2 px-4 rounded shadow-sm w-full focus:ring-0 focus:border-gray-500  " type="text" name="add"/>
+                        </td>
+                        <td  headers="mas" class="py-3  ">
+                            <button @click="dish.ud++" class="border-2 border-transparent bg-gray-400 ml-1  font-bold uppercase text-white rounded transition-all hover:border-gray-500 hover:bg-gray-500">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
+                            <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
                             </svg>
-                        </button>
-                    </td>
-                    <td  headers="add" class="py-3 mx-1 w-16">
-                        <input v-model="dish.ud" class="text-center bg-white border border-gray-200 mx-1 py-2 px-4 rounded shadow-sm w-full focus:ring-0 focus:border-gray-500  " type="text" name="add"/>
-                    </td>
-                    <td  headers="mas" class="py-3  ">
-                        <button @click="suma()" class="border-2 border-transparent bg-gray-400 ml-1  font-bold uppercase text-white rounded transition-all hover:border-gray-500 hover:bg-gray-500">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
-                        </svg>
-                        </button>
-                    </td>
-                    <td  headers="Email" class="py-3  w-max">
+                            </button>
+                        </td>
+                    </div>
+                    
+                    <td  headers="sel" class="col-span-1 w-full">
                         <button @click="selection(dish)" class="border-2 border-transparent bg-blue-400 ml-4 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-blue-500 hover:bg-blue-600">Añadir</button>
                     </td>
                 </tr>
@@ -284,48 +286,50 @@
                 </th>
             </tr>
             <div v-for="(dish,index) in dishes" @key="index" :class="ocultoSe">
-                <tr  v-if="dish.category == 'Segundos' "  role="row" class="w-full hover:bg-blue-100 border-b flex cursor-pointer items-center justify-center ">
-                    <td  headers="Puesto" class="py-3 w-2/12">
+                <tr  v-if="dish.category == 'Segundos' "  role="row" class="w-full hover:bg-blue-100 border-b grid grid-cols-6 gap-2 cursor-pointer items-center justify-center ">
+                    <td  headers="Puesto" class="col-span-1 w-full hidden md:block">
                         <span style="
                                 padding: 2px 5px;
                                 font-size: 0.7rem;
                                 position: relative;
                                 bottom: 2px;
                                 " class="font-mono rounded-sm bg-red-400 text-white leading-none">S</span>
-                            <!-- </div> -->
+
                         <span class="pr-2"></span>{{ dish.category }}
                     </td>
-                    <td headers="Nombre" class="py-3 px-1 w-2/12">
+                    <td headers="Nombre" class="col-span-1 w-full">
                         <div class="relative group w-full ">
                             {{ dish.name }}
                         </div>
                     </td>
-                    <td  headers="Precio" class="py-3 w-16  truncate">
+                    <td  headers="Precio" class="col-span-1 w-full  truncate">
                         {{ dish.price }}€
                     </td>
-                    <td  headers="deseleccionar" class="py-3 ml-8 w-16">
+                    <td  headers="deseleccionar" class="col-span-1 w-full text-center">
                         <button @click="NoSelection(dish)" class="border-2 border-transparent bg-red-400  py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-red-500 hover:bg-red-600">X</button>
                     </td>
-
-                    <td  headers="menos" class="py-3 ">
-                        <button @click="resta()" class="border-2 border-transparent bg-gray-400   font-bold uppercase text-white rounded transition-all hover:border-gray-500 hover:bg-gray-500">
+                    <div class="col-span-1 w-full">
+                        <td  headers="menos" class="py-3 ">
+                        <button @click="dish.ud > 0 ? dish.ud -- : '0' " class="border-2 border-transparent bg-gray-400   font-bold uppercase text-white rounded transition-all hover:border-gray-500 hover:bg-gray-500">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
                             </svg>
                         </button>
-                    </td>
-                    <td  headers="add" class="py-3 mx-1 w-16">
-                        <input v-model="dish.ud" class=" text-center bg-white border border-gray-200 mx-1 py-2 px-4 rounded shadow-sm w-full focus:ring-0 focus:border-gray-500  " type="text" name="add"/>
-                    </td>
-                    <td  headers="mas" class="py-3">
-                        <button @click="suma()" class="border-2 border-transparent bg-gray-400  ml-1  font-bold uppercase text-white rounded transition-all hover:border-gray-500 hover:bg-gray-500">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
-                        </svg>
-                        </button>
-                    </td>
-                    <td  headers="Email" class="py-3 w-max">
-                        <button @click="selection(dish)" class="border-2 border-transparent bg-blue-400 ml-4 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-blue-500 hover:bg-blue-600">Añadir</button>
+                        </td>
+                        <td  headers="add" class="py-3 mx-1 w-16">
+                            <input v-model="dish.ud" class=" bg-white text-center border border-gray-200 py-2 px-4 rounded shadow-sm w-full focus:ring-0 focus:border-gray-500  " type="text" name="add"/>
+                        </td>
+                        <td  headers="mas" class="py-3">
+                            <button @click="dish.ud++" class="border-2 border-transparent bg-gray-400  ml-1  font-bold uppercase text-white rounded transition-all hover:border-gray-500 hover:bg-gray-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+                            </svg>
+                            </button>
+                        </td>
+                    </div>
+                    
+                    <td  headers="sel" class="col-span-1 w-full">
+                        <button @click="selection(dish)" class="border-2 border-transparent bg-blue-400  ml-4 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-blue-500 hover:bg-blue-600">Añadir</button>
                     </td>
                 </tr>
             </div>
@@ -342,51 +346,50 @@
                 </th>
             </tr>
             <div v-for="(dish,index) in dishes" @key="index" :class="ocultoPo">
-                <tr  v-if="dish.category == 'Postres' "  role="row" class="hover:bg-blue-100 border-b flex cursor-pointer items-center justify-center ">
-                    <td  headers="Puesto" class="py-3 w-2/12">
-                        <!-- <div class="ml-auto relative group"> -->
+                <tr  v-if="dish.category == 'Postres' "  role="row" class="hover:bg-blue-100 border-b grid grid-cols-6 cursor-pointer items-center justify-center ">
+                    <td  headers="Puesto" class="col-span-1 w-full hidden md:block">
+
                         <span style="
                                 padding: 2px 5px;
                                 font-size: 0.7rem;
                                 position: relative;
                                 bottom: 2px;
                                 " class="font-mono rounded-sm bg-pink-400 text-white leading-none">P</span>
-                            <!-- </div> -->
+
                         <span class="pr-2"></span>{{ dish.category }}
                     </td>
-                    <td headers="Nombre" class="py-3 px-1 w-2/12">
+                    <td headers="Nombre" class="col-span-1 w-full">
                         <div class="relative group w-full truncate">
                             {{ dish.name }}
                         </div>
                     </td>
-                    <!-- <td headers="Descripción" class="py-3 px-1  w-80 truncate">
-                        {{ dish.description }}
-                    </td> -->
-                    <td  headers="Precio" class="py-3 w-16 truncate ">
+                    <td  headers="Precio" class="col-span-1 w-full truncate ">
                         {{ dish.price }}€
                     </td>
-                    <td  headers="deseleccionar" class="py-3 w-16 ml-8 ">
+                    <td  headers="deseleccionar" class="col-span-1 w-full text-center ">
                         <button @click="NoSelection(dish)" class="border-2 border-transparent bg-red-400  py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-red-500 hover:bg-red-600">X</button>
                     </td>
-
-                    <td  headers="menos" class="py-3 ">
-                        <button @click="resta()" class="border-2 border-transparent bg-gray-400   font-bold uppercase text-white rounded transition-all hover:border-gray-500 hover:bg-gray-500">
+                    <div class="w-full col-span-1">
+                        <td  headers="menos" class="py-3 ">
+                            <button @click="dish.ud > 0 ? dish.ud -- : '0' " class="border-2 border-transparent bg-gray-400   font-bold uppercase text-white rounded transition-all hover:border-gray-500 hover:bg-gray-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </td>
+                        <td  headers="add" class="py-3  mx-1 w-16">
+                            <input v-model="dish.ud" class="bg-white text-center border border-gray-200 py-2 px-4 rounded shadow-sm w-full focus:ring-0 focus:border-gray-500  " type="text" name="add"/>
+                        </td>
+                        <td  headers="mas" class="py-3  ">
+                            <button @click="dish.ud++" class="border-2 border-transparent bg-gray-400 ml-1  font-bold uppercase text-white rounded transition-all hover:border-gray-500 hover:bg-gray-500">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
+                            <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
                             </svg>
-                        </button>
-                    </td>
-                    <td  headers="add" class="py-3  mx-1 w-16">
-                        <input v-model="dish.ud" class="text-center bg-white border border-gray-200 mx-1 py-2 px-4 rounded shadow-sm w-full focus:ring-0 focus:border-gray-500  " type="text" name="add"/>
-                    </td>
-                    <td  headers="mas" class="py-3  ">
-                        <button @click="suma()" class="border-2 border-transparent bg-gray-400 ml-1  font-bold uppercase text-white rounded transition-all hover:border-gray-500 hover:bg-gray-500">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
-                        </svg>
-                        </button>
-                    </td>
-                    <td  headers="Email" class="py-3 w-max ">
+                            </button>
+                        </td>
+                    </div>
+                    
+                    <td  headers="sel" class="w-full col-span-1">
                         <button @click="selection(dish)" class="border-2 border-transparent bg-blue-400 ml-4 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-blue-500 hover:bg-blue-600">Añadir</button>
                     </td>
                 </tr>
@@ -404,51 +407,51 @@
                 </th>
             </tr>
             <div v-for="(dish,index) in dishes" @key="index" :class="ocultoOt">
-                <tr  v-if="dish.category == 'Otros'"  role="row" class="w-full hover:bg-blue-100 border-b flex cursor-pointer items-center justify-center ">
-                    <td  headers="Puesto" class="py-3 w-2/12">
-                        <!-- <div class="ml-auto relative group"> -->
+                <tr  v-if="dish.category == 'Otros'"  role="row" class="w-full hover:bg-blue-100 border-b grid grid-cols-6 cursor-pointer items-center justify-center ">
+                    <td  headers="Puesto" class="w-full col-span-1 hidden md:block">
+
                         <span style="
                                 padding: 2px 5px;
                                 font-size: 0.7rem;
                                 position: relative;
                                 bottom: 2px;
                                 " class="font-mono rounded-sm bg-purple-400 text-white leading-none">O</span>
-                            <!-- </div> -->
+
                         <span class="pr-2"></span>{{ dish.category }}
                     </td>
-                    <td headers="Nombre" class="py-3 px-1 w-2/12">
+                    <td headers="Nombre" class="w-full col-span-1">
                         <div class="relative group w-full truncate">
                             {{ dish.name }}
                         </div>
                     </td>
-                    <!-- <td headers="Descripción" class="py-3 px-1  w-80 truncate">
-                        {{ dish.description }}
-                    </td> -->
-                    <td  headers="Precio" class="py-3 w-16  truncate  ">
+
+                    <td  headers="Precio" class="w-full col-span-1  truncate  ">
                         {{ dish.price }}€
                     </td>
-                    <td  headers="deseleccionar" class="py-3 ml-8 w-16 ">
+                    <td  headers="deseleccionar" class="w-full col-span-1 text-center">
                         <button @click="NoSelection(dish)" class="border-2 border-transparent bg-red-400  py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-red-500 hover:bg-red-600">X</button>
                     </td>
-
-                    <td  headers="menos" class="py-3 ">
-                        <button @click="resta()" class="border-2 border-transparent bg-gray-400  font-bold uppercase text-white rounded transition-all hover:border-gray-500 hover:bg-gray-500">
+                    <div class="w-full col-span-1">
+                        <td  headers="menos" class="py-3 ">
+                            <button @click="dish.ud > 0 ? dish.ud -- : '0' " class="border-2 border-transparent bg-gray-400  font-bold uppercase text-white rounded transition-all hover:border-gray-500 hover:bg-gray-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </td>
+                        <td  headers="add" class="py-3 mx-1 w-16 ">
+                            <input v-model="dish.ud" class=" bg-white text-center border border-gray-200 py-2 px-4 rounded shadow-sm w-full focus:ring-0 focus:border-gray-500  " type="text" name="add"/>
+                        </td>
+                        <td  headers="mas" class="py-3   ">
+                            <button @click="dish.ud++" class="border-2 border-transparent bg-gray-400 ml-1 font-bold uppercase text-white rounded transition-all hover:border-gray-500 hover:bg-gray-500">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
+                            <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
                             </svg>
-                        </button>
-                    </td>
-                    <td  headers="add" class="py-3 mx-1 w-16 ">
-                        <input v-model="dish.ud" class=" bg-white text-center border border-gray-200 mx-1 py-2 px-4 rounded shadow-sm w-full focus:ring-0 focus:border-gray-500  " type="text" name="add"/>
-                    </td>
-                    <td  headers="mas" class="py-3   ">
-                        <button @click="suma()" class="border-2 border-transparent bg-gray-400 ml-1 font-bold uppercase text-white rounded transition-all hover:border-gray-500 hover:bg-gray-500">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
-                        </svg>
-                        </button>
-                    </td>
-                    <td  headers="Email" class="py-3 w-max ">
+                            </button>
+                        </td>
+                    </div>
+                    
+                    <td  headers="sel" class="w-full col-span-1 ">
                         <button @click="selection(dish)" class="border-2 border-transparent bg-blue-400 ml-4 py-2 px-4 font-bold uppercase text-white rounded transition-all hover:border-blue-500 hover:bg-blue-600">Añadir</button>
                     </td>
                 </tr>

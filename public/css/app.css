@@ -41,6 +41,7 @@ body {
 
 #navSide {
   position: fixed;
+  z-index: 50;
 }
 
 #grid {

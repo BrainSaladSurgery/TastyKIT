@@ -186,6 +186,7 @@
                 await axios.get('/table/'+id).
                     then((response) =>{
                         this.table = response.data
+                        console.log(this.table)
                     })
             }
         },
@@ -193,7 +194,7 @@
             tableID: function(val){
                 if(this.tableID !=  ''){
                     this.getTable(this.tableID)
-                    this.tableID = ''
+
                 }
             }
 

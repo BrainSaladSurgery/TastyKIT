@@ -15,7 +15,7 @@ class TableSeeder extends Seeder
     public function run()
     {
         $faker = \Faker\Factory::create();
-        for($i = 0; 25 > $i; $i++){
+        for($i = 1; 25 > $i; $i++){
 
             Table::create([
                 'name'=> $i,

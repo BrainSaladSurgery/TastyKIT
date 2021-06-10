@@ -1,5 +1,5 @@
 <template>
-    <table aria-describedby="info-popup" aria-label="open tickets" class="border-t w-full min-h-0 h-full flex flex-col">
+    <table aria-describedby="info-popup" aria-label="open tickets" class="border-t w-full min-h-0 h-full flex flex-col ">
         <thead class="flex w-full flex-col px-4">
             <tr class="border-b flex w-full justify-start">
             <th id="Mesa" class="font-semibold text-left py-3 px-1 w-1/12 truncate">
@@ -36,7 +36,7 @@
                     </div>
                 </td>
                 <td headers="Day" class="text-left py-3 px-1  w-1/6 truncate">
-                    {{ reserva.day }}
+                    {{ changeDate(reserva.day) }}
                 </td>
                 <td  headers="Time" class="text-left py-3 px-1 w-1/6">
                     {{ reserva.time }}
@@ -76,7 +76,7 @@
 
 <script>
     import Modal from '@/Jetstream/Modal'
-
+    import moment from 'moment'
 
     export default {
         components: {
@@ -108,6 +108,12 @@
                 this.reser.id = id
                 this.reser.firstName = firstName
             },
+
+            changeDate(reserva){
+
+                return moment(reserva).format('DD-MM-YYYY')
+            },
+
 
             updateReserv(id){
 

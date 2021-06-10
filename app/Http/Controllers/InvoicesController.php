@@ -43,10 +43,11 @@ class InvoicesController extends Controller
 
         $invoice = [];
         $tik = $order[0]->ticket;
-        $mesa = $order[0]->mesa($order[0]->table_id)->name;
+        $mesa = DB::table('orders')->join('tables','orders.table_id','=','tables.id')->where('tables.id', $order[0]->table_id)->first();
         $status = $order[0]->status;
         $tim = $order[0]->created_at;
         $items = [];
+        //$mesa = $order[0]->table_id;
 
         $total = $order[0]->total;
         $userName = $order[0]->owner($order[0]->user_id)->name;

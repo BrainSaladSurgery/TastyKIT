@@ -25,17 +25,17 @@ class Product extends Model
     {
         $url = null;
 
-        if($request->imageDefault == true){
-
-            $url = 'https://cdn1.iconfinder.com/data/icons/fruit-filled-line-1/64/food_fruit_vegetable_vegetarian_organic_tomato-256.png';
-
-        }else{
+        if($request->imageDefault == 'false'){
 
             $file = $request->file('image');
             $name = $file->getClientOriginalName();
             $storage = Storage::disk('public')->put($name, $file);
             $url = asset('storage/' . $storage);
 
+
+        }else{
+
+            $url = 'https://cdn1.iconfinder.com/data/icons/fruit-filled-line-1/64/food_fruit_vegetable_vegetarian_organic_tomato-256.png';
         }
 
         $product = (new static)::create([
@@ -44,7 +44,7 @@ class Product extends Model
             'name' => $request->name,
             'amount' => $request->amount,
             'categories_id' => $request->categoryCreate,
-            'default_img' => $request->imageDefault,
+            //'default_img' => $request->imageDefault,
             'type' => 'Producto',
         ]);
 

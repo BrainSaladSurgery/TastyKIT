@@ -26,7 +26,7 @@ class UserFactory extends Factory
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'password' => bcrypt('123456789D'), // password
             'remember_token' => Str::random(10),
             'dni' => $this->faker->isbn10(),
             'phone' => $this->faker->phoneNumber,
@@ -34,7 +34,6 @@ class UserFactory extends Factory
             'lastName' => $this->faker->lastName,
             'type' => 'Usuario',
             'Bir_Date' => $this->faker->date('Y-m-d','now'),
-            'rol_id' => $this->faker->numberBetween(1,3),
             'addresses_id'=> $this->faker->numberBetween(1,60)
         ];
     }

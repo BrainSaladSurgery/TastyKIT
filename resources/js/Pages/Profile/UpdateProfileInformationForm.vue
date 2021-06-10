@@ -65,7 +65,7 @@
                 <!-- Phone -->
                 <div class="col-span-3 sm:col-span-3">
                     <jet-label for="phone" value="Teléfono" />
-                    <jet-input id="phone" type="email" class="mt-1 block w-full" v-model="form.phone" />
+                    <jet-input id="phone" type="text" class="mt-1 block w-full" v-model="form.phone" />
                     <jet-input-error :message="form.errors.phone" class="mt-2" />
                 </div>
 

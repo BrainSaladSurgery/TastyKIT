@@ -23,7 +23,28 @@ class UserController extends Controller
 
     public function getUsers()
     {
-        return $user = User::all();
+        $users = User::all();
+        $datos = [];
+
+        foreach($users as $usuario){
+
+            $address = $usuario->address;
+            $role = User::where('id', $usuario->id)->first()->roles()->first()->name;
+
+            array_push($datos , [   'name' => $usuario->name,
+                                    'firstName' => $usuario->firstName,
+                                    'lastName' => $usuario->lastName,
+                                    'dni' => $usuario->dni,
+                                    'rol' => $role,
+                                    'email' => $usuario->email,
+                                    'phone' => $usuario->phone,
+                                    'type' => $usuario->type,
+                                    'address' => $address->address,
+                                    'id' => $usuario->id
+            ]);
+        }
+
+        return $datos;
     }
 
     /**
@@ -57,11 +78,12 @@ class UserController extends Controller
     {
         $usuario = User::where('id', $id)->first();
         $address = $usuario->address;
+        $role = User::where('id', $id)->first()->roles()->first()->name;
 
         $user = [   'name' => $usuario->name,
                     'firstName' => $usuario->firstName,
                     'lastName' => $usuario->lastName,
-                    'rol' => $usuario->rol_id,
+                    'rol' => $role,
                     'email' => $usuario->email,
                     'phone' => $usuario->phone,
                     'type' => $usuario->type,
@@ -91,14 +113,16 @@ class UserController extends Controller
      */
     public function updateUser(Request $request, $id)
     {
+        $rol = $request->rol == 'Admin' ? '1' : '2';
+
         $user = User::findOrfail($id);
         $user->firstName = $request->firstName;
         $user->lastName = $request->lastName;
-        $user->rol_id = $request->rol;
         $user->email = $request->email;
         $user->phone = $request->phone;
         $user->name = $request->name;
-        $address = Address::find($user->addresses_id);
+        $user->roles()->sync($rol);
+        $address = Address::find($rol);
         $address->address = $request->address;
 
         $address->update();

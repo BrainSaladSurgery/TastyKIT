@@ -29,6 +29,10 @@
         "vue-loader": "^16.1.2"
     },
     "dependencies": {
-
+        "@casl/ability": "^5.3.1",
+        "@casl/vue": "^2.1.0",
+        "animejs": "^3.2.1",
+        "moment": "^2.29.1",
+        "tone": "^14.7.77"
     }
 }

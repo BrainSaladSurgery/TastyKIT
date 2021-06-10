@@ -17,6 +17,7 @@ class CreateReservationsTable extends Migration
             $table->id();
             $table->string('firstName');
             $table->string('lastName')->nullable();
+            $table->text('description')->nullable();
             $table->date('day');
             $table->integer('pax');
             $table->String('hour');

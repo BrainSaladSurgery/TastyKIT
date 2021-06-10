@@ -35,15 +35,15 @@
                             <div class="flex flex-col m-5 sm:flex-row items-center mb-5 sm:space-x-5">
                                 <div class="w-full sm:w-3/5">
                                     <p class="mb-2 font-semibold text-gray-700">Nombre del producto</p>
-                                    <input v-model="productName" class="bg-white border border-gray-200 rounded shadow-sm w-full focus:ring-0 focus:border-gray-500 " type="text" name="name">
+                                    <input v-model="productName" class="bg-white border border-gray-200 rounded shadow-sm w-full focus:ring-0 focus:border-gray-500 " type="text" name="name" required>
                                 </div>
                                 <div class="w-full sm:w-1/3 mt-2 sm:mt-0">
                                     <p class="mb-2 font-semibold text-gray-700">Cantidad</p>
-                                    <input  v-model="productAmount" class=" bg-white border border-gray-200 rounded shadow-sm  focus:ring-0 focus:border-gray-500" type="text" name="amount" >
+                                    <input  v-model="productAmount" class=" bg-white border border-gray-200 rounded shadow-sm  focus:ring-0 focus:border-gray-500" type="text" name="amount" required>
                                 </div>
                                 <div class="w-full sm:w-1/3 mt-2 sm:mt-0">
                                     <p class="mb-2 font-semibold text-gray-700">Categoría</p>
-                                    <select v-model="productCategory" type="text" name="categoryCreate" class="w-full p-2 bg-white border border-gray-200 rounded shadow-sm appearance-none focus:ring-0 focus:border-gray-500">
+                                    <select v-model="productCategory" type="text" name="categoryCreate" class="w-full p-2 bg-white border border-gray-200 rounded shadow-sm appearance-none focus:ring-0 focus:border-gray-500" required>
                                         <option value="2">Vegetales</option>
                                         <option value="3">Carnes</option>
                                         <option value="4">Frutas</option>
@@ -54,7 +54,7 @@
                             </div>
                             <div class="flex flex-col px-6 py-5 bg-gray-50">
                                 <p class="mb-2 font-semibold text-gray-700">Descripción</p>
-                                <textarea v-model="descriptionProduct" type="text" name="" placeholder="Escribe aquí..." class="p-5 mb-5 bg-white border border-gray-200 rounded shadow-sm h-36 focus:ring-0 focus:border-gray-500" id=""></textarea>
+                                <textarea v-model="descriptionProduct" type="text" name="" placeholder="Escribe aquí..." class="p-5 mb-5 bg-white border border-gray-200 rounded shadow-sm h-36 focus:ring-0 focus:border-gray-500" required></textarea>
 
                                 <hr />
 
@@ -115,27 +115,8 @@
                             </div>
                             <div class="flex flex-col px-6 py-5 bg-gray-50">
                                 <p class="mb-2 font-semibold text-gray-700">Descripción</p>
-                                <textarea v-model="produc.description" type="text" name="" placeholder="Escribe aquí..." class="p-5 mb-5 bg-white border border-gray-200 rounded shadow-sm h-36 focus:ring-0 focus:border-gray-500" ></textarea>
-
+                                <textarea v-model="produc.description" type="text" name="" placeholder="Escribe aquí..." class="p-5 mb-5 bg-white border border-gray-200 rounded shadow-sm h-36 focus:ring-0 focus:border-gray-500" required></textarea>
                                 <hr />
-
-                                <div class="flex items-center mt-5 mb-3 space-x-4">
-                                    <input v-model="imageDefault" class="inline-flex rounded-full" type="checkbox" id="check1" name="check1" />
-                                    <label class="inline-flex font-semibold text-gray-400" for="check1">Imagen por defecto</label>
-                                </div>
-                                <div class="flex flex-row items-center justify-between p-5 bg-white border border-gray-200 rounded shadow-sm">
-                                    <div class="flex flex-row items-center">
-                                        <button @click="selectImage" class="outline-none focus:outline-none inline-flex items-center rounded-full cursor-pointer bg-blue-500 p-2">
-                                            <svg class="text-white h-7 w-7 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                            </svg>
-                                        </button>
-                                        <div class="flex flex-col">
-                                            <input id="image" @change="filechange"  class="inputFile" type="file" name="image" accept="image/gif,image/jpeg,image/jpg,image/png" style="display: none;">
-                                            <p  class="ml-2 text-gray-500" for="image">Pulsar para cambiar imagen</p>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                                 <div class="flex flex-row items-center justify-between p-5 bg-white border-t border-gray-200 rounded-bl-lg rounded-br-lg">
                                     <p class="font-semibold text-blue-500 ml-5">Cancelar</p>
@@ -236,7 +217,8 @@
                 }).
                     then((response) => {
 
-                        this.productos.unshift(response.data)
+
+                        this.getProducts()
                         this.resetData()
 
                     }).catch(error =>{
@@ -293,6 +275,7 @@
 
                 this.showModalMod = false
                 this.produc = []
+                this.getProducts()
 
             },
 
@@ -316,6 +299,7 @@
         watch: {
             productID: function(val){
                 this.getProduct(val)
+                this.productID = ''
             },
             change: function(val){
 
@@ -325,9 +309,9 @@
             },
             deletePro: function(val){
 
-                if(val == true){
-                    this.getProducts()
-                }
+                this.getProducts()
+                this.deletePro = false
+
             }
         }
     }

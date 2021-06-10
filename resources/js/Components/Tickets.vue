@@ -88,10 +88,10 @@
 
                 await axios.get('/order-numticket')
                     .then(response =>{
-
+                        console.log(response.data)
                         if(response.data != ''){
 
-                            this.num = response.data.ticket + 1
+                            this.num = response.data + 1
                             this.numTicket = this.num.toString().padStart(5,0)
 
                         }else{
@@ -115,7 +115,9 @@
                 }
                 await axios.post('/create-order',datos)
                     .then(response =>{
-
+                        this.$emit('resetProps',true)
+                        this.total = 0
+                        this.getNumTicket()
                     }).catch(error =>{
 
                         console.log(error)

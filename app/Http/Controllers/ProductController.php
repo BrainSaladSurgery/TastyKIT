@@ -30,7 +30,7 @@ class ProductController extends Controller
 
     public function getProducts()
     {
-        return $products = Product::all();
+        return $products = Product::orderBy('created_at','desc')->get();
     }
 
     public function show($id){

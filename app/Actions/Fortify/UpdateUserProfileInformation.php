@@ -40,7 +40,6 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'dni' => $input['dni'],
                 'phone' => $input['phone'],
                 // Por defecto agrego que sea User y que no tenga dirección para rellenarla luego más tarde en el perfil
-                'rol_id' => '3',
                 'addresses_id' => '1',
             ])->save();
         }

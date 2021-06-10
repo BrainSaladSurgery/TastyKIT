@@ -19,14 +19,12 @@
 </template>
 
 <script>
-
     import AppLayout from '@/Layouts/AppLayout'
     import NavSide from '@/Components/NavSide'
     import Stats from '@/Components/Stats'
     import HeadTab from '@/Components/HeadTab'
     import HeaderNav from '@/Components/HeaderNav'
     import TableTicket from '@/Components/TableTicket'
-
     export default {
         components: {
             AppLayout,
@@ -44,9 +42,6 @@
                 open: 0,
                 totalcount:0
             }
-        },
-        methods: {
-
         },
 
     }

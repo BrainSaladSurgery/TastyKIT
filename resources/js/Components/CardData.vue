@@ -1,7 +1,7 @@
 <template>
     <!-- Start CARD -->
-   <article  class="overflow-hidden rounded-lg shadow-lg w-80 h-auto ">
-        <div  @click="modalModify();modalData(data.id)" class="w-full h-4/5 flex justify-center hover:bg-gray-500 hover:object-cover">
+   <article  class="overflow-hidden rounded-lg shadow-lg w-80 h-11/12 ">
+        <div  @click="modalModify();modalData(data.id)" class="w-full h-72 flex justify-center hover:bg-gray-500 hover:object-cover">
             <img class="object-contain" :src="data.image" alt="imagen del producto">
         </div>
         <div class="flex-wrap mr-3">
@@ -76,14 +76,14 @@
                         then((response) => {
 
                             console.log(response)
+                            this.emitDelete()
 
                         }).catch(error =>{
 
                             console.log(error)
                         })
 
-                        this.emitDelete()
-
+a
                         break;
 
                     case 'Bebida':
@@ -92,13 +92,12 @@
                         then((response) => {
 
                             console.log(response)
+                            this.emitDelete()
 
                         }).catch(error =>{
 
                             console.log(error)
                         })
-
-                        this.emitDelete()
 
                         break;
                 }
