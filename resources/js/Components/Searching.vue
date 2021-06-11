@@ -17,7 +17,7 @@
                     </div>
             </template>
 
-            <!-- <template #content>
+            <template #content>
 
                 <div v-if="users.length > 0">
                     <inertia-link  v-for="(user,index) in users" :href="'/profile/'+user.nick_name" :key="index"  class="block flex items-center py-2 px-3 hover:bg-gray-100">
@@ -36,7 +36,7 @@
                 </div>
 
 
-            </template> -->
+            </template> 
         </dropdown>
     </div>
 </template>
