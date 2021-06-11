@@ -10,7 +10,7 @@ Index
 Conócenos
 ![TastyKIT](/ImagenesTastyKit/2.jpg)
 Reservas
-![TastyKIT](/ImagenesTastyKit/3.png)
+![TastyKIT](/ImagenesTastyKit/3.jpg)
 Productos
 ![TastyKIT](/ImagenesTastyKit/4.png)
 Buscador
