@@ -34,8 +34,10 @@ npm run dev and npm run watch
 ```
 php artisan serve
 
-## Usuarios de prueba
+
 ```
+## Usuarios de prueba
+
 Admin: jessica.rod.mir@gmail.com, password: 12345678D
 User: esther.ica@gmail.com, password: 12345678D
 ```
