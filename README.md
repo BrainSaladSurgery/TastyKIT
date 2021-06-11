@@ -28,10 +28,12 @@ npm install, composer require, php artisan migrate:fresh --seed
 ```
 npm run dev and npm run watch
 
+
+```
 ### Deploy in local
 ```
 php artisan serve
-```
+
 ## Usuarios de prueba
 ```
 Admin: jessica.rod.mir@gmail.com, password: 12345678D
