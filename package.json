@@ -7,8 +7,9 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "npm run production",
-        "production": "mix --production"
+        "production": "mix --production",
         "postinstall": "npm run prod"
+
     },
     "devDependencies": {
         "@inertiajs/inertia": "^0.8.4",
