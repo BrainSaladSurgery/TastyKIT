@@ -8,6 +8,7 @@
         "hot": "mix watch --hot",
         "prod": "npm run production",
         "production": "mix --production"
+        "postinstall": "npm run prod"
     },
     "devDependencies": {
         "@inertiajs/inertia": "^0.8.4",
