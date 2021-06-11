@@ -6,16 +6,20 @@ Una vez que conocemos un poquito más está aplicación debemos hacer una peque�
 ### Instructions
 
 Index
-![TastyKIT](/ImagenesTastyKit/1.jpg)
+![TastyKIT](/ImagenesTastyKit/1.png)
 Conócenos
 ![TastyKIT](/ImagenesTastyKit/2.jpg)
-Add Food
-![TastyKIT](/ImagenesTastyKit/1.png)
-Login
-![TastyKIT](/ImagenesTastyKit/1.png)
-Edit
-![TastyKIT](/ImagenesTastyKit/1.png)
-# lazyfood
+Reservas
+![TastyKIT](/ImagenesTastyKit/3.png)
+Productos
+![TastyKIT](/ImagenesTastyKit/4.png)
+Buscador
+![TastyKIT](/ImagenesTastyKit/5.jpg)
+Comanda
+![TastyKIT](/ImagenesTastyKit/6.jpg)
+Tickets
+![TastyKIT](/ImagenesTastyKit/7.jpg)
+
 
 ## Project setup
 ```
