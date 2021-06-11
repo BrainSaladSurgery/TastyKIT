@@ -23,25 +23,20 @@ Tickets
 ```
 npm install, composer require, php artisan migrate:fresh --seed
 ```
-
 ### Compiles and hot-reloads for development
 ```
 npm run dev and npm run watch
-
-
 ```
 ### Deploy in local
 ```
 php artisan serve
-
-
 ```
 ## Usuarios de prueba
 
 Admin: jessica.rod.mir@gmail.com, password: 12345678D
 User: esther.ica@gmail.com, password: 12345678D
 ```
-
+```
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
@@ -107,3 +102,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```
