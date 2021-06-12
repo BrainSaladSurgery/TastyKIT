@@ -171,20 +171,7 @@
     }
 </script>
 <style>
-    @font-face{
-        font-family: "Hestina";
-        src: url("@/../fonts/Hestina.otf");
-    }
-    @font-face{
-        font-family: "Rashkey";
-        src: url("@/../fonts/Rashkey.otf");
-    }
-    #tasty{
-        font-family: "Hestina" !important;
-    }
-    #kit{
-        font-family: "Rashkey" !important;
-    }
+
 </style>
 
 
