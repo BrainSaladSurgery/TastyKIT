@@ -115,7 +115,7 @@
             <text
                 xml:space="preserve"
                 id="text833"
-                style="font-style:normal;font-weight:normal;font-size:14.1111px;line-height:0;font-family:sans-serif;white-space:pre;shape-inside:url(#rect835);fill:#000000;fill-opacity:1;stroke:none;"
+                style="font-style:normal;font-weight:normal;font-size:14.1111px;line-height:0;white-space:pre;shape-inside:url(#rect835);fill:#000000;fill-opacity:1;stroke:none;"
                 transform="translate(48.982854,12.902775)"
                 x="111.86553"
                 y="0"><tspan
@@ -170,5 +170,15 @@
         }
     }
 </script>
+<style>
+    @font-face{
+        font-family: Hestina;
+        src: './resources/fonts/Hestina.otf'
+    }
+    @font-face{
+        font-family: Rashkey;
+        src: './resources/fonts/Rashkey.otf'
+    }
+</style>
 
 
