@@ -172,12 +172,12 @@
 </script>
 <style>
     @font-face{
-        font-family: Hestina;
-        src: url('@/../fonts/Hestina.otf') format("opentype");
+        font-family: "Hestina";
+        src: url("@/../fonts/Hestina.otf");
     }
     @font-face{
-        font-family: Rashkey;
-        src: url('@/../fonts/Rashkey.otf') format("opentype");
+        font-family: "Rashkey";
+        src: url("@/../fonts/Rashkey.otf");
     }
 </style>
 
