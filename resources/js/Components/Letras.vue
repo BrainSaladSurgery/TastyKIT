@@ -170,21 +170,5 @@
         }
     }
 </script>
-<style>
-    @font-face {
-        font-family: "Hestina";
-        src: url("/resources/fonts/Hestina.otf");
-    }
-    @font-face {
-        font-family: "Rashkey";
-        src: url("/resources/fonts/Rashkey.otf");
-    }
-    #tasty {
-        font-family: Hestina !important;
-    }
 
-    #kit {
-        font-family: Rashkey !important;
-    }
-    </style>
 
