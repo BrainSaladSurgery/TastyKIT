@@ -173,11 +173,11 @@
 <style>
     @font-face{
         font-family: Hestina;
-        src: './resources/fonts/Hestina.otf'
+        src: url('@/../fonts/Hestina.otf') format("opentype");
     }
     @font-face{
         font-family: Rashkey;
-        src: './resources/fonts/Rashkey.otf'
+        src: url('@/../fonts/Rashkey.otf') format("opentype");
     }
 </style>
 
