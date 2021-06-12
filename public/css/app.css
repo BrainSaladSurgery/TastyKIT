@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap);
 * {
   margin: 0;
   padding: 0;
@@ -6,14 +7,14 @@
 
 @font-face {
   font-family: "Hestina";
-  src: url("./fonts/Hestina.otf");
+  src: url("/resources/fonts/Hestina.otf");
 }
 @font-face {
   font-family: "Rashkey";
-  src: url("./fonts/Rashkey.otf");
+  src: url("/resources/fonts/Rashkey.otf");
 }
 #tasty {
-  font-family: Hestina !important;
+  font-family: "Dancing Script", cursive;
 }
 
 #kit {
