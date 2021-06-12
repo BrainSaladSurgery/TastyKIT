@@ -120,8 +120,8 @@
                 x="111.86553"
                 y="0"><tspan
                 x="60.784845"
-                y="84.533316"><tspan
-                    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5778px;line-height:2.35;font-family:Hestina;-inkscape-font-specification:Hestina;text-align:center;text-anchor:middle;fill:#e6822f;fill-opacity:0.971888">Tasty</tspan><tspan
+                y="84.533316"><tspan id="tasty"
+                    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5778px;line-height:2.35;font-family:Hestina;-inkscape-font-specification:Hestina;text-align:center;text-anchor:middle;fill:#e6822f;fill-opacity:0.971888">Tasty</tspan><tspan id="kit"
                     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:2.35;font-family:Rashkey;-inkscape-font-specification:Rashkey;text-align:center;letter-spacing:0px;word-spacing:0.224896px;text-anchor:middle;fill:#e6822f;fill-opacity:0.971888">KiT</tspan></tspan></text>
             </g>
             <g
@@ -178,6 +178,12 @@
     @font-face{
         font-family: "Rashkey";
         src: url("@/../fonts/Rashkey.otf");
+    }
+    #tasty{
+        font-family: "Hestina" !important;
+    }
+    #kit{
+        font-family: "Rashkey" !important;
     }
 </style>
 
