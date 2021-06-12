@@ -170,8 +170,5 @@
         }
     }
 </script>
-<style>
-
-</style>
 
 

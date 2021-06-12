@@ -18,7 +18,8 @@ mix.js('resources/js/app.js', 'public/js').vue()
     ])
     .webpackConfig(require('./webpack.config'));
 
-mix.sass('resources/scss/app.scss', 'public/css');
+mix.sass('resources/scss/app.scss', 'public/css')
+.copy('resources/fonts','public/fonts');
 if (mix.inProduction()) {
     mix.version();
 }

@@ -6,11 +6,11 @@
 
 @font-face {
   font-family: "Hestina";
-  src: url(/fonts/Hestina.otf?c179a4cda1e9b5cbca1c73d4b3d7a830);
+  src: url("../fonts/Hestina.otf");
 }
 @font-face {
   font-family: "Rashkey";
-  src: url(/fonts/Rashkey.otf?285255253eaff49563d81025f24c17fc);
+  src: url("../fonts/Rashkey.otf");
 }
 #tasty {
   font-family: "Hestina" !important;
