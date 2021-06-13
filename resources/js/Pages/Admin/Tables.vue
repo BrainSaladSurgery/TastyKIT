@@ -96,6 +96,9 @@
 </template>
 
 <script>
+/**
+ * write a component's description
+ */
     import AppLayout from '@/Layouts/AppLayout'
     import NavTop from '@/Components/NavTop'
     import NavSide from '@/Components/NavSide'
@@ -105,6 +108,13 @@
 
 
     export default {
+        /**
+         * @description
+         */
+        /**
+         * @description
+         */
+         */
         data(){
             return{
                 showModal: false,
@@ -127,13 +137,19 @@
 
         },
         methods: {
-            // Method change state modal
+
+            /**
+             * @description change state modal
+             */
             changeStateModal(){
 
                 this.showModal = !this.showModal
 
             },
 
+            /**
+             * @description change state modal
+             */
             changeStateModalMod(){
 
                 this.showModalMod = !this.showModalMod
@@ -141,6 +157,9 @@
             },
 
 
+            /**
+             * @description
+             */
             async getTables(){
 
                 await axios.get('/tables-list')
@@ -151,6 +170,10 @@
                 })
             },
 
+            /**
+             * @description send data for update specified resource
+             * @param {table} id
+             */
             async updateTable(id){
 
                 var url = '/update-table/' + id
@@ -174,6 +197,9 @@
 
             },
 
+            /**
+             * @description reset data
+             */
             resetDataUp(){
 
                 this.showModalMod = false
@@ -181,6 +207,10 @@
 
             },
 
+            /**
+             * @description return specified resources
+             * @param {table} id
+             */
             async getTable(id){
 
                 await axios.get('/table/'+id).
@@ -191,6 +221,7 @@
             }
         },
         watch:{
+
             tableID: function(val){
                 if(this.tableID !=  ''){
                     this.getTable(this.tableID)

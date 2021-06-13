@@ -1,0 +1,183 @@
+\hypertarget{class_app_1_1_http_1_1_controllers_1_1_invoices_controller}{}\doxysection{Invoices\+Controller Class Reference}
+\label{class_app_1_1_http_1_1_controllers_1_1_invoices_controller}\index{InvoicesController@{InvoicesController}}
+Inheritance diagram for Invoices\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_app_1_1_http_1_1_controllers_1_1_invoices_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_ab97db003a1af1efba27592b66d06076f}{\+\_\+\+\_\+construct}} (Order \$order)
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_a149eb92716c1084a935e04a8d95f7347}{index}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_a436acb5cea09bbf0995e6aa22f824934}{get\+Total}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_a4a18c0abbf6628848d2c3b8c48fbca19}{get\+Invoices}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_a55f1b0e94954f6ef867508d3887eb471}{find\+Order\+By\+Ticket}} (\$ticket)
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_a9ef485163104597c12185b53cdacf638}{store}} (Request \$request)
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_ae4914d07a9bbe4aede7a5dea759f6287}{show}} (\$id)
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_aefc2ab0e35bc8bce50fe6d3f989d5e74}{update\+Ticket}} (Request \$request, \$ticket)
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_a726fa8a4b4b187b9ca32ba427aac8137}{destroy}} (\$id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_ac81b120f34489879fb3a0ed668315d8d}{set\+Array}} (\$datos)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Yelx \href{mailto:jessica.rod.mir@gmail.com}{\texttt{ jessica.\+rod.\+mir@gmail.\+com}} \mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_controller}{Controller}} Model Order(\+Invoices) 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_ab97db003a1af1efba27592b66d06076f}\label{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_ab97db003a1af1efba27592b66d06076f}} 
+\index{InvoicesController@{InvoicesController}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!InvoicesController@{InvoicesController}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{Order}]{\$order }\end{DoxyParamCaption})}
+
+Constructor 
+\begin{DoxyParams}[1]{Parameters}
+App\textbackslash{}\+Models\textbackslash{}\+Order & {\em \$order} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_a726fa8a4b4b187b9ca32ba427aac8137}\label{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_a726fa8a4b4b187b9ca32ba427aac8137}} 
+\index{InvoicesController@{InvoicesController}!destroy@{destroy}}
+\index{destroy@{destroy}!InvoicesController@{InvoicesController}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily destroy (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
+
+Remove the specified resource from storage.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\textbackslash{}\+App\textbackslash{}\+Models\textbackslash{}\+Order & {\em \$id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\textbackslash{}\+Illuminate\textbackslash{}\+Http\textbackslash{}\+Response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_a55f1b0e94954f6ef867508d3887eb471}\label{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_a55f1b0e94954f6ef867508d3887eb471}} 
+\index{InvoicesController@{InvoicesController}!findOrderByTicket@{findOrderByTicket}}
+\index{findOrderByTicket@{findOrderByTicket}!InvoicesController@{InvoicesController}}
+\doxysubsubsection{\texorpdfstring{findOrderByTicket()}{findOrderByTicket()}}
+{\footnotesize\ttfamily find\+Order\+By\+Ticket (\begin{DoxyParamCaption}\item[{}]{\$ticket }\end{DoxyParamCaption})}
+
+Find Order By ticket, sort by ticket
+
+\begin{DoxyReturn}{Returns}
+App\textbackslash{}\+Models\textbackslash{}\+Order array \mbox{[}\mbox{]}\$invoice 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_a4a18c0abbf6628848d2c3b8c48fbca19}\label{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_a4a18c0abbf6628848d2c3b8c48fbca19}} 
+\index{InvoicesController@{InvoicesController}!getInvoices@{getInvoices}}
+\index{getInvoices@{getInvoices}!InvoicesController@{InvoicesController}}
+\doxysubsubsection{\texorpdfstring{getInvoices()}{getInvoices()}}
+{\footnotesize\ttfamily get\+Invoices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Display all records Order @depends find\+Order\+By\+Ticket @depends set\+Array
+
+\begin{DoxyReturn}{Returns}
+App\textbackslash{}\+Models\textbackslash{}\+Order array \mbox{[}\mbox{]}\$order 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_a436acb5cea09bbf0995e6aa22f824934}\label{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_a436acb5cea09bbf0995e6aa22f824934}} 
+\index{InvoicesController@{InvoicesController}!getTotal@{getTotal}}
+\index{getTotal@{getTotal}!InvoicesController@{InvoicesController}}
+\doxysubsubsection{\texorpdfstring{getTotal()}{getTotal()}}
+{\footnotesize\ttfamily get\+Total (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Display count totally Order
+
+\begin{DoxyReturn}{Returns}
+App\textbackslash{}\+Models\textbackslash{}\+Order \$order 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_a149eb92716c1084a935e04a8d95f7347}\label{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_a149eb92716c1084a935e04a8d95f7347}} 
+\index{InvoicesController@{InvoicesController}!index@{index}}
+\index{index@{index}!InvoicesController@{InvoicesController}}
+\doxysubsubsection{\texorpdfstring{index()}{index()}}
+{\footnotesize\ttfamily index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Display a view of the resource.
+
+\begin{DoxyReturn}{Returns}
+Inertia\textbackslash{}\+Inertia Admin/\+Invoices 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_ac81b120f34489879fb3a0ed668315d8d}\label{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_ac81b120f34489879fb3a0ed668315d8d}} 
+\index{InvoicesController@{InvoicesController}!setArray@{setArray}}
+\index{setArray@{setArray}!InvoicesController@{InvoicesController}}
+\doxysubsubsection{\texorpdfstring{setArray()}{setArray()}}
+{\footnotesize\ttfamily static set\+Array (\begin{DoxyParamCaption}\item[{}]{\$datos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Set array all Orders @depends find\+Order\+By\+Ticket 
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$datos} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+App\textbackslash{}\+Models\textbackslash{}\+Order array \mbox{[}\mbox{]}\$invoice 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_ae4914d07a9bbe4aede7a5dea759f6287}\label{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_ae4914d07a9bbe4aede7a5dea759f6287}} 
+\index{InvoicesController@{InvoicesController}!show@{show}}
+\index{show@{show}!InvoicesController@{InvoicesController}}
+\doxysubsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily show (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
+
+Display the specified resource.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\textbackslash{}\+App\textbackslash{}\+Models\textbackslash{}\+Order & {\em \$id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\textbackslash{}\+Illuminate\textbackslash{}\+Http\textbackslash{}\+Response \$datos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_a9ef485163104597c12185b53cdacf638}\label{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_a9ef485163104597c12185b53cdacf638}} 
+\index{InvoicesController@{InvoicesController}!store@{store}}
+\index{store@{store}!InvoicesController@{InvoicesController}}
+\doxysubsubsection{\texorpdfstring{store()}{store()}}
+{\footnotesize\ttfamily store (\begin{DoxyParamCaption}\item[{Request}]{\$request }\end{DoxyParamCaption})}
+
+Store a newly created resource in storage.
+
+
+\begin{DoxyParams}[1]{Parameters}
+Illuminate\textbackslash{}\+Http\textbackslash{}\+Request & {\em \$request} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_aefc2ab0e35bc8bce50fe6d3f989d5e74}\label{class_app_1_1_http_1_1_controllers_1_1_invoices_controller_aefc2ab0e35bc8bce50fe6d3f989d5e74}} 
+\index{InvoicesController@{InvoicesController}!updateTicket@{updateTicket}}
+\index{updateTicket@{updateTicket}!InvoicesController@{InvoicesController}}
+\doxysubsubsection{\texorpdfstring{updateTicket()}{updateTicket()}}
+{\footnotesize\ttfamily update\+Ticket (\begin{DoxyParamCaption}\item[{Request}]{\$request,  }\item[{}]{\$ticket }\end{DoxyParamCaption})}
+
+Update the specified resource in storage.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\textbackslash{}\+Illuminate\textbackslash{}\+Http\textbackslash{}\+Request & {\em \$request} & \\
+\hline
+\textbackslash{}\+App\textbackslash{}\+Models\textbackslash{}\+Order & {\em \$ticket} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\textbackslash{}\+Illuminate\textbackslash{}\+Http\textbackslash{}\+Response 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/yelxg/\+Desktop/\+Tasty\+KIT-\/25-\/finish-\/\+OK/app/\+Http/\+Controllers/Invoices\+Controller.\+php\end{DoxyCompactItemize}

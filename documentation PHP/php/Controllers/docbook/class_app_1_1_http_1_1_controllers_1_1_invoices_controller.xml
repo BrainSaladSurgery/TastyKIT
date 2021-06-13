@@ -1,0 +1,308 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_http_1_1_controllers_1_1_invoices_controller" xml:lang="en-US">
+<title>InvoicesController Class Reference</title>
+<indexterm><primary>InvoicesController</primary></indexterm>
+<para>Inheritance diagram for InvoicesController:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_http_1_1_controllers_1_1_invoices_controller.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_invoices_controller_1ab97db003a1af1efba27592b66d06076f">__construct</link> (Order $order)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_invoices_controller_1a149eb92716c1084a935e04a8d95f7347">index</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_invoices_controller_1a436acb5cea09bbf0995e6aa22f824934">getTotal</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_invoices_controller_1a4a18c0abbf6628848d2c3b8c48fbca19">getInvoices</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_invoices_controller_1a55f1b0e94954f6ef867508d3887eb471">findOrderByTicket</link> ($ticket)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_invoices_controller_1a9ef485163104597c12185b53cdacf638">store</link> (Request $request)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_invoices_controller_1ae4914d07a9bbe4aede7a5dea759f6287">show</link> ($id)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_invoices_controller_1aefc2ab0e35bc8bce50fe6d3f989d5e74">updateTicket</link> (Request $request, $ticket)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_invoices_controller_1a726fa8a4b4b187b9ca32ba427aac8137">destroy</link> ($id)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static <link linkend="_class_app_1_1_http_1_1_controllers_1_1_invoices_controller_1ac81b120f34489879fb3a0ed668315d8d">setArray</link> ($datos)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para><formalpara><title>Author</title>
+
+<para>Yelx <link xlink:href="mailto:jessica.rod.mir@gmail.com">jessica.rod.mir@gmail.com</link> <link linkend="_class_app_1_1_http_1_1_controllers_1_1_controller">Controller</link> Model Order(Invoices) </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_invoices_controller_1ab97db003a1af1efba27592b66d06076f"/>    <section>
+    <title>__construct()</title>
+<indexterm><primary>__construct</primary><secondary>InvoicesController</secondary></indexterm>
+<indexterm><primary>InvoicesController</primary><secondary>__construct</secondary></indexterm>
+<para><computeroutput>__construct (Order $order)</computeroutput></para>
+<para>Constructor 
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>App\Models\Order                                </entry>                                <entry>$order</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_invoices_controller_1a726fa8a4b4b187b9ca32ba427aac8137"/>    <section>
+    <title>destroy()</title>
+<indexterm><primary>destroy</primary><secondary>InvoicesController</secondary></indexterm>
+<indexterm><primary>InvoicesController</primary><secondary>destroy</secondary></indexterm>
+<para><computeroutput>destroy ( $id)</computeroutput></para>
+<para>Remove the specified resource from storage.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>\App\Models\Order                                </entry>                                <entry>$id</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>\Illuminate\Http\Response </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_invoices_controller_1a55f1b0e94954f6ef867508d3887eb471"/>    <section>
+    <title>findOrderByTicket()</title>
+<indexterm><primary>findOrderByTicket</primary><secondary>InvoicesController</secondary></indexterm>
+<indexterm><primary>InvoicesController</primary><secondary>findOrderByTicket</secondary></indexterm>
+<para><computeroutput>findOrderByTicket ( $ticket)</computeroutput></para>
+<para>Find Order By ticket, sort by ticket</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>App\Models\Order array []$invoice </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_invoices_controller_1a4a18c0abbf6628848d2c3b8c48fbca19"/>    <section>
+    <title>getInvoices()</title>
+<indexterm><primary>getInvoices</primary><secondary>InvoicesController</secondary></indexterm>
+<indexterm><primary>InvoicesController</primary><secondary>getInvoices</secondary></indexterm>
+<para><computeroutput>getInvoices ( )</computeroutput></para>
+<para>Display all records Order @depends findOrderByTicket @depends setArray</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>App\Models\Order array []$order </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_invoices_controller_1a436acb5cea09bbf0995e6aa22f824934"/>    <section>
+    <title>getTotal()</title>
+<indexterm><primary>getTotal</primary><secondary>InvoicesController</secondary></indexterm>
+<indexterm><primary>InvoicesController</primary><secondary>getTotal</secondary></indexterm>
+<para><computeroutput>getTotal ( )</computeroutput></para>
+<para>Display count totally Order</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>App\Models\Order $order </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_invoices_controller_1a149eb92716c1084a935e04a8d95f7347"/>    <section>
+    <title>index()</title>
+<indexterm><primary>index</primary><secondary>InvoicesController</secondary></indexterm>
+<indexterm><primary>InvoicesController</primary><secondary>index</secondary></indexterm>
+<para><computeroutput>index ( )</computeroutput></para>
+<para>Display a view of the resource.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Inertia\Inertia Admin/Invoices </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_invoices_controller_1ac81b120f34489879fb3a0ed668315d8d"/>    <section>
+    <title>setArray()</title>
+<indexterm><primary>setArray</primary><secondary>InvoicesController</secondary></indexterm>
+<indexterm><primary>InvoicesController</primary><secondary>setArray</secondary></indexterm>
+<para><computeroutput>static setArray ( $datos)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Set array all Orders @depends findOrderByTicket 
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>array                                </entry>                                <entry>$datos</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>App\Models\Order array []$invoice </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_invoices_controller_1ae4914d07a9bbe4aede7a5dea759f6287"/>    <section>
+    <title>show()</title>
+<indexterm><primary>show</primary><secondary>InvoicesController</secondary></indexterm>
+<indexterm><primary>InvoicesController</primary><secondary>show</secondary></indexterm>
+<para><computeroutput>show ( $id)</computeroutput></para>
+<para>Display the specified resource.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>\App\Models\Order                                </entry>                                <entry>$id</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>\Illuminate\Http\Response $datos </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_invoices_controller_1a9ef485163104597c12185b53cdacf638"/>    <section>
+    <title>store()</title>
+<indexterm><primary>store</primary><secondary>InvoicesController</secondary></indexterm>
+<indexterm><primary>InvoicesController</primary><secondary>store</secondary></indexterm>
+<para><computeroutput>store (Request $request)</computeroutput></para>
+<para>Store a newly created resource in storage.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>Illuminate\Http\Request                                </entry>                                <entry>$request</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_invoices_controller_1aefc2ab0e35bc8bce50fe6d3f989d5e74"/>    <section>
+    <title>updateTicket()</title>
+<indexterm><primary>updateTicket</primary><secondary>InvoicesController</secondary></indexterm>
+<indexterm><primary>InvoicesController</primary><secondary>updateTicket</secondary></indexterm>
+<para><computeroutput>updateTicket (Request $request,  $ticket)</computeroutput></para>
+<para>Update the specified resource in storage.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>\Illuminate\Http\Request                                </entry>                                <entry>$request</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>\App\Models\Order                                </entry>                                <entry>$ticket</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>\Illuminate\Http\Response </para>
+</formalpara>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+C:/Users/yelxg/Desktop/TastyKIT-25-finish-OK/app/Http/Controllers/InvoicesController.php</section>
+</section>

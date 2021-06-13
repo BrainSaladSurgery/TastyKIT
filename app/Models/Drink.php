@@ -23,6 +23,12 @@ class Drink extends Model
         'price'
     ];
 
+    /**
+     * Create a new resources
+     *
+     * @param mixed $request
+     * @return App\Models\Drink $drink
+     */
     public static function createDrink($request)
     {
         $url = null;
@@ -59,11 +65,21 @@ class Drink extends Model
         return $drink;
     }
 
+    /**
+     * Return relationship drink with orders
+     *
+     * @return $drink
+     */
     public function orders()
     {
         return $this->belongsToMany(Order::class, 'ticket_order', 'id', 'drink_id');//muchos a muchos
     }
 
+    /**
+     * Return relationship Drink with category
+     *
+     * @return $drink
+     */
     public function category()
     {
         return $this->belongsTo(DrinkCategory::class, 'categories_id', 'id');//1 a muchos

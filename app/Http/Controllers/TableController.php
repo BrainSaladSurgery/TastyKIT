@@ -10,9 +10,9 @@ use \Illuminate\Http\Response;
 class TableController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a view of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Inertia\Inertia Admin/Tables
      */
     public function index()
     {
@@ -20,36 +20,20 @@ class TableController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Return all records in BD object Table
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response $mesa
      */
     public function getTables(){
 
         return $mesa = Table::all();
     }
 
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Table  $table
-     * @return \Illuminate\Http\Response
+     * @param  $id
+     * @return \Illuminate\Http\Response $table
      */
     public function getTable($id)
     {

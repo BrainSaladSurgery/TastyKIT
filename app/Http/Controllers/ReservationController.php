@@ -8,35 +8,48 @@ use Inertia\Inertia;
 use \Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
 
+/**
+ * @author Yelx <jessica.rod.mir@gmail.com>
+ * [Description ReservationController]
+ */
 class ReservationController extends Controller
 {
+    /**
+     * Constructor
+     * @param App\Models\Reservation $reserv
+     */
     public function __construct(Reservation $reserv)
     {
         $this->reserv = $reserv;
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        // $allCategories = ProductCategory::all();
-        // $product= Product::all()->first();
-        // return Inertia::render('Admin/Products',['allCategories' => $allCategories,
-        //                                         'type' => $product->type]);
-    }
 
+    /**
+     * Return all records in BD Reservation
+     *
+     * @return App\Models\Reservation $reserv
+     */
     public function getReserv()
     {
         return $reserv = Reservation::all();
     }
 
+
+    /**
+     * Return count all totally Reservation
+     *
+     * @return int
+     */
     public function getTotal()
     {
         return count(Reservation::all());
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  $id
+     * @return \Illuminate\Http\Response $reservation
+     */
     public function show($id){
 
         return Reservation::where('id', $id)->first();
@@ -45,7 +58,7 @@ class ReservationController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param\Illuminate\Http\Request $request
      */
     public function create(Request $request)
     {

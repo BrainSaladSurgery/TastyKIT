@@ -10,17 +10,26 @@ use Illuminate\Support\Facades\DB;
 use \Illuminate\Http\Response;
 
 
+/**
+ * @author Yelx <jessica.rod.mir@gmail.com>
+ * Controller Model Drink
+ */
 class DrinkController extends Controller
 {
 
+    /**
+     * Constructor DrinkController
+     * @param Drink $drink
+     */
     public function __construct(Drink $drink){
 
         $this->drink = $drink;
     }
+
     /**
-     * Display a listing of the resource.
+     * Display a view of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Inertia\Inertia Admin/Drinks[allCategories,type]
      */
     public function index()
     {
@@ -30,6 +39,12 @@ class DrinkController extends Controller
                                                 'type' => $drink->type] );
     }
 
+
+    /**
+     * Return all drinks in BD
+     *
+     * @return App\Models\Drink $datos
+     */
     public function getDrinks()
     {
         $drinks = Drink::all();
@@ -52,8 +67,9 @@ class DrinkController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Create a new resource.
      *
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function create(Request $request)

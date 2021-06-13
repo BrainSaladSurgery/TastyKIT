@@ -1,0 +1,244 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_http_1_1_controllers_1_1_product_controller" xml:lang="en-US">
+<title>ProductController Class Reference</title>
+<indexterm><primary>ProductController</primary></indexterm>
+<para>Inheritance diagram for ProductController:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_http_1_1_controllers_1_1_product_controller.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_product_controller_1a5762dc36aaf13d0ff89779ec364f8031">__construct</link> (Product $product)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_product_controller_1a149eb92716c1084a935e04a8d95f7347">index</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_product_controller_1a9686a480a1adb1923d64e71cf0624275">getProducts</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_product_controller_1ae4914d07a9bbe4aede7a5dea759f6287">show</link> ($id)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_product_controller_1a14e082d8e6a6a1e8dea28f9d0267fdf0">create</link> (Request $request)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_product_controller_1a85a4d4489d9a4878d25f51a265b2ba05">updateProduct</link> (Request $request, $id)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_product_controller_1a726fa8a4b4b187b9ca32ba427aac8137">destroy</link> ($id)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para><formalpara><title>Author</title>
+
+<para>Yelx <link xlink:href="mailto:jessica.rod.mir@gmail.com">jessica.rod.mir@gmail.com</link> [Description <link linkend="_class_app_1_1_http_1_1_controllers_1_1_product_controller">ProductController</link>] </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_product_controller_1a5762dc36aaf13d0ff89779ec364f8031"/>    <section>
+    <title>__construct()</title>
+<indexterm><primary>__construct</primary><secondary>ProductController</secondary></indexterm>
+<indexterm><primary>ProductController</primary><secondary>__construct</secondary></indexterm>
+<para><computeroutput>__construct (Product $product)</computeroutput></para>
+<para>Constructor 
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>Product                                </entry>                                <entry>$product</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_product_controller_1a14e082d8e6a6a1e8dea28f9d0267fdf0"/>    <section>
+    <title>create()</title>
+<indexterm><primary>create</primary><secondary>ProductController</secondary></indexterm>
+<indexterm><primary>ProductController</primary><secondary>create</secondary></indexterm>
+<para><computeroutput>create (Request $request)</computeroutput></para>
+<para>Create a new resource.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>\Illuminate\Http\Request                                </entry>                                <entry>$request</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>\Illuminate\Http\Response </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_product_controller_1a726fa8a4b4b187b9ca32ba427aac8137"/>    <section>
+    <title>destroy()</title>
+<indexterm><primary>destroy</primary><secondary>ProductController</secondary></indexterm>
+<indexterm><primary>ProductController</primary><secondary>destroy</secondary></indexterm>
+<para><computeroutput>destroy ( $id)</computeroutput></para>
+<para>Remove the specified resource from storage.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>\App\Models\Product                                </entry>                                <entry>$product</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>\Illuminate\Http\Response </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_product_controller_1a9686a480a1adb1923d64e71cf0624275"/>    <section>
+    <title>getProducts()</title>
+<indexterm><primary>getProducts</primary><secondary>ProductController</secondary></indexterm>
+<indexterm><primary>ProductController</primary><secondary>getProducts</secondary></indexterm>
+<para><computeroutput>getProducts ( )</computeroutput></para>
+<para>Return all records in BD order desc</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>App\Models\Products $products </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_product_controller_1a149eb92716c1084a935e04a8d95f7347"/>    <section>
+    <title>index()</title>
+<indexterm><primary>index</primary><secondary>ProductController</secondary></indexterm>
+<indexterm><primary>ProductController</primary><secondary>index</secondary></indexterm>
+<para><computeroutput>index ( )</computeroutput></para>
+<para>Display a view of the resource.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Inertia\Inertia Admin/Products </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_product_controller_1ae4914d07a9bbe4aede7a5dea759f6287"/>    <section>
+    <title>show()</title>
+<indexterm><primary>show</primary><secondary>ProductController</secondary></indexterm>
+<indexterm><primary>ProductController</primary><secondary>show</secondary></indexterm>
+<para><computeroutput>show ( $id)</computeroutput></para>
+<para>Display the specified resource.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>$id</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>\Illuminate\Http\Response $product </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_product_controller_1a85a4d4489d9a4878d25f51a265b2ba05"/>    <section>
+    <title>updateProduct()</title>
+<indexterm><primary>updateProduct</primary><secondary>ProductController</secondary></indexterm>
+<indexterm><primary>ProductController</primary><secondary>updateProduct</secondary></indexterm>
+<para><computeroutput>updateProduct (Request $request,  $id)</computeroutput></para>
+<para>Update the specified product in Database.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>\Illuminate\Http\Request                                </entry>                                <entry>$request</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>\App\Models\Product                                </entry>                                <entry>$id</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>\Illuminate\Http\Response </para>
+</formalpara>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+C:/Users/yelxg/Desktop/TastyKIT-25-finish-OK/app/Http/Controllers/ProductController.php</section>
+</section>

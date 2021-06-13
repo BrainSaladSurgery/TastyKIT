@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_models_1_1_order" xml:lang="en-US">
+<title>Order Class Reference</title>
+<indexterm><primary>Order</primary></indexterm>
+<para>Inheritance diagram for Order:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_models_1_1_order.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_models_1_1_order_1a5aa7b43c8ec77df216a71a27da0a321c">table</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_models_1_1_order_1ae8a275690ff1b618e1947378b0ed73ae">user</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_models_1_1_order_1a6aac09666868d17fe88c8db82992c751">drink</link> ($drinkId)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_models_1_1_order_1a4811f2f57fb66806cacf6bf8646a7ef4">dish</link> ($dishId)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_models_1_1_order_1a4e777df419c6c515a7f26b38e23bdb20">owner</link> ($userId)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static <link linkend="_class_app_1_1_models_1_1_order_1a66925624252a25d7f5e36875aa227301">mesa</link> ($mesaId)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><emphasis role="strong">$fillable</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_app_1_1_models_1_1_order_1a4811f2f57fb66806cacf6bf8646a7ef4"/>    <section>
+    <title>dish()</title>
+<indexterm><primary>dish</primary><secondary>Order</secondary></indexterm>
+<indexterm><primary>Order</primary><secondary>dish</secondary></indexterm>
+<para><computeroutput>dish ( $dishId)</computeroutput></para>
+<para>Return relationship <link linkend="_class_app_1_1_models_1_1_order">Order</link> with dish</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>App\Models\Dish                                </entry>                                <entry>$dishId</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>$order </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_models_1_1_order_1a6aac09666868d17fe88c8db82992c751"/>    <section>
+    <title>drink()</title>
+<indexterm><primary>drink</primary><secondary>Order</secondary></indexterm>
+<indexterm><primary>Order</primary><secondary>drink</secondary></indexterm>
+<para><computeroutput>drink ( $drinkId)</computeroutput></para>
+<para>Return relationship <link linkend="_class_app_1_1_models_1_1_order">Order</link> with drink 
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>App\Models\Drinks                                </entry>                                <entry>$drinkId</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>$order </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_models_1_1_order_1a66925624252a25d7f5e36875aa227301"/>    <section>
+    <title>mesa()</title>
+<indexterm><primary>mesa</primary><secondary>Order</secondary></indexterm>
+<indexterm><primary>Order</primary><secondary>mesa</secondary></indexterm>
+<para><computeroutput>static mesa ( $mesaId)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Return relationship <link linkend="_class_app_1_1_models_1_1_order">Order</link> with table</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>App\Models\Table                                </entry>                                <entry>$mesaId</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>$order </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_models_1_1_order_1a4e777df419c6c515a7f26b38e23bdb20"/>    <section>
+    <title>owner()</title>
+<indexterm><primary>owner</primary><secondary>Order</secondary></indexterm>
+<indexterm><primary>Order</primary><secondary>owner</secondary></indexterm>
+<para><computeroutput>owner ( $userId)</computeroutput></para>
+<para>Return relationship <link linkend="_class_app_1_1_models_1_1_order">Order</link> with user</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>App\Models\User                                </entry>                                <entry>$userId</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>$order </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_models_1_1_order_1a5aa7b43c8ec77df216a71a27da0a321c"/>    <section>
+    <title>table()</title>
+<indexterm><primary>table</primary><secondary>Order</secondary></indexterm>
+<indexterm><primary>Order</primary><secondary>table</secondary></indexterm>
+<para><computeroutput>table ( )</computeroutput></para>
+<para>Return relationship <link linkend="_class_app_1_1_models_1_1_order">Order</link> with table</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>$order </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_models_1_1_order_1ae8a275690ff1b618e1947378b0ed73ae"/>    <section>
+    <title>user()</title>
+<indexterm><primary>user</primary><secondary>Order</secondary></indexterm>
+<indexterm><primary>Order</primary><secondary>user</secondary></indexterm>
+<para><computeroutput>user ( )</computeroutput></para>
+<para>Return relationship <link linkend="_class_app_1_1_models_1_1_order">Order</link> with user</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>$order </para>
+</formalpara>
+</para>
+</section>
+</section>
+<section>
+<title>Field Documentation</title>
+<anchor xml:id="_class_app_1_1_models_1_1_order_1a6a90e74ccdf5efd70d51d10c906f8e32"/>    <section>
+    <title>$fillable</title>
+<indexterm><primary>$fillable</primary><secondary>Order</secondary></indexterm>
+<indexterm><primary>Order</primary><secondary>$fillable</secondary></indexterm>
+<para><computeroutput>$fillable<computeroutput>[protected]</computeroutput></computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting>=&#32;[
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;type&apos;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;ticket&apos;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;status&apos;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;comment&apos;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;table_id&apos;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;dish_id&apos;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;drink_id&apos;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;ud&apos;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;user_id&apos;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;total&apos;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;created_at&apos;</emphasis>
+&#32;&#32;&#32;&#32;]
+</programlisting></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+C:/Users/yelxg/Desktop/TastyKIT-25-finish-OK/app/Models/Order.php</section>
+</section>

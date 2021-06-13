@@ -1,0 +1,138 @@
+\hypertarget{class_app_1_1_http_1_1_controllers_1_1_dish_controller}{}\doxysection{Dish\+Controller Class Reference}
+\label{class_app_1_1_http_1_1_controllers_1_1_dish_controller}\index{DishController@{DishController}}
+Inheritance diagram for Dish\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_app_1_1_http_1_1_controllers_1_1_dish_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_dish_controller_a756aace24a648e9642712f912e18a54a}{\+\_\+\+\_\+construct}} (Dish \$dish)
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_dish_controller_a149eb92716c1084a935e04a8d95f7347}{index}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_dish_controller_ab2001ee09b9656b7ee07842031f78bfa}{get\+Dishes}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_dish_controller_a9ef485163104597c12185b53cdacf638}{store}} (Request \$request)
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_dish_controller_ae4914d07a9bbe4aede7a5dea759f6287}{show}} (\$id)
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_dish_controller_add02afe5e6456941f3fe51eaeeebee44}{update\+Dish}} (Request \$request, \$id)
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_dish_controller_a726fa8a4b4b187b9ca32ba427aac8137}{destroy}} (\$id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Yelx \href{mailto:jessica.rod.mir@gmail.com}{\texttt{ jessica.\+rod.\+mir@gmail.\+com}} \mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_controller}{Controller}} Model Dishes 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_dish_controller_a756aace24a648e9642712f912e18a54a}\label{class_app_1_1_http_1_1_controllers_1_1_dish_controller_a756aace24a648e9642712f912e18a54a}} 
+\index{DishController@{DishController}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!DishController@{DishController}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{Dish}]{\$dish }\end{DoxyParamCaption})}
+
+Constructor 
+\begin{DoxyParams}[1]{Parameters}
+Dish & {\em \$dish} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_dish_controller_a726fa8a4b4b187b9ca32ba427aac8137}\label{class_app_1_1_http_1_1_controllers_1_1_dish_controller_a726fa8a4b4b187b9ca32ba427aac8137}} 
+\index{DishController@{DishController}!destroy@{destroy}}
+\index{destroy@{destroy}!DishController@{DishController}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily destroy (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
+
+Remove the specified resource from storage.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\textbackslash{}\+Illuminate\textbackslash{}\+Http\textbackslash{}\+Request & {\em \$id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\textbackslash{}\+Illuminate\textbackslash{}\+Http\textbackslash{}\+Response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_dish_controller_ab2001ee09b9656b7ee07842031f78bfa}\label{class_app_1_1_http_1_1_controllers_1_1_dish_controller_ab2001ee09b9656b7ee07842031f78bfa}} 
+\index{DishController@{DishController}!getDishes@{getDishes}}
+\index{getDishes@{getDishes}!DishController@{DishController}}
+\doxysubsubsection{\texorpdfstring{getDishes()}{getDishes()}}
+{\footnotesize\ttfamily get\+Dishes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Return all dishes in BD
+
+\begin{DoxyReturn}{Returns}
+App\textbackslash{}\+Models\textbackslash{}\+Dish \$datos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_dish_controller_a149eb92716c1084a935e04a8d95f7347}\label{class_app_1_1_http_1_1_controllers_1_1_dish_controller_a149eb92716c1084a935e04a8d95f7347}} 
+\index{DishController@{DishController}!index@{index}}
+\index{index@{index}!DishController@{DishController}}
+\doxysubsubsection{\texorpdfstring{index()}{index()}}
+{\footnotesize\ttfamily index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Display a view of the resource.
+
+\begin{DoxyReturn}{Returns}
+Inertia\textbackslash{}\+Inertia Admin/\+Dishes\mbox{[}all\+Categories,type\mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_dish_controller_ae4914d07a9bbe4aede7a5dea759f6287}\label{class_app_1_1_http_1_1_controllers_1_1_dish_controller_ae4914d07a9bbe4aede7a5dea759f6287}} 
+\index{DishController@{DishController}!show@{show}}
+\index{show@{show}!DishController@{DishController}}
+\doxysubsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily show (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
+
+Display the specified resource.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\textbackslash{}\+Illuminate\textbackslash{}\+Http\textbackslash{}\+Request & {\em \$id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\textbackslash{}\+Illuminate\textbackslash{}\+Http\textbackslash{}\+Response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_dish_controller_a9ef485163104597c12185b53cdacf638}\label{class_app_1_1_http_1_1_controllers_1_1_dish_controller_a9ef485163104597c12185b53cdacf638}} 
+\index{DishController@{DishController}!store@{store}}
+\index{store@{store}!DishController@{DishController}}
+\doxysubsubsection{\texorpdfstring{store()}{store()}}
+{\footnotesize\ttfamily store (\begin{DoxyParamCaption}\item[{Request}]{\$request }\end{DoxyParamCaption})}
+
+Store a newly created resource in storage.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\textbackslash{}\+Illuminate\textbackslash{}\+Http\textbackslash{}\+Request & {\em \$request} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_dish_controller_add02afe5e6456941f3fe51eaeeebee44}\label{class_app_1_1_http_1_1_controllers_1_1_dish_controller_add02afe5e6456941f3fe51eaeeebee44}} 
+\index{DishController@{DishController}!updateDish@{updateDish}}
+\index{updateDish@{updateDish}!DishController@{DishController}}
+\doxysubsubsection{\texorpdfstring{updateDish()}{updateDish()}}
+{\footnotesize\ttfamily update\+Dish (\begin{DoxyParamCaption}\item[{Request}]{\$request,  }\item[{}]{\$id }\end{DoxyParamCaption})}
+
+Update the specified resource in storage.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\textbackslash{}\+Illuminate\textbackslash{}\+Http\textbackslash{}\+Request & {\em \$request} & \\
+\hline
+\textbackslash{}\+Illuminate\textbackslash{}\+Http\textbackslash{}\+Request & {\em \$id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\textbackslash{}\+Illuminate\textbackslash{}\+Http\textbackslash{}\+Response 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/yelxg/\+Desktop/\+Tasty\+KIT-\/25-\/finish-\/\+OK/app/\+Http/\+Controllers/Dish\+Controller.\+php\end{DoxyCompactItemize}

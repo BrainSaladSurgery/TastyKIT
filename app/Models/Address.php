@@ -17,6 +17,10 @@ class Address extends Model
         'ZIP'
     ];
 
+    /**
+     * Return relationship users with address
+     * @return $user
+     */
     public function users()
     {
         return $this->hasMany(User::class, 'addresses_id', 'id');//1 a muchos

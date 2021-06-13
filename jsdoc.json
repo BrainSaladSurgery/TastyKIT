@@ -1,0 +1,18 @@
+{
+    "plugins": [
+        "node_modules/jsdoc-vuejs"
+    ],
+    "source": {
+        "include":["resources/js/Pages/Admin"],
+        "includePattern": "\\.(vue|js)$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "opts": {
+        "recurse": true,
+        "destination": "./documentation"
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false
+    }
+}

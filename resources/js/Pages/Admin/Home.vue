@@ -3,8 +3,8 @@
         <template #navSide>
         <div id="navSide" >
             <nav-side />
-        </div>  
-        <div style="width: 80.5px; heigth: auto;"></div>    
+        </div>
+        <div style="width: 80.5px; heigth: auto;"></div>
         </template>
         <template #content>
 
@@ -242,6 +242,9 @@
 </template>
 
 <script>
+/**
+ * write a component's description
+ */
 
     import AppLayout from '@/Layouts/AppLayout'
     import NavSide from '@/Components/NavSide'
@@ -254,6 +257,13 @@
     import Modal from '@/Jetstream/Modal'
 
     export default {
+        /**
+         * @description
+         */
+        /**
+         * @description
+         */
+         */
         data(){
             return{
                 total:0,
@@ -294,16 +304,25 @@
         },
         methods: {
 
+            /**
+             * @description Change modal status
+             */
             changeModalAdd(){
 
                 this.showModalAdd = !this.showModalAdd
             },
 
+            /**
+             * @description Change modal status
+             */
             changeModal(){
 
                 this.showModal = !this.showModal
             },
 
+            /**
+             * @description return total reservation
+             */
             async getTotal(){
 
                 await axios.get('/reservation-total')
@@ -313,6 +332,9 @@
                     })
             },
 
+            /**
+             * @description return all reservations
+             */
             async getReservas(){
 
                 await axios.get('/reservation-list')
@@ -327,6 +349,10 @@
                     })
             },
 
+            /**
+             * @description return specified resource
+             * @param {reservation} id
+             */
             async getReserva(id){
 
                 await axios.get('/reservation/'+id)
@@ -341,6 +367,9 @@
                         console.log(error)
                     })
             },
+            /**
+             * @description Control errors
+             */
             checkForm(){
                 if(this.reserv.day == ''){
                     this.errorDay = true
@@ -373,8 +402,12 @@
                 }
             },
 
+            /**
+             * @description send data for create new resource
+             * @param {reservation} reserv
+             */
             async createReserv(reserv){
-                
+
                 const formData = new FormData()
                 formData.append('firstName', this.reserv.firstName)
                 formData.append('lastName', this.reserv.lastName)
@@ -394,6 +427,11 @@
 
             },
 
+            /**
+             * @description Control error and update specified resource
+             * @param {reservation} reserva
+             * @param {reservation} id
+             */
             async updateReserva(reserva, id){
 
                 if(reserva.day == ''){
@@ -438,6 +476,9 @@
 
             },
 
+            /**
+             * @description reset data
+             */
             resetData(){
                 this.changeModalAdd()
                 this.getTotal()
@@ -455,6 +496,9 @@
                 this.error = false
             },
 
+            /**
+             * @description reset data later modify
+             */
             resetDataMod(){
                 this.changeModal()
                 this.getReservas()
@@ -496,8 +540,6 @@
             this.getTotal()
             this.getReservas()
         },
-
-
 
     }
 </script>

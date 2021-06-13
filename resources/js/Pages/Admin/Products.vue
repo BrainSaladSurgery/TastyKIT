@@ -134,6 +134,9 @@
 </template>
 
 <script>
+/**
+ * write a component's description
+ */
     import AppLayout from '@/Layouts/AppLayout'
     import NavTop from '@/Components/NavTop'
     import NavSide from '@/Components/NavSide'
@@ -143,6 +146,13 @@
 
 
     export default {
+        /**
+         * @description
+         */
+        /**
+         * @description
+         */
+         */
         data(){
             return{
                 showModal: false,
@@ -174,32 +184,46 @@
 
         },
         methods: {
-            // Method change state modal
+            /**
+             * @description change state modal
+             */
             changeStateModal(){
 
                 this.showModal = !this.showModal
 
             },
 
+            /**
+             * @description change state modal
+             */
             changeStateModalMod(){
 
                 this.showModalMod = !this.showModalMod
 
             },
 
-            //Take id image
+            /**
+             * @description take element with id image
+             */
             selectImage(){
 
                 document.getElementById('image').click()
             },
-            //create file in url
+
+            /**
+             * @description create file in url
+             * @param {event} e
+             */
             filechange(e){
 
                 let file = e.target.files[0]
                 this.image = file
                 this.url = URL.createObjectURL(file)
             },
-            // Method create Product
+
+            /**
+             * @description send data for create Product
+             */
             async createProduct(){
 
                 const formData = new FormData()
@@ -227,6 +251,9 @@
                     })
             },
 
+            /**
+             * @description reset data
+             */
             resetData(){
 
                 this.showModal = false
@@ -239,6 +266,9 @@
                 this.productCategory = ''
             },
 
+            /**
+             * @description return all products
+             */
             async getProducts(){
 
                 await axios.get('/products-list')
@@ -248,6 +278,10 @@
                 })
             },
 
+            /**
+             * @description send data for update specified product
+             * @param {product} idProduct
+             */
             async updateProduct(idProduct){
 
                 var url = '/update-product/' + idProduct
@@ -271,6 +305,9 @@
 
             },
 
+            /**
+             * @description reset data
+             */
             resetDataUp(){
 
                 this.showModalMod = false
@@ -279,6 +316,10 @@
 
             },
 
+            /**
+             * @description return specified resource
+             * @param {product} id
+             */
             async getProduct(id){
 
                 await axios.get('/product/'+id).
@@ -288,7 +329,6 @@
             }
         },
 
-
         mounted: function() {
 
             this.getProducts()
@@ -297,21 +337,23 @@
 
 
         watch: {
+
             productID: function(val){
                 this.getProduct(val)
                 this.productID = ''
             },
+
             change: function(val){
 
                 if(val == true){
                     this.getProducts()
                 }
             },
+
             deletePro: function(val){
 
                 this.getProducts()
                 this.deletePro = false
-
             }
         }
     }

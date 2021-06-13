@@ -14,6 +14,11 @@ class DishCategory extends Model
         'description'
     ];
 
+    /**
+     * Return relationship DishCategory with dish
+     *
+     * @return $dishCategory
+     */
     public function dishes()
     {
         return $this->hasMany(Dish::class, 'categories_id', 'id');//1 a muchos

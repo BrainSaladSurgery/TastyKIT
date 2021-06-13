@@ -145,6 +145,9 @@
 </template>
 
 <script>
+/**
+ * write a component's description
+ */
     import AppLayout from '@/Layouts/AppLayout'
     import NavTop from '@/Components/NavTop'
     import NavSide from '@/Components/NavSide'
@@ -154,6 +157,13 @@
 
 
     export default {
+        /**
+         * @description
+         */
+        /**
+         * @description
+         */
+         */
         data(){
             return{
                 showModal: false,
@@ -186,31 +196,46 @@
         },
         methods: {
             // Method change state modal
+            /**
+             * @description Change status modal
+             */
             changeStateModal(){
 
                 this.showModal = !this.showModal
 
             },
 
+            /**
+             * @description Change status modal
+             */
             changeStateModalMod(){
 
                 this.showModalMod = !this.showModalMod
 
             },
 
-            //Take id image
+            /**
+             * @description Take id image
+             */
             selectImage(){
 
                 document.getElementById('image').click()
             },
-            //create file in url
+
+            /**
+             * @description create file in url
+             * @param {any} e
+             */
             filechange(e){
 
                 let file = e.target.files[0]
                 this.image = file
                 this.url = URL.createObjectURL(file)
             },
-            // Method create Drink
+
+            /**
+             * @description send data for create a new resource drink
+             */
             async createDrink(){
 
                 const formData = new FormData()
@@ -238,6 +263,9 @@
                     })
             },
 
+            /**
+             * @description reset data
+             */
             resetData(){
 
                 this.showModal = false
@@ -251,6 +279,9 @@
                 this.drinkCategory = ''
             },
 
+            /**
+             * @description display list all drinks
+             */
             async getDrinks(){
 
                 await axios.get('/drinks-list')
@@ -260,9 +291,13 @@
                 })
             },
 
-            async updateDrink(idProduct){
+            /**
+             * @description send data for update specified resources drink
+             * @param {any} idDrink
+             */
+            async updateDrink(idDrink){
 
-                var url = '/update-drink/' + idProduct
+                var url = '/update-drink/' + idDrink
 
                 await axios.put(url ,this.drink).
                     then((response) => {
@@ -282,6 +317,9 @@
 
             },
 
+            /**
+             * @description reset data and get all drinks
+             */
             resetDataUp(){
 
                 this.showModalMod = false
@@ -290,6 +328,10 @@
 
             },
 
+            /**
+             * @description Return specified resource
+             * @param {drink} id
+             */
             async getDrink(id){
 
                 await axios.get('/drink/'+id).
@@ -302,7 +344,6 @@
             }
         },
 
-
         mounted: function() {
 
             this.getDrinks()
@@ -311,6 +352,7 @@
 
 
         watch: {
+
             drinkID: function(val){
 
                 if(this.drinkID != ''){

@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_models_1_1_table" xml:lang="en-US">
+<title>Table Class Reference</title>
+<indexterm><primary>Table</primary></indexterm>
+<para>Inheritance diagram for Table:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_models_1_1_table.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_app_1_1_models_1_1_table_1aea7048eab5f1505888d34f9f454b6cc4"/><emphasis role="strong">table_reservations</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_app_1_1_models_1_1_table_1a01c8b416b86d785d493bfb37eefb52e6"/><emphasis role="strong">tables_users</emphasis> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_models_1_1_table_1af338145541356008fbbc6f97de6885e6">order</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><emphasis role="strong">$fillable</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_app_1_1_models_1_1_table_1af338145541356008fbbc6f97de6885e6"/>    <section>
+    <title>order()</title>
+<indexterm><primary>order</primary><secondary>Table</secondary></indexterm>
+<indexterm><primary>Table</primary><secondary>order</secondary></indexterm>
+<para><computeroutput>order ( )</computeroutput></para>
+<para>Return relationship <link linkend="_class_app_1_1_models_1_1_table">Table</link> with orders</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>$table </para>
+</formalpara>
+</para>
+</section>
+</section>
+<section>
+<title>Field Documentation</title>
+<anchor xml:id="_class_app_1_1_models_1_1_table_1a6a90e74ccdf5efd70d51d10c906f8e32"/>    <section>
+    <title>$fillable</title>
+<indexterm><primary>$fillable</primary><secondary>Table</secondary></indexterm>
+<indexterm><primary>Table</primary><secondary>$fillable</secondary></indexterm>
+<para><computeroutput>$fillable<computeroutput>[protected]</computeroutput></computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting>=&#32;[
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;status&apos;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;name&apos;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;min_pax&apos;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;max_pax&apos;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;photo&apos;</emphasis>
+&#32;&#32;&#32;&#32;]
+</programlisting></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+C:/Users/yelxg/Desktop/TastyKIT-25-finish-OK/app/Models/Table.php</section>
+</section>

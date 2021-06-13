@@ -8,17 +8,26 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 use \Illuminate\Http\Response;
 
+/**
+ * @author Yelx <jessica.rod.mir@gmail.com>
+ * Controller Model Dishes
+ */
 class DishController extends Controller
 {
 
+    /**
+     * Constructor
+     * @param Dish $dish
+     */
     public function __construct(Dish $dish){
 
         $this->dish = $dish;
     }
+
     /**
-     * Display a listing of the resource.
+     * Display a view of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Inertia\Inertia Admin/Dishes[allCategories,type]
      */
     public function index()
     {
@@ -28,6 +37,11 @@ class DishController extends Controller
                                                 'type' => $dish->type] );
     }
 
+    /**
+     * Return all dishes in BD
+     *
+     * @return App\Models\Dish $datos
+     */
     public function getDishes()
     {
         $dishes = Dish::all();
@@ -49,20 +63,9 @@ class DishController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create(Request $request)
-    {
-
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
@@ -79,7 +82,7 @@ class DishController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Dish  $dish
+     * @param  \Illuminate\Http\Request $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -99,21 +102,10 @@ class DishController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Dish  $dish
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Dish $dish)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Dish  $dish
+     * @param  \Illuminate\Http\Request  $id
      * @return \Illuminate\Http\Response
      */
     public function updateDish(Request $request, $id)
@@ -130,7 +122,7 @@ class DishController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Dish  $dish
+     * @param  \Illuminate\Http\Request  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

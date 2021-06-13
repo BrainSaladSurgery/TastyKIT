@@ -7,18 +7,27 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 use \Illuminate\Http\Response;
 
+/**
+ * @author Yelx <jessica.rod.mir@gmail.com>
+ * [Description OrderController]
+ */
 class OrderController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a view of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Inertia\Inertia Admin/Orders
      */
     public function index()
     {
         return Inertia::render('Admin/Orders');
     }
 
+    /**
+     * Display a last Number order
+     *
+     * @return int
+     */
     public function getNumTicket(){
 
         $order = Order::orderBy('ticket','desc')->get()->first();
@@ -26,9 +35,9 @@ class OrderController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Create a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param Illuminate\Http\Request $data
      */
     public function create(Request $data)
     {
@@ -67,63 +76,5 @@ class OrderController extends Controller
                 ]);
             }
         }
-    }
-
-
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Order $order)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Order $order)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Order $order)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Order $order)
-    {
-        //
     }
 }

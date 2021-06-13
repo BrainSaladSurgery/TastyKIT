@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_http_1_1_controllers_1_1_table_controller" xml:lang="en-US">
+<title>TableController Class Reference</title>
+<indexterm><primary>TableController</primary></indexterm>
+<para>Inheritance diagram for TableController:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_http_1_1_controllers_1_1_table_controller.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_table_controller_1a149eb92716c1084a935e04a8d95f7347">index</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_table_controller_1a61b9097ace78236a1a7f9cfd9e9ab01c">getTables</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_table_controller_1a5ae8e5039938b7d0ee6f2f6d45d0fa72">getTable</link> ($id)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_table_controller_1a0d8daf59bddca84cb1dc14b7a4a37912">edit</link> (Table $table)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_table_controller_1a301bb198c2fa254bbe8696ff263423f2">update</link> (Request $request, Table $table)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_table_controller_1a44fc0ea0845f34f6c5752c55e5ffd6dc">destroy</link> (Table $table)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_table_controller_1a44fc0ea0845f34f6c5752c55e5ffd6dc"/>    <section>
+    <title>destroy()</title>
+<indexterm><primary>destroy</primary><secondary>TableController</secondary></indexterm>
+<indexterm><primary>TableController</primary><secondary>destroy</secondary></indexterm>
+<para><computeroutput>destroy (Table $table)</computeroutput></para>
+<para>Remove the specified resource from storage.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>\App\Models\Table                                </entry>                                <entry>$table</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>\Illuminate\Http\Response </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_table_controller_1a0d8daf59bddca84cb1dc14b7a4a37912"/>    <section>
+    <title>edit()</title>
+<indexterm><primary>edit</primary><secondary>TableController</secondary></indexterm>
+<indexterm><primary>TableController</primary><secondary>edit</secondary></indexterm>
+<para><computeroutput>edit (Table $table)</computeroutput></para>
+<para>Show the form for editing the specified resource.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>\App\Models\Table                                </entry>                                <entry>$table</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>\Illuminate\Http\Response </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_table_controller_1a5ae8e5039938b7d0ee6f2f6d45d0fa72"/>    <section>
+    <title>getTable()</title>
+<indexterm><primary>getTable</primary><secondary>TableController</secondary></indexterm>
+<indexterm><primary>TableController</primary><secondary>getTable</secondary></indexterm>
+<para><computeroutput>getTable ( $id)</computeroutput></para>
+<para>Display the specified resource.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>$id</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>\Illuminate\Http\Response $table </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_table_controller_1a61b9097ace78236a1a7f9cfd9e9ab01c"/>    <section>
+    <title>getTables()</title>
+<indexterm><primary>getTables</primary><secondary>TableController</secondary></indexterm>
+<indexterm><primary>TableController</primary><secondary>getTables</secondary></indexterm>
+<para><computeroutput>getTables ( )</computeroutput></para>
+<para>Return all records in BD object Table</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>\Illuminate\Http\Response $mesa </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_table_controller_1a149eb92716c1084a935e04a8d95f7347"/>    <section>
+    <title>index()</title>
+<indexterm><primary>index</primary><secondary>TableController</secondary></indexterm>
+<indexterm><primary>TableController</primary><secondary>index</secondary></indexterm>
+<para><computeroutput>index ( )</computeroutput></para>
+<para>Display a view of the resource.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Inertia\Inertia Admin/Tables </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_table_controller_1a301bb198c2fa254bbe8696ff263423f2"/>    <section>
+    <title>update()</title>
+<indexterm><primary>update</primary><secondary>TableController</secondary></indexterm>
+<indexterm><primary>TableController</primary><secondary>update</secondary></indexterm>
+<para><computeroutput>update (Request $request, Table $table)</computeroutput></para>
+<para>Update the specified resource in storage.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>\Illuminate\Http\Request                                </entry>                                <entry>$request</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>\App\Models\Table                                </entry>                                <entry>$table</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>\Illuminate\Http\Response </para>
+</formalpara>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+C:/Users/yelxg/Desktop/TastyKIT-25-finish-OK/app/Http/Controllers/TableController.php</section>
+</section>

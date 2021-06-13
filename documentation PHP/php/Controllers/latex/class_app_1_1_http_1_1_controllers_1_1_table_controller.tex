@@ -1,0 +1,119 @@
+\hypertarget{class_app_1_1_http_1_1_controllers_1_1_table_controller}{}\doxysection{Table\+Controller Class Reference}
+\label{class_app_1_1_http_1_1_controllers_1_1_table_controller}\index{TableController@{TableController}}
+Inheritance diagram for Table\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_app_1_1_http_1_1_controllers_1_1_table_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_table_controller_a149eb92716c1084a935e04a8d95f7347}{index}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_table_controller_a61b9097ace78236a1a7f9cfd9e9ab01c}{get\+Tables}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_table_controller_a5ae8e5039938b7d0ee6f2f6d45d0fa72}{get\+Table}} (\$id)
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_table_controller_a0d8daf59bddca84cb1dc14b7a4a37912}{edit}} (Table \$table)
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_table_controller_a301bb198c2fa254bbe8696ff263423f2}{update}} (Request \$request, Table \$table)
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_table_controller_a44fc0ea0845f34f6c5752c55e5ffd6dc}{destroy}} (Table \$table)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_table_controller_a44fc0ea0845f34f6c5752c55e5ffd6dc}\label{class_app_1_1_http_1_1_controllers_1_1_table_controller_a44fc0ea0845f34f6c5752c55e5ffd6dc}} 
+\index{TableController@{TableController}!destroy@{destroy}}
+\index{destroy@{destroy}!TableController@{TableController}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily destroy (\begin{DoxyParamCaption}\item[{Table}]{\$table }\end{DoxyParamCaption})}
+
+Remove the specified resource from storage.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\textbackslash{}\+App\textbackslash{}\+Models\textbackslash{}\+Table & {\em \$table} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\textbackslash{}\+Illuminate\textbackslash{}\+Http\textbackslash{}\+Response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_table_controller_a0d8daf59bddca84cb1dc14b7a4a37912}\label{class_app_1_1_http_1_1_controllers_1_1_table_controller_a0d8daf59bddca84cb1dc14b7a4a37912}} 
+\index{TableController@{TableController}!edit@{edit}}
+\index{edit@{edit}!TableController@{TableController}}
+\doxysubsubsection{\texorpdfstring{edit()}{edit()}}
+{\footnotesize\ttfamily edit (\begin{DoxyParamCaption}\item[{Table}]{\$table }\end{DoxyParamCaption})}
+
+Show the form for editing the specified resource.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\textbackslash{}\+App\textbackslash{}\+Models\textbackslash{}\+Table & {\em \$table} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\textbackslash{}\+Illuminate\textbackslash{}\+Http\textbackslash{}\+Response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_table_controller_a5ae8e5039938b7d0ee6f2f6d45d0fa72}\label{class_app_1_1_http_1_1_controllers_1_1_table_controller_a5ae8e5039938b7d0ee6f2f6d45d0fa72}} 
+\index{TableController@{TableController}!getTable@{getTable}}
+\index{getTable@{getTable}!TableController@{TableController}}
+\doxysubsubsection{\texorpdfstring{getTable()}{getTable()}}
+{\footnotesize\ttfamily get\+Table (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
+
+Display the specified resource.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\textbackslash{}\+Illuminate\textbackslash{}\+Http\textbackslash{}\+Response \$table 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_table_controller_a61b9097ace78236a1a7f9cfd9e9ab01c}\label{class_app_1_1_http_1_1_controllers_1_1_table_controller_a61b9097ace78236a1a7f9cfd9e9ab01c}} 
+\index{TableController@{TableController}!getTables@{getTables}}
+\index{getTables@{getTables}!TableController@{TableController}}
+\doxysubsubsection{\texorpdfstring{getTables()}{getTables()}}
+{\footnotesize\ttfamily get\+Tables (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Return all records in BD object Table
+
+\begin{DoxyReturn}{Returns}
+\textbackslash{}\+Illuminate\textbackslash{}\+Http\textbackslash{}\+Response \$mesa 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_table_controller_a149eb92716c1084a935e04a8d95f7347}\label{class_app_1_1_http_1_1_controllers_1_1_table_controller_a149eb92716c1084a935e04a8d95f7347}} 
+\index{TableController@{TableController}!index@{index}}
+\index{index@{index}!TableController@{TableController}}
+\doxysubsubsection{\texorpdfstring{index()}{index()}}
+{\footnotesize\ttfamily index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Display a view of the resource.
+
+\begin{DoxyReturn}{Returns}
+Inertia\textbackslash{}\+Inertia Admin/\+Tables 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_table_controller_a301bb198c2fa254bbe8696ff263423f2}\label{class_app_1_1_http_1_1_controllers_1_1_table_controller_a301bb198c2fa254bbe8696ff263423f2}} 
+\index{TableController@{TableController}!update@{update}}
+\index{update@{update}!TableController@{TableController}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily update (\begin{DoxyParamCaption}\item[{Request}]{\$request,  }\item[{Table}]{\$table }\end{DoxyParamCaption})}
+
+Update the specified resource in storage.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\textbackslash{}\+Illuminate\textbackslash{}\+Http\textbackslash{}\+Request & {\em \$request} & \\
+\hline
+\textbackslash{}\+App\textbackslash{}\+Models\textbackslash{}\+Table & {\em \$table} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\textbackslash{}\+Illuminate\textbackslash{}\+Http\textbackslash{}\+Response 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/yelxg/\+Desktop/\+Tasty\+KIT-\/25-\/finish-\/\+OK/app/\+Http/\+Controllers/Table\+Controller.\+php\end{DoxyCompactItemize}

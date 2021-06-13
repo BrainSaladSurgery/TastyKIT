@@ -9,18 +9,27 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\DB;
 use \Illuminate\Http\Response;
 
+/**
+ * @author Yelx <jessica.rod.mir@gmail.com>
+ * Controller Model User
+ */
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a view of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Inertia\Inertia Admin/Users
      */
     public function index()
     {
         return Inertia::render('Admin/Users');
     }
 
+    /**
+     * Return all dishes in BD object User
+     *
+     * @return App\Models\User $datos
+     */
     public function getUsers()
     {
         $users = User::all();
@@ -48,31 +57,10 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-
-    }
-
-    /**
      * Display the specified resource.
      *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
+     * @param  \Illuminate\Http\Request $id
+     * @return \Illuminate\Http\Response $user
      */
     public function show($id)
     {
@@ -91,17 +79,6 @@ class UserController extends Controller
                     'id' => $usuario->id
         ];
         return $user;
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(User $user)
-    {
-        //
     }
 
     /**

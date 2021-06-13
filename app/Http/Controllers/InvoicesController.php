@@ -8,23 +8,48 @@ use Inertia\Inertia;
 use \Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 
+/**
+ * @author Yelx <jessica.rod.mir@gmail.com>
+ * Controller Model Order(Invoices)
+ */
 class InvoicesController extends Controller
 {
+    /**
+     * Constructor
+     * @param App\Models\Order $order
+     */
     public function __construct(Order $order){
 
         $this->order = $order;
     }
 
+    /**
+     * Display a view of the resource.
+     *
+     * @return Inertia\Inertia Admin/Invoices
+     */
     public function index()
     {
         return Inertia::render('Admin/Invoices');
     }
 
+    /**
+     * Display count totally Order
+     *
+     * @return App\Models\Order $order
+     */
     public function getTotal()
     {
         return Order::distinct()->get('ticket');
     }
 
+    /**
+     * Display all records Order
+     * @depends findOrderByTicket
+     * @depends setArray
+     *
+     * @return App\Models\Order array []$order
+     */
     public function getInvoices()
     {
         $invoices = Order::distinct()->get('ticket');
@@ -37,6 +62,11 @@ class InvoicesController extends Controller
         return $order;
     }
 
+    /**
+     * Find Order By ticket, sort by ticket
+     *
+     * @return App\Models\Order array []$invoice
+     */
     public function findOrderByTicket($ticket){
 
         $order = Order::where('ticket',$ticket)->get();
@@ -84,6 +114,12 @@ class InvoicesController extends Controller
 
     }
 
+    /**
+     * Set array all Orders
+     * @depends findOrderByTicket
+     * @param  array $datos
+     * @return App\Models\Order array []$invoice
+     */
     public static function  setArray($datos){
         $orders=[];
 
@@ -105,6 +141,11 @@ class InvoicesController extends Controller
         return $orders;
     }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param Illuminate\Http\Request $request
+     */
     public function store(Request $request)
     {
 
@@ -121,7 +162,7 @@ class InvoicesController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Order  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response $datos
      */
     public function show($id)
     {
@@ -145,7 +186,7 @@ class InvoicesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Dish  $dish
+     * @param  \App\Models\Order  $ticket
      * @return \Illuminate\Http\Response
      */
     public function updateTicket(Request $request, $ticket)

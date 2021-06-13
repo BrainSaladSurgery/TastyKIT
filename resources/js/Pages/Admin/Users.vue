@@ -91,6 +91,9 @@
 </template>
 
 <script>
+/**
+ * write a component's description
+ */
 
     import AppLayout from '@/Layouts/AppLayout'
     import NavSide from '@/Components/NavSide'
@@ -117,6 +120,10 @@
             HeaderNav
         },
 
+        /**
+         * @description
+         * @returns {any}
+         */
         data(){
             return {
 
@@ -137,6 +144,10 @@
 
         },
         methods: {
+            /**
+             * @description send data for return specified resource
+             * @param {user} id
+             */
             async sendData(id){
 
                 await axios.get('/user/'+id).
@@ -146,6 +157,10 @@
                     })
             },
 
+            /**
+             * @description send data for return specified resource
+             * @param {user} id
+             */
             async getUser(id){
 
                 await axios.get('/user/'+id).
@@ -154,12 +169,19 @@
                     })
             },
 
+            /**
+             * @description change status modal
+             */
             changeStateModal(){
 
                 this.showModalUser = !this.showModalUser
 
             },
 
+            /**
+             * @description send data for update resource
+             * @param {user} id
+             */
             async modifyUser(id){
                 await axios.put('/update-user/'+ id, this.user).
                     then((response) =>{
@@ -173,6 +195,9 @@
                     })
             },
 
+            /**
+             * @description reset data
+             */
             resetDataUp(){
 
                 this.showModalUser = false
@@ -184,6 +209,7 @@
         },
 
         watch: {
+
             deleteUsuario: function (val){
                 if(this.deleteUsuario != ''){
 
@@ -191,7 +217,6 @@
                 }
             },
 
-            // Reset de la modal
             borrado: function(val){
                 if(this.borrado == true){
 
@@ -201,7 +226,6 @@
                 }
             },
 
-            //MODIFY
             editUsuario: function(val){
                 if(this.editUsuario != ''){
 

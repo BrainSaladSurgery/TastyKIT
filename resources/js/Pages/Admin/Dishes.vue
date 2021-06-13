@@ -118,6 +118,9 @@
 </template>
 
 <script>
+/**
+ * write a component's description
+ */
 
     import AppLayout from '@/Layouts/AppLayout'
     import NavSide from '@/Components/NavSide'
@@ -144,6 +147,10 @@
             HeaderNav
         },
 
+        /**
+         * @description
+         * @returns {any}
+         */
         data(){
             return {
 
@@ -164,6 +171,11 @@
 
         },
         methods: {
+
+            /**
+             * @description Send data specified dish
+             * @param {dish} id
+             */
             async sendData(id){
 
                 await axios.get('/dish/'+id).
@@ -173,6 +185,10 @@
                     })
             },
 
+            /**
+             * @description Get the resource specified dish
+             * @param {dish} id
+             */
             async getDish(id){
 
                 await axios.get('/dish/'+id).
@@ -184,16 +200,26 @@
                     })
             },
 
+            /**
+             * @description Change Status modal
+             */
             changeStateModal(){
 
                 this.showModalDish = !this.showModalDish
             },
 
+            /**
+             * @description Change Status modal
+             */
             changeStateModalMod(){
 
                 this.showModalDishMod = !this.showModalDishMod
             },
 
+            /**
+             * @description Send data for create new resource dish
+             * @param {dish} dish
+             */
             async createDish(dish){
 
                 const formData = new FormData()
@@ -217,6 +243,10 @@
                     })
             },
 
+            /**
+             * @description Send data for update specified resource dish
+             * @param {dish} data
+             */
             async updateDish(data){
                 await axios.put('/update-dish/'+ data.id, this.dish).
                     then((response) =>{
@@ -231,6 +261,9 @@
                     })
             },
 
+            /**
+             * @description reset data
+             */
             resetDataUp(){
 
                 this.dish = []
@@ -240,6 +273,7 @@
         },
 
         watch: {
+
             deleteDish: function (val){
                 if(this.deleteDish != ''){
 
@@ -247,7 +281,11 @@
                 }
             },
 
-            // Reset de la modal
+
+            /**
+             * @description reset modal
+             * @param {any} val
+             */
             borrado: function(val){
                 if(this.borrado == true){
 
@@ -257,7 +295,10 @@
                 }
             },
 
-            //MODIFY
+            /**
+             * @description watch for modify
+             * @param {any} val
+             */
             dishID: function(val){
                 if(this.dishID != ''){
 

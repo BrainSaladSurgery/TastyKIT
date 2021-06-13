@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_http_1_1_controllers_1_1_search_controller" xml:lang="en-US">
+<title>SearchController Class Reference</title>
+<indexterm><primary>SearchController</primary></indexterm>
+<para>Inheritance diagram for SearchController:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_http_1_1_controllers_1_1_search_controller.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_search_controller_1af515b85bafb22ee9d5a0e85ef71692ac">search</link> ($name, $type)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para><formalpara><title>Author</title>
+
+<para>Yelx <link xlink:href="mailto:jessica.rod.mir@gmail.com">jessica.rod.mir@gmail.com</link> [Description <link linkend="_class_app_1_1_http_1_1_controllers_1_1_search_controller">SearchController</link>] </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_search_controller_1af515b85bafb22ee9d5a0e85ef71692ac"/>    <section>
+    <title>search()</title>
+<indexterm><primary>search</primary><secondary>SearchController</secondary></indexterm>
+<indexterm><primary>SearchController</primary><secondary>search</secondary></indexterm>
+<para><computeroutput>search ( $name,  $type)</computeroutput></para>
+<para>Display this specified record</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>mixed                                </entry>                                <entry>$name</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>mixed                                </entry>                                <entry>$type</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Product/Drink/User/Dish </para>
+</formalpara>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+C:/Users/yelxg/Desktop/TastyKIT-25-finish-OK/app/Http/Controllers/SearchController.php</section>
+</section>

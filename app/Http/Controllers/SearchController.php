@@ -8,8 +8,20 @@ use App\Models\Drink;
 use App\Models\User;
 use App\Models\Dish;
 
+/**
+ * @author Yelx <jessica.rod.mir@gmail.com>
+ * [Description SearchController]
+ */
 class SearchController extends Controller
 {
+    /**
+     * Display this specified record
+     *
+     * @param mixed $name
+     * @param mixed $type
+     *
+     * @return Product/Drink/User/Dish
+     */
     public function search($name, $type){
 
         switch ($type) {

@@ -20,7 +20,12 @@ class Product extends Model
         'categories_id'
     ];
 
-    // Method createProduct
+    /**
+     * Create a new resources
+     *
+     * @param mixed $request
+     * @return App\Models\Product $product
+     */
     public static function createProduct($request)
     {
         $url = null;

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_index" xml:lang="en-US">
+    <info>
+    <title>Tastykit</title>
+    </info>
+<chapter>
+    <title>Data Structure Documentation</title>
+    <xi:include href="class_app_1_1_http_1_1_controllers_1_1_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_http_1_1_controllers_1_1_dish_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_http_1_1_controllers_1_1_drink_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_http_1_1_controllers_1_1_invoices_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_http_1_1_controllers_1_1_order_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_http_1_1_controllers_1_1_product_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_http_1_1_controllers_1_1_reservation_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_http_1_1_controllers_1_1_search_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_http_1_1_controllers_1_1_table_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_app_1_1_http_1_1_controllers_1_1_user_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<index/>
+</book>

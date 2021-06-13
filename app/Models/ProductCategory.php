@@ -14,6 +14,11 @@ class ProductCategory extends Model
         'description'
     ];
 
+    /**
+     * Return relationship ProductCategory with products
+     *
+     * @return $productCategory
+     */
     public function product_category()
     {
         return $this->hasOne(Product::class);//1 a muchos

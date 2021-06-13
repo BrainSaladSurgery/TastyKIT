@@ -1,0 +1,107 @@
+\hypertarget{class_app_1_1_http_1_1_controllers_1_1_user_controller}{}\doxysection{User\+Controller Class Reference}
+\label{class_app_1_1_http_1_1_controllers_1_1_user_controller}\index{UserController@{UserController}}
+Inheritance diagram for User\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_app_1_1_http_1_1_controllers_1_1_user_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_user_controller_a149eb92716c1084a935e04a8d95f7347}{index}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_user_controller_a0fc10b64683021b70c7eb95fb514c119}{get\+Users}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_user_controller_ae4914d07a9bbe4aede7a5dea759f6287}{show}} (\$id)
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_user_controller_a234e128735970534b59731443c8e78d7}{update\+User}} (Request \$request, \$id)
+\item 
+\mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_user_controller_a726fa8a4b4b187b9ca32ba427aac8137}{destroy}} (\$id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Yelx \href{mailto:jessica.rod.mir@gmail.com}{\texttt{ jessica.\+rod.\+mir@gmail.\+com}} \mbox{\hyperlink{class_app_1_1_http_1_1_controllers_1_1_controller}{Controller}} Model User 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_user_controller_a726fa8a4b4b187b9ca32ba427aac8137}\label{class_app_1_1_http_1_1_controllers_1_1_user_controller_a726fa8a4b4b187b9ca32ba427aac8137}} 
+\index{UserController@{UserController}!destroy@{destroy}}
+\index{destroy@{destroy}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily destroy (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
+
+Remove the specified resource from storage.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\textbackslash{}\+App\textbackslash{}\+Models\textbackslash{}\+User & {\em \$user} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\textbackslash{}\+Illuminate\textbackslash{}\+Http\textbackslash{}\+Response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_user_controller_a0fc10b64683021b70c7eb95fb514c119}\label{class_app_1_1_http_1_1_controllers_1_1_user_controller_a0fc10b64683021b70c7eb95fb514c119}} 
+\index{UserController@{UserController}!getUsers@{getUsers}}
+\index{getUsers@{getUsers}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{getUsers()}{getUsers()}}
+{\footnotesize\ttfamily get\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Return all dishes in BD object User
+
+\begin{DoxyReturn}{Returns}
+App\textbackslash{}\+Models\textbackslash{}\+User \$datos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_user_controller_a149eb92716c1084a935e04a8d95f7347}\label{class_app_1_1_http_1_1_controllers_1_1_user_controller_a149eb92716c1084a935e04a8d95f7347}} 
+\index{UserController@{UserController}!index@{index}}
+\index{index@{index}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{index()}{index()}}
+{\footnotesize\ttfamily index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Display a view of the resource.
+
+\begin{DoxyReturn}{Returns}
+Inertia\textbackslash{}\+Inertia Admin/\+Users 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_user_controller_ae4914d07a9bbe4aede7a5dea759f6287}\label{class_app_1_1_http_1_1_controllers_1_1_user_controller_ae4914d07a9bbe4aede7a5dea759f6287}} 
+\index{UserController@{UserController}!show@{show}}
+\index{show@{show}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily show (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
+
+Display the specified resource.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\textbackslash{}\+Illuminate\textbackslash{}\+Http\textbackslash{}\+Request & {\em \$id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\textbackslash{}\+Illuminate\textbackslash{}\+Http\textbackslash{}\+Response \$user 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_http_1_1_controllers_1_1_user_controller_a234e128735970534b59731443c8e78d7}\label{class_app_1_1_http_1_1_controllers_1_1_user_controller_a234e128735970534b59731443c8e78d7}} 
+\index{UserController@{UserController}!updateUser@{updateUser}}
+\index{updateUser@{updateUser}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{updateUser()}{updateUser()}}
+{\footnotesize\ttfamily update\+User (\begin{DoxyParamCaption}\item[{Request}]{\$request,  }\item[{}]{\$id }\end{DoxyParamCaption})}
+
+Update the specified resource in storage.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\textbackslash{}\+Illuminate\textbackslash{}\+Http\textbackslash{}\+Request & {\em \$request} & \\
+\hline
+\textbackslash{}\+App\textbackslash{}\+Models\textbackslash{}\+User & {\em \$user} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\textbackslash{}\+Illuminate\textbackslash{}\+Http\textbackslash{}\+Response 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/yelxg/\+Desktop/\+Tasty\+KIT-\/25-\/finish-\/\+OK/app/\+Http/\+Controllers/User\+Controller.\+php\end{DoxyCompactItemize}

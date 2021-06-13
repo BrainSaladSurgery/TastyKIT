@@ -9,16 +9,26 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\DB;
 use \Illuminate\Http\Response;
 
+/**
+ * @author Yelx <jessica.rod.mir@gmail.com>
+ * [Description ProductController]
+ */
 class ProductController extends Controller
 {
+
+    /**
+     * Constructor
+     * @param Product $product
+     */
     public function __construct(Product $product)
     {
         $this->product = $product;
     }
+
     /**
-     * Display a listing of the resource.
+     * Display a view of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Inertia\Inertia Admin/Products
      */
     public function index()
     {
@@ -28,19 +38,31 @@ class ProductController extends Controller
                                                 'type' => $product->type]);
     }
 
+    /**
+     * Return all records in BD order desc
+     *
+     * @return App\Models\Products $products
+     */
     public function getProducts()
     {
         return $products = Product::orderBy('created_at','desc')->get();
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  $id
+     * @return \Illuminate\Http\Response $product
+     */
     public function show($id){
 
         return Product::where('id', $id)->first();
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Create a new resource.
      *
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function create(Request $request)
@@ -65,7 +87,7 @@ class ProductController extends Controller
      * Update the specified product in Database.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\Product  $id
      * @return \Illuminate\Http\Response
      */
     public function updateProduct(Request $request,  $id)

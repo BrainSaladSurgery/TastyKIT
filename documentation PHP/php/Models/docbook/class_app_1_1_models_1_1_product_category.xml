@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_models_1_1_product_category" xml:lang="en-US">
+<title>ProductCategory Class Reference</title>
+<indexterm><primary>ProductCategory</primary></indexterm>
+<para>Inheritance diagram for ProductCategory:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_models_1_1_product_category.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_models_1_1_product_category_1a3797fe7706ae2dc10209977d364b7ecf">product_category</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><emphasis role="strong">$fillable</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_app_1_1_models_1_1_product_category_1a3797fe7706ae2dc10209977d364b7ecf"/>    <section>
+    <title>product_category()</title>
+<indexterm><primary>product_category</primary><secondary>ProductCategory</secondary></indexterm>
+<indexterm><primary>ProductCategory</primary><secondary>product_category</secondary></indexterm>
+<para><computeroutput>product_category ( )</computeroutput></para>
+<para>Return relationship <link linkend="_class_app_1_1_models_1_1_product_category">ProductCategory</link> with products</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>$productCategory </para>
+</formalpara>
+</para>
+</section>
+</section>
+<section>
+<title>Field Documentation</title>
+<anchor xml:id="_class_app_1_1_models_1_1_product_category_1a6a90e74ccdf5efd70d51d10c906f8e32"/>    <section>
+    <title>$fillable</title>
+<indexterm><primary>$fillable</primary><secondary>ProductCategory</secondary></indexterm>
+<indexterm><primary>ProductCategory</primary><secondary>$fillable</secondary></indexterm>
+<para><computeroutput>$fillable<computeroutput>[protected]</computeroutput></computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting>=&#32;[
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;name&apos;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;description&apos;</emphasis>
+&#32;&#32;&#32;&#32;]
+</programlisting></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+C:/Users/yelxg/Desktop/TastyKIT-25-finish-OK/app/Models/ProductCategory.php</section>
+</section>

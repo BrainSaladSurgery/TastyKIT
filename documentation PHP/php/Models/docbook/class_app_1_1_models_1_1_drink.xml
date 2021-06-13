@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_models_1_1_drink" xml:lang="en-US">
+<title>Drink Class Reference</title>
+<indexterm><primary>Drink</primary></indexterm>
+<para>Inheritance diagram for Drink:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_models_1_1_drink.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_models_1_1_drink_1ade7a3d08c497abd198448fec996c7bc9">orders</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_models_1_1_drink_1aa6f5738c49213165a21d711dfa53f1d6">category</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static <link linkend="_class_app_1_1_models_1_1_drink_1a72ead67734e9f49b68ed3cce662909da">createDrink</link> ($request)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><emphasis role="strong">$fillable</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_app_1_1_models_1_1_drink_1aa6f5738c49213165a21d711dfa53f1d6"/>    <section>
+    <title>category()</title>
+<indexterm><primary>category</primary><secondary>Drink</secondary></indexterm>
+<indexterm><primary>Drink</primary><secondary>category</secondary></indexterm>
+<para><computeroutput>category ( )</computeroutput></para>
+<para>Return relationship <link linkend="_class_app_1_1_models_1_1_drink">Drink</link> with category</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>$drink </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_models_1_1_drink_1a72ead67734e9f49b68ed3cce662909da"/>    <section>
+    <title>createDrink()</title>
+<indexterm><primary>createDrink</primary><secondary>Drink</secondary></indexterm>
+<indexterm><primary>Drink</primary><secondary>createDrink</secondary></indexterm>
+<para><computeroutput>static createDrink ( $request)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Create a new resources</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>mixed                                </entry>                                <entry>$request</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>App\Models\Drink $drink </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_models_1_1_drink_1ade7a3d08c497abd198448fec996c7bc9"/>    <section>
+    <title>orders()</title>
+<indexterm><primary>orders</primary><secondary>Drink</secondary></indexterm>
+<indexterm><primary>Drink</primary><secondary>orders</secondary></indexterm>
+<para><computeroutput>orders ( )</computeroutput></para>
+<para>Return relationship drink with orders</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>$drink </para>
+</formalpara>
+</para>
+</section>
+</section>
+<section>
+<title>Field Documentation</title>
+<anchor xml:id="_class_app_1_1_models_1_1_drink_1a6a90e74ccdf5efd70d51d10c906f8e32"/>    <section>
+    <title>$fillable</title>
+<indexterm><primary>$fillable</primary><secondary>Drink</secondary></indexterm>
+<indexterm><primary>Drink</primary><secondary>$fillable</secondary></indexterm>
+<para><computeroutput>$fillable<computeroutput>[protected]</computeroutput></computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting>=&#32;[
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;amount&apos;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;image&apos;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;description&apos;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;name&apos;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;type&apos;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;default_img&apos;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;categories_id&apos;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;ud&apos;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;price&apos;</emphasis>
+&#32;&#32;&#32;&#32;]
+</programlisting></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+C:/Users/yelxg/Desktop/TastyKIT-25-finish-OK/app/Models/Drink.php</section>
+</section>

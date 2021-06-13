@@ -1,0 +1,245 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_app_1_1_http_1_1_controllers_1_1_drink_controller" xml:lang="en-US">
+<title>DrinkController Class Reference</title>
+<indexterm><primary>DrinkController</primary></indexterm>
+<para>Inheritance diagram for DrinkController:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_app_1_1_http_1_1_controllers_1_1_drink_controller.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_drink_controller_1a10fbce25d3403b7345dfd3d606ce18dc">__construct</link> (Drink $drink)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_drink_controller_1a149eb92716c1084a935e04a8d95f7347">index</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_drink_controller_1a06e8e7fbed5c31acf0bb4e8043f2ed82">getDrinks</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_drink_controller_1a14e082d8e6a6a1e8dea28f9d0267fdf0">create</link> (Request $request)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_drink_controller_1ae4914d07a9bbe4aede7a5dea759f6287">show</link> ($id)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_drink_controller_1a4bf1769b74f611ac2d68a989821244b6">updateDrink</link> (Request $request, $id)</para>
+</listitem>
+            <listitem><para><link linkend="_class_app_1_1_http_1_1_controllers_1_1_drink_controller_1a726fa8a4b4b187b9ca32ba427aac8137">destroy</link> ($id)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para><formalpara><title>Author</title>
+
+<para>Yelx <link xlink:href="mailto:jessica.rod.mir@gmail.com">jessica.rod.mir@gmail.com</link> <link linkend="_class_app_1_1_http_1_1_controllers_1_1_controller">Controller</link> Model Drink </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_drink_controller_1a10fbce25d3403b7345dfd3d606ce18dc"/>    <section>
+    <title>__construct()</title>
+<indexterm><primary>__construct</primary><secondary>DrinkController</secondary></indexterm>
+<indexterm><primary>DrinkController</primary><secondary>__construct</secondary></indexterm>
+<para><computeroutput>__construct (Drink $drink)</computeroutput></para>
+<para>Constructor <link linkend="_class_app_1_1_http_1_1_controllers_1_1_drink_controller">DrinkController</link> 
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>Drink                                </entry>                                <entry>$drink</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_drink_controller_1a14e082d8e6a6a1e8dea28f9d0267fdf0"/>    <section>
+    <title>create()</title>
+<indexterm><primary>create</primary><secondary>DrinkController</secondary></indexterm>
+<indexterm><primary>DrinkController</primary><secondary>create</secondary></indexterm>
+<para><computeroutput>create (Request $request)</computeroutput></para>
+<para>Create a new resource.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>\Illuminate\Http\Request                                </entry>                                <entry>$request</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>\Illuminate\Http\Response </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_drink_controller_1a726fa8a4b4b187b9ca32ba427aac8137"/>    <section>
+    <title>destroy()</title>
+<indexterm><primary>destroy</primary><secondary>DrinkController</secondary></indexterm>
+<indexterm><primary>DrinkController</primary><secondary>destroy</secondary></indexterm>
+<para><computeroutput>destroy ( $id)</computeroutput></para>
+<para>Remove the specified resource from storage.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>\App\Models\Drink                                </entry>                                <entry>$drink</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>\Illuminate\Http\Response </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_drink_controller_1a06e8e7fbed5c31acf0bb4e8043f2ed82"/>    <section>
+    <title>getDrinks()</title>
+<indexterm><primary>getDrinks</primary><secondary>DrinkController</secondary></indexterm>
+<indexterm><primary>DrinkController</primary><secondary>getDrinks</secondary></indexterm>
+<para><computeroutput>getDrinks ( )</computeroutput></para>
+<para>Return all drinks in BD</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>App\Models\Drink $datos </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_drink_controller_1a149eb92716c1084a935e04a8d95f7347"/>    <section>
+    <title>index()</title>
+<indexterm><primary>index</primary><secondary>DrinkController</secondary></indexterm>
+<indexterm><primary>DrinkController</primary><secondary>index</secondary></indexterm>
+<para><computeroutput>index ( )</computeroutput></para>
+<para>Display a view of the resource.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Inertia\Inertia Admin/Drinks[allCategories,type] </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_drink_controller_1ae4914d07a9bbe4aede7a5dea759f6287"/>    <section>
+    <title>show()</title>
+<indexterm><primary>show</primary><secondary>DrinkController</secondary></indexterm>
+<indexterm><primary>DrinkController</primary><secondary>show</secondary></indexterm>
+<para><computeroutput>show ( $id)</computeroutput></para>
+<para>Display the specified resource.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>\App\Models\Drink                                </entry>                                <entry>$drink</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>\Illuminate\Http\Response </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_app_1_1_http_1_1_controllers_1_1_drink_controller_1a4bf1769b74f611ac2d68a989821244b6"/>    <section>
+    <title>updateDrink()</title>
+<indexterm><primary>updateDrink</primary><secondary>DrinkController</secondary></indexterm>
+<indexterm><primary>DrinkController</primary><secondary>updateDrink</secondary></indexterm>
+<para><computeroutput>updateDrink (Request $request,  $id)</computeroutput></para>
+<para>Update the specified resource in storage.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>\Illuminate\Http\Request                                </entry>                                <entry>$request</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>\App\Models\Drink                                </entry>                                <entry>$drink</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>\Illuminate\Http\Response </para>
+</formalpara>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+C:/Users/yelxg/Desktop/TastyKIT-25-finish-OK/app/Http/Controllers/DrinkController.php</section>
+</section>
